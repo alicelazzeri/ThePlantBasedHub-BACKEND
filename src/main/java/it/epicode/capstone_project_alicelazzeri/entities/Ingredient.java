@@ -16,10 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
 
-public class Ingredient {
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private UUID id;
+public class Ingredient extends BaseEntity {
 
     @Column(nullable = false)
     private String ingredientName;

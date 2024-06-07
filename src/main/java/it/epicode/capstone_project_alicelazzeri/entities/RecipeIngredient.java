@@ -12,10 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
 
-public class RecipeIngredient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class RecipeIngredient extends BaseEntity {
 
     @Column(nullable = false)
     private int quantity;

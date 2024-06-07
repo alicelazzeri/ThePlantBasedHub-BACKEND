@@ -3,6 +3,7 @@ package it.epicode.capstone_project_alicelazzeri.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import it.epicode.capstone_project_alicelazzeri.entities.enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,42 +11,33 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name="users")
 @Getter
 @Setter
 @EqualsAndHashCode
+@AllArgsConstructor
 @NoArgsConstructor
 // @Builder(setterPrefix = "with")
-@JsonIgnoreProperties({"password", "active", "authorities", "enabled", "credentialsNOnExpired", "accountNonExpired", "accountNonLocked"})
+@JsonIgnoreProperties({"password", "active", "authorities", "enabled", "credentialsNonExpired", "accountNonExpired", "accountNonLocked"})
 
-public class User implements UserDetails {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class User extends BaseEntity implements UserDetails {
 
     @Column(nullable = false)
-    private String firstname;
+    @Size(min = 3, max = 30, message = "First name should be between 3 and 30 characters")
+    private String firstName;
     @Column(nullable = false)
+    @Size(min = 3, max = 30, message = "Last name should be between 3 and 30 characters")
     private String lastName;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     private String password;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    public User(String firstname, String lastName, String email, String password) {
-        this.firstname = firstname;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.role = Role.USER;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.UUID;
 
-public class FavoriteRecipe {
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private UUID id;
+public class FavoriteRecipe extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")

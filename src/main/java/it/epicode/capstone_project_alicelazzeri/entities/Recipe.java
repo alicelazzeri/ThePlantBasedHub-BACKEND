@@ -18,10 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
 
-public class Recipe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class Recipe extends BaseEntity {
 
     @Column(nullable = false)
     private String recipeName;
@@ -37,6 +34,6 @@ public class Recipe {
     private int caloriesPerServing;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<RecipeIngredient> ingredients = new ArrayList<>();
 
 }
