@@ -77,7 +77,6 @@ public class UserService {
                     "</body>" +
                     "</html>";
 
-
             helper.setText(emailContent, true);
             javaMailSender.send(mimeMessage);
 
@@ -178,6 +177,8 @@ public class UserService {
             throw new NotFoundException("User with id: " + id + " not found");
         }
     }
+
+    // GET find user by email
 
     @Transactional(readOnly = true)
     public User findByEmail(String email) {
