@@ -31,6 +31,7 @@ public class JWTTools {
                 compact();
     }
 
+
     // JWT Token validation
 
     public void verifyToken(String token) {
