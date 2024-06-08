@@ -48,13 +48,8 @@ public class JWTTools {
 
     // Extract ID from JWT Token
 
-    public UUID extractIdFromToken(String token) {
-        String idString = Jwts.parser()
-                .setSigningKey(Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8)))
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-
-        return UUID.fromString(idString);
+    public int extractIdFromToken(String token) {
+        return Integer.parseInt(Jwts.parser().verifyWith(Keys.hmacShaKeyFor(secret.getBytes())).
+                build().parseSignedClaims(token).getPayload().getSubject());
     }
 }

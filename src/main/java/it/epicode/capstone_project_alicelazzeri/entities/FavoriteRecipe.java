@@ -1,8 +1,17 @@
 package it.epicode.capstone_project_alicelazzeri.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.UUID;
+@Entity
+@Table(name="favorite_recipes")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder(setterPrefix = "with")
 
 public class FavoriteRecipe extends BaseEntity {
 

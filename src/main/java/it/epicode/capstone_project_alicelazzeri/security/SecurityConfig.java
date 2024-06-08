@@ -33,7 +33,7 @@ public class SecurityConfig {
         httpSecurity.csrf(c -> c.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -56,12 +56,16 @@ public class SecurityConfig {
 
     // Password Encoder configuration
 
+    @Bean
     PasswordEncoder getBCrypt() {
+
         return new BCryptPasswordEncoder(11);
+
     }
 
     // Java Mail Sender configuration
 
+    @Bean
     public JavaMailSenderImpl getJavaMailSender(@Value("${gmail.mail.transport.protocol}" )String protocol,
                                                 @Value("${gmail.mail.smtp.auth}" ) String auth,
                                                 @Value("${gmail.mail.smtp.starttls.enable}" )String starttls,
