@@ -1,5 +1,6 @@
 package it.epicode.capstone_project_alicelazzeri.payloads;
 
+import it.epicode.capstone_project_alicelazzeri.entities.enums.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -23,6 +24,7 @@ public record UserRegisterRequestDTO(
         @NotNull(message = "User password is mandatory")
         @NotEmpty(message = "User password cannot be empty")
         @Size(min = 8, message = "User password must contain at least 8 characters")
-        String password
+        String password,
+        Role role
 ) {
 }

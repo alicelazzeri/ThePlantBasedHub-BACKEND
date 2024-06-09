@@ -29,7 +29,7 @@ public class AuthController {
     // POST http://localhost:8080/api/auth/register
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(
+    public ResponseEntity<String> registerUser(
             @RequestBody @Validated UserRegisterRequestDTO registerPayload,
             BindingResult validation) {
 
@@ -38,6 +38,22 @@ public class AuthController {
         }
 
         String result = userService.saveUser(registerPayload);
+
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    // POST http://localhost:8080/api/auth/register/admin
+
+    @PostMapping("/register/admin")
+    public ResponseEntity<String> registerAdmin(
+            @RequestBody @Validated UserRegisterRequestDTO registerPayload,
+            BindingResult validation) {
+
+        if (validation.hasErrors()) {
+            throw new BadRequestException(validation.getAllErrors());
+        }
+
+        String result = userService.saveUserAdmin(registerPayload);
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

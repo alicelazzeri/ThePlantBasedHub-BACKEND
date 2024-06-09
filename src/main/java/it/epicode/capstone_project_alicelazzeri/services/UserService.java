@@ -158,6 +158,7 @@ public class UserService {
         user.setFirstName(userPayload.firstName());
         user.setLastName(userPayload.lastName());
         user.setEmail(userPayload.email());
+        user.setRole(Role.USER);
         user.setRole(Role.ADMIN);
         user.setPassword(bcrypt.encode(userPayload.password()));
         sendRegistrationEmail(userPayload.email(), userPayload.firstName());
@@ -178,6 +179,10 @@ public class UserService {
             user.setLastName(userPayload.lastName());
             user.setEmail(userPayload.email());
             user.setPassword(bcrypt.encode(userPayload.password()));
+
+            if (userPayload.role() != null) {
+                user.setRole(userPayload.role());
+            }
 
             return userRepository.save(user);
         } else {
