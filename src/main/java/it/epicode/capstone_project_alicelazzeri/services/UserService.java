@@ -5,12 +5,14 @@ import com.cloudinary.utils.ObjectUtils;
 import it.epicode.capstone_project_alicelazzeri.entities.User;
 import it.epicode.capstone_project_alicelazzeri.entities.enums.Role;
 import it.epicode.capstone_project_alicelazzeri.exceptions.BadRequestException;
+import it.epicode.capstone_project_alicelazzeri.exceptions.FileSizeExceededException;
 import it.epicode.capstone_project_alicelazzeri.exceptions.NotFoundException;
 import it.epicode.capstone_project_alicelazzeri.payloads.UserRegisterRequestDTO;
 import it.epicode.capstone_project_alicelazzeri.repositories.UserRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -22,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -37,6 +40,27 @@ public class UserService {
 
     @Autowired
     private JavaMailSender javaMailSender;
+
+    @Value("${spring.servlet.multipart.max-file-size}")
+    private String maxFileSize;
+
+    public long getMaxFileSizeInBytes() {
+        String[] parts = maxFileSize.split("(?i)(?<=[0-9])(?=[a-z])");
+        long size = Long.parseLong(parts[0]);
+        String unit = parts[1].toUpperCase();
+        switch (unit) {
+            case "KB":
+                size *= 1024;
+                break;
+            case "MB":
+                size *= 1024 * 1024;
+                break;
+            case "GB":
+                size *= 1024 * 1024 * 1024;
+                break;
+        }
+        return size;
+    }
 
     public void sendRegistrationEmail(String email, String recipientName) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -85,7 +109,6 @@ public class UserService {
             throw new RuntimeException(e);
         }
     }
-
 
     // GET all users
 
@@ -191,15 +214,66 @@ public class UserService {
         }
     }
 
+    // POST upload cloudinary file with public_id
 
+    @Transactional
+    public String uploadAvatar(Long id, MultipartFile image) throws IOException {
 
+        long maxFileSize = getMaxFileSizeInBytes();
+        if (image.getSize() > maxFileSize) {
+            throw new FileSizeExceededException("File size exceeds the maximum allowed size");
+        }
 
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User with id: " + id + " not found"));
 
+        String existingPublicId = user.getAvatarUrl();
+        if (existingPublicId != null && !existingPublicId.isEmpty()) {
+            cloudinaryUploader.uploader().destroy(existingPublicId, ObjectUtils.emptyMap());
+        }
 
+        Map<String, Object> uploadResult = cloudinaryUploader.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+        String publicId = (String) uploadResult.get("public_id");
+        String url = (String) uploadResult.get("url");
 
+        user.setAvatarUrl(publicId);
+        userRepository.save(user);
 
-    public String uploadImage(MultipartFile image) throws IOException {
-        String url = (String) cloudinaryUploader.uploader().upload(image.getBytes(), ObjectUtils.emptyMap()).get("url");
         return url;
     }
+
+
+    // DELETE delete cloudinary file
+
+    @Transactional
+    public String deleteAvatar(Long id, String publicId) throws IOException {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User with id: " + id + " not found"));
+
+        if (publicId != null && !publicId.isEmpty()) {
+            cloudinaryUploader.uploader().destroy(publicId, ObjectUtils.emptyMap());
+            user.setAvatarUrl(null);
+            userRepository.save(user);
+            return "Avatar deleted successfully";
+        } else {
+            return "No avatar found for deletion";
+        }
+    }
+
+    // PUT update cloudinary file
+
+    @Transactional
+    public String updateImage(long id, String publicId, MultipartFile updatedImage) throws IOException {
+        if (publicId != null && !publicId.isEmpty()) {
+            deleteAvatar(id, publicId);
+        }
+
+        long maxFileSize = getMaxFileSizeInBytes();
+        if (updatedImage.getSize() > maxFileSize) {
+            throw new FileSizeExceededException("File size exceeds the maximum allowed size");
+        }
+
+        return uploadAvatar(id, updatedImage);
+    }
+
 }
