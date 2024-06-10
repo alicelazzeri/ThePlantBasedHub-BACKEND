@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,12 +26,14 @@ public class RecipeService {
 
     // GET all recipes
 
+    @Transactional(readOnly = true)
     public Page<Recipe> getAllRecipes(Pageable pageable){
         return recipeRepository.findAll(pageable);
     }
 
     // GET recipe by ID
 
+    @Transactional(readOnly = true)
     public Recipe getRecipeById(long id) {
         return recipeRepository.findById(id).orElseThrow(
                 ()-> new NotFoundException("Recipe with id: " + id + " not found"));
@@ -38,6 +41,7 @@ public class RecipeService {
 
     // POST saving recipe
 
+    @Transactional
     public Recipe saveRecipe(RecipeDTO recipePayload) {
         Recipe recipe = mapToEntity(recipePayload);
         recipe.getIngredients().forEach(ingredient -> ingredient.setRecipe(recipe));
@@ -46,6 +50,7 @@ public class RecipeService {
 
     // PUT updating recipe
 
+    @Transactional
     public Recipe updateRecipe(long id, RecipeDTO updatedRecipe) {
         Recipe recipeToBeUpdated = this.getRecipeById(id);
         if (recipeToBeUpdated == null) {
@@ -58,6 +63,7 @@ public class RecipeService {
 
     // DELETE recipe
 
+    @Transactional
     public void deleteRecipe(long id) {
         if (!recipeRepository.existsById(id)) {
             throw new NotFoundException("Recipe with id: " + id + " not found");

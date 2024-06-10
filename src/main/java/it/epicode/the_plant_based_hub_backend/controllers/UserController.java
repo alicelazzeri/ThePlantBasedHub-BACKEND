@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin
 public class UserController {
 
     @Autowired
@@ -47,9 +48,8 @@ public class UserController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public ResponseEntity<User> getUserById(@PathVariable long id) {
         Optional<User> userOptional = userService.getUserById(id);
-
-        User user = userOptional.orElseThrow(() -> new NotFoundException("User with id: " + id + " not found"));
-
+        User user = userOptional.orElseThrow(
+                () -> new NotFoundException("User with id: " + id + " not found"));
         return ResponseEntity.ok(user);
     }
 
@@ -61,11 +61,9 @@ public class UserController {
             @PathVariable long id,
             @RequestBody @Validated UserRegisterRequestDTO userDto,
             BindingResult validation) {
-
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
         }
-
         User updatedUser = userService.updateUser(id, userDto);
         return ResponseEntity.ok(updatedUser);
     }
@@ -83,7 +81,10 @@ public class UserController {
 
     @PostMapping("/{id}/avatar/upload")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<String> uploadAvatar(@PathVariable Long id, @RequestParam("avatar") MultipartFile image) throws IOException {
+    public ResponseEntity<String> uploadAvatar(
+            @PathVariable Long id,
+            @RequestParam("avatar") MultipartFile image)
+            throws IOException {
         String url = userService.uploadAvatar(id, image);
         return ResponseEntity.ok(url);
     }
@@ -92,7 +93,10 @@ public class UserController {
 
     @DeleteMapping("/{id}/avatar/delete")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<String> deleteAvatar(@PathVariable Long id, @RequestParam("publicId") String publicId) throws IOException {
+    public ResponseEntity<String> deleteAvatar(
+            @PathVariable Long id,
+            @RequestParam("publicId") String publicId)
+            throws IOException {
         String message = userService.deleteAvatar(id, publicId);
         return ResponseEntity.ok(message);
     }
@@ -101,7 +105,11 @@ public class UserController {
 
     @PutMapping("/{id}/avatar/update")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<String> updateAvatar(@PathVariable Long id, @RequestParam("publicId") String publicId, @RequestParam("avatar") MultipartFile updatedImage) throws IOException {
+    public ResponseEntity<String> updateAvatar(
+            @PathVariable Long id,
+            @RequestParam("publicId") String publicId,
+            @RequestParam("avatar") MultipartFile updatedImage)
+            throws IOException {
         String url = userService.updateImage(id, publicId, updatedImage);
         return ResponseEntity.ok(url);
     }

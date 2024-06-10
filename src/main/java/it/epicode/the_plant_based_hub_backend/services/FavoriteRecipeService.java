@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class FavoriteRecipeService {
@@ -24,12 +25,14 @@ public class FavoriteRecipeService {
 
     // GET all favorite recipes
 
+    @Transactional(readOnly = true)
     public Page<FavoriteRecipe> getAllFavoriteRecipes(Pageable pageable) {
         return favoriteRecipeRepository.findAll(pageable);
     }
 
     // GET favorite recipe by id
 
+    @Transactional(readOnly = true)
     public FavoriteRecipe getFavoriteRecipeById(long id) {
         return favoriteRecipeRepository.findById(id).orElseThrow(
                 () -> new NotFoundException("Favorite recipe with id: " + id + " not found"));
@@ -37,6 +40,7 @@ public class FavoriteRecipeService {
 
     // POST saving favorite recipe
 
+    @Transactional
     public FavoriteRecipe saveFavoriteRecipe(FavoriteRecipeDTO favoriteRecipePayload) {
         FavoriteRecipe favoriteRecipe = mapToEntity(favoriteRecipePayload);
         return favoriteRecipeRepository.save(favoriteRecipe);
@@ -44,6 +48,7 @@ public class FavoriteRecipeService {
 
     // PUT updating favorite recipe
 
+    @Transactional
     public FavoriteRecipe updateFavoriteRecipe(long id, FavoriteRecipeDTO updatedFavoriteRecipe) {
         FavoriteRecipe favoriteRecipeToBeUpdated = this.getFavoriteRecipeById(id);
         updateFavoriteRecipeFromDTO(favoriteRecipeToBeUpdated, updatedFavoriteRecipe);
@@ -52,6 +57,7 @@ public class FavoriteRecipeService {
 
     // DELETE favorite recipe
 
+    @Transactional
     public void deleteFavoriteRecipe(long id) {
         if (!favoriteRecipeRepository.existsById(id)) {
             throw new NotFoundException("Favorite recipe with id: " + id + " not found");

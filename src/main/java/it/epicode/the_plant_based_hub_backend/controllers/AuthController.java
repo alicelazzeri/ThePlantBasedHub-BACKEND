@@ -11,13 +11,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
 public class AuthController {
 
     @Autowired
@@ -36,9 +34,7 @@ public class AuthController {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
         }
-
         String result = userService.saveUser(registerPayload);
-
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 
