@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.epicode</groupId>
-	<artifactId>capstone_project_alicelazzeri</artifactId>
+	<artifactId>theplantbasedhub-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>capstone_project_alicelazzeri</name>
+	<name>theplantbasedhub-backend</name>
 	<description>Capstone project for the Full Stack Development bootcamp of EPICODE</description>
 	<properties>
 		<java.version>21</java.version>
