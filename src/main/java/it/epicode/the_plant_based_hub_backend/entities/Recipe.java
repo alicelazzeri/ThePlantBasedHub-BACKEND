@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.entities;
 
+import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,9 @@ public class Recipe extends BaseEntity {
     private String recipeName;
     @Column(nullable = false)
     private String recipeDescription;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RecipeCategory recipeCategory;
     @Column(nullable = false)
     private String recipeInstructions;
     @Column(nullable = false)

@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.payloads.entities;
 
+import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -15,6 +16,8 @@ public record RecipeDTO(
         @NotNull(message = "Recipe description is mandatory")
         @NotEmpty(message = "Recipe description cannot be empty")
         String recipeDescription,
+        @NotNull(message = "Recipe category is mandatory")
+        RecipeCategory recipeCategory,
         @NotNull(message = "Recipe instructions is mandatory")
         @NotEmpty(message = "Recipe instructions cannot be empty")
         String recipeInstructions,

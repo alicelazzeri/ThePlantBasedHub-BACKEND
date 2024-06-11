@@ -83,6 +83,7 @@ public class RecipeService {
         Recipe recipe = Recipe.builder()
                 .withRecipeName(recipeDTO.recipeName())
                 .withRecipeDescription(recipeDTO.recipeDescription())
+                .withRecipeCategory(recipeDTO.recipeCategory())
                 .withRecipeInstructions(recipeDTO.recipeInstructions())
                 .withPreparationTime(recipeDTO.preparationTime())
                 .withNumberOfServings(recipeDTO.numberOfServings())
@@ -109,6 +110,7 @@ public class RecipeService {
     private void updateRecipeFromDTO(Recipe existingRecipe, RecipeDTO recipeDTO) {
         existingRecipe.setRecipeName(recipeDTO.recipeName());
         existingRecipe.setRecipeDescription(recipeDTO.recipeDescription());
+        existingRecipe.setRecipeCategory(recipeDTO.recipeCategory());
         existingRecipe.setRecipeInstructions(recipeDTO.recipeInstructions());
         existingRecipe.setPreparationTime(recipeDTO.preparationTime());
         existingRecipe.setNumberOfServings(recipeDTO.numberOfServings());
