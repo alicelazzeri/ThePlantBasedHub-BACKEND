@@ -4,7 +4,7 @@ import it.epicode.the_plant_based_hub_backend.entities.FavoriteRecipe;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.User;
 import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.FavoriteRecipeDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.FavoriteRecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.repositories.FavoriteRecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -41,7 +41,7 @@ public class FavoriteRecipeService {
     // POST saving favorite recipe
 
     @Transactional
-    public FavoriteRecipe saveFavoriteRecipe(FavoriteRecipeDTO favoriteRecipePayload) {
+    public FavoriteRecipe saveFavoriteRecipe(FavoriteRecipeRequestDTO favoriteRecipePayload) {
         FavoriteRecipe favoriteRecipe = mapToEntity(favoriteRecipePayload);
         return favoriteRecipeRepository.save(favoriteRecipe);
     }
@@ -49,7 +49,7 @@ public class FavoriteRecipeService {
     // PUT updating favorite recipe
 
     @Transactional
-    public FavoriteRecipe updateFavoriteRecipe(long id, FavoriteRecipeDTO updatedFavoriteRecipe) {
+    public FavoriteRecipe updateFavoriteRecipe(long id, FavoriteRecipeRequestDTO updatedFavoriteRecipe) {
         FavoriteRecipe favoriteRecipeToBeUpdated = this.getFavoriteRecipeById(id);
         updateFavoriteRecipeFromDTO(favoriteRecipeToBeUpdated, updatedFavoriteRecipe);
         return favoriteRecipeRepository.save(favoriteRecipeToBeUpdated);
@@ -67,10 +67,10 @@ public class FavoriteRecipeService {
 
     // Map FavoriteRecipeDTO to FavoriteRecipe entity
 
-    public FavoriteRecipe mapToEntity(FavoriteRecipeDTO favoriteRecipeDTO) {
-        User user = userService.getUserById(favoriteRecipeDTO.userId())
-                .orElseThrow(() -> new NotFoundException("User with id: " + favoriteRecipeDTO.userId() + " not found"));
-        Recipe recipe = recipeService.getRecipeById(favoriteRecipeDTO.recipeId());
+    public FavoriteRecipe mapToEntity(FavoriteRecipeRequestDTO favoriteRecipeRequestDTO) {
+        User user = userService.getUserById(favoriteRecipeRequestDTO.userId())
+                .orElseThrow(() -> new NotFoundException("User with id: " + favoriteRecipeRequestDTO.userId() + " not found"));
+        Recipe recipe = recipeService.getRecipeById(favoriteRecipeRequestDTO.recipeId());
 
         return FavoriteRecipe.builder()
                 .withUser(user)
@@ -80,10 +80,10 @@ public class FavoriteRecipeService {
 
     // Update already existing favorite recipe
 
-    public void updateFavoriteRecipeFromDTO(FavoriteRecipe existingFavoriteRecipe, FavoriteRecipeDTO favoriteRecipeDTO) {
-        User user = userService.getUserById(favoriteRecipeDTO.userId())
-                .orElseThrow(() -> new NotFoundException("User with id: " + favoriteRecipeDTO.userId() + " not found"));
-        Recipe recipe = recipeService.getRecipeById(favoriteRecipeDTO.recipeId());
+    public void updateFavoriteRecipeFromDTO(FavoriteRecipe existingFavoriteRecipe, FavoriteRecipeRequestDTO favoriteRecipeRequestDTO) {
+        User user = userService.getUserById(favoriteRecipeRequestDTO.userId())
+                .orElseThrow(() -> new NotFoundException("User with id: " + favoriteRecipeRequestDTO.userId() + " not found"));
+        Recipe recipe = recipeService.getRecipeById(favoriteRecipeRequestDTO.recipeId());
 
         existingFavoriteRecipe.setUser(user);
         existingFavoriteRecipe.setRecipe(recipe);

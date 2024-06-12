@@ -2,7 +2,7 @@ package it.epicode.the_plant_based_hub_backend.services;
 
 import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.IngredientDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.IngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.repositories.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,7 +33,7 @@ public class IngredientService {
     // POST saving ingredient
 
     @Transactional
-    public Ingredient saveIngredient(IngredientDTO ingredientPayload) {
+    public Ingredient saveIngredient(IngredientRequestDTO ingredientPayload) {
         Ingredient ingredient = mapToEntity(ingredientPayload);
         return ingredientRepository.save(ingredient);
     }
@@ -41,7 +41,7 @@ public class IngredientService {
     // PUT updating ingredient
 
     @Transactional
-    public Ingredient updateIngredient(long id, IngredientDTO updatedIngredient) {
+    public Ingredient updateIngredient(long id, IngredientRequestDTO updatedIngredient) {
         Ingredient ingredientToBeUpdated = this.getIngredientById(id);
         if (ingredientToBeUpdated == null) {
             throw new NotFoundException("Ingredient with id: " + id + " not found");
@@ -65,22 +65,22 @@ public class IngredientService {
     // Map IngredientDTO to Ingredient entity (converts IngredientDTO to an Ingredient entity instance in order to save or
     // update data on db via IngredientRepository)
 
-    public Ingredient mapToEntity(IngredientDTO ingredientDTO) {
+    public Ingredient mapToEntity(IngredientRequestDTO ingredientRequestDTO) {
         Ingredient ingredient = Ingredient.builder()
-                .withIngredientName(ingredientDTO.ingredientName())
-                .withIngredientCategory(ingredientDTO.ingredientCategory())
-                .withCaloriesPerServing(ingredientDTO.caloriesPerServing())
-                .withRecommendedAmount(ingredientDTO.recommendedAmount())
+                .withIngredientName(ingredientRequestDTO.ingredientName())
+                .withIngredientCategory(ingredientRequestDTO.ingredientCategory())
+                .withCaloriesPerServing(ingredientRequestDTO.caloriesPerServing())
+                .withRecommendedAmount(ingredientRequestDTO.recommendedAmount())
                 .build();
         return ingredient;
     }
 
     // update already existing ingredient from IngredientDTO
 
-    private void updateIngredientFromDTO(Ingredient existingIngredient, IngredientDTO ingredientDTO) {
-        existingIngredient.setIngredientName(ingredientDTO.ingredientName());
-        existingIngredient.setIngredientCategory(ingredientDTO.ingredientCategory());
-        existingIngredient.setCaloriesPerServing(ingredientDTO.caloriesPerServing());
-        existingIngredient.setRecommendedAmount(ingredientDTO.recommendedAmount());
+    private void updateIngredientFromDTO(Ingredient existingIngredient, IngredientRequestDTO ingredientRequestDTO) {
+        existingIngredient.setIngredientName(ingredientRequestDTO.ingredientName());
+        existingIngredient.setIngredientCategory(ingredientRequestDTO.ingredientCategory());
+        existingIngredient.setCaloriesPerServing(ingredientRequestDTO.caloriesPerServing());
+        existingIngredient.setRecommendedAmount(ingredientRequestDTO.recommendedAmount());
     }
 }

@@ -4,8 +4,8 @@ import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
 import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeDTO;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -42,7 +42,7 @@ public class RecipeService {
     // POST saving recipe
 
     @Transactional
-    public Recipe saveRecipe(RecipeDTO recipePayload) {
+    public Recipe saveRecipe(RecipeRequestDTO recipePayload) {
         Recipe recipe = mapToEntity(recipePayload);
         recipe.getIngredients().forEach(ingredient -> ingredient.setRecipe(recipe));
         return recipeRepository.save(recipe);
@@ -51,7 +51,7 @@ public class RecipeService {
     // PUT updating recipe
 
     @Transactional
-    public Recipe updateRecipe(long id, RecipeDTO updatedRecipe) {
+    public Recipe updateRecipe(long id, RecipeRequestDTO updatedRecipe) {
         Recipe recipeToBeUpdated = this.getRecipeById(id);
         if (recipeToBeUpdated == null) {
             throw new NotFoundException("Recipe with id: " + id + " not found");
@@ -75,19 +75,19 @@ public class RecipeService {
     // Map RecipeDTO to Recipe entity (converts RecipeDTO to a Recipe entity instance in order to save or
     // update data on db via RecipeRepository)
 
-    private Recipe mapToEntity(RecipeDTO recipeDTO) {
-        List<RecipeIngredient> ingredients = recipeDTO.ingredients().stream()
+    private Recipe mapToEntity(RecipeRequestDTO recipeRequestDTO) {
+        List<RecipeIngredient> ingredients = recipeRequestDTO.ingredients().stream()
                 .map(this::mapToRecipeIngredientEntity)
                 .collect(Collectors.toList());
 
         Recipe recipe = Recipe.builder()
-                .withRecipeName(recipeDTO.recipeName())
-                .withRecipeDescription(recipeDTO.recipeDescription())
-                .withRecipeCategory(recipeDTO.recipeCategory())
-                .withRecipeInstructions(recipeDTO.recipeInstructions())
-                .withPreparationTime(recipeDTO.preparationTime())
-                .withNumberOfServings(recipeDTO.numberOfServings())
-                .withCaloriesPerServing(recipeDTO.caloriesPerServing())
+                .withRecipeName(recipeRequestDTO.recipeName())
+                .withRecipeDescription(recipeRequestDTO.recipeDescription())
+                .withRecipeCategory(recipeRequestDTO.recipeCategory())
+                .withRecipeInstructions(recipeRequestDTO.recipeInstructions())
+                .withPreparationTime(recipeRequestDTO.preparationTime())
+                .withNumberOfServings(recipeRequestDTO.numberOfServings())
+                .withCaloriesPerServing(recipeRequestDTO.caloriesPerServing())
                 .withIngredients(ingredients)
                 .build();
         return recipe;
@@ -96,27 +96,27 @@ public class RecipeService {
     // Map RecipeIngredientDTO to RecipeIngredient entity (converts RecipeIngredientDTO to a RecipeIngredient entity instance in order to save or
     // update data on db via recipeIngredientRepository)
 
-    private RecipeIngredient mapToRecipeIngredientEntity(RecipeIngredientDTO recipeIngredientDTO) {
-        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientDTO.ingredientId());
+    private RecipeIngredient mapToRecipeIngredientEntity(RecipeIngredientRequestDTO recipeIngredientRequestDTO) {
+        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientRequestDTO.ingredientId());
         return RecipeIngredient.builder()
-                .withQuantity(recipeIngredientDTO.quantity())
-                .withMeasurementUnit(recipeIngredientDTO.measurementUnit())
+                .withQuantity(recipeIngredientRequestDTO.quantity())
+                .withMeasurementUnit(recipeIngredientRequestDTO.measurementUnit())
                 .withIngredient(ingredient)
                 .build();
     }
 
     // update already existing recipe from RecipeDTO
 
-    private void updateRecipeFromDTO(Recipe existingRecipe, RecipeDTO recipeDTO) {
-        existingRecipe.setRecipeName(recipeDTO.recipeName());
-        existingRecipe.setRecipeDescription(recipeDTO.recipeDescription());
-        existingRecipe.setRecipeCategory(recipeDTO.recipeCategory());
-        existingRecipe.setRecipeInstructions(recipeDTO.recipeInstructions());
-        existingRecipe.setPreparationTime(recipeDTO.preparationTime());
-        existingRecipe.setNumberOfServings(recipeDTO.numberOfServings());
-        existingRecipe.setCaloriesPerServing(recipeDTO.caloriesPerServing());
+    private void updateRecipeFromDTO(Recipe existingRecipe, RecipeRequestDTO recipeRequestDTO) {
+        existingRecipe.setRecipeName(recipeRequestDTO.recipeName());
+        existingRecipe.setRecipeDescription(recipeRequestDTO.recipeDescription());
+        existingRecipe.setRecipeCategory(recipeRequestDTO.recipeCategory());
+        existingRecipe.setRecipeInstructions(recipeRequestDTO.recipeInstructions());
+        existingRecipe.setPreparationTime(recipeRequestDTO.preparationTime());
+        existingRecipe.setNumberOfServings(recipeRequestDTO.numberOfServings());
+        existingRecipe.setCaloriesPerServing(recipeRequestDTO.caloriesPerServing());
 
-        List<RecipeIngredient> ingredients = recipeDTO.ingredients().stream()
+        List<RecipeIngredient> ingredients = recipeRequestDTO.ingredients().stream()
                 .map(this::mapToRecipeIngredientEntity)
                 .collect(Collectors.toList());
         existingRecipe.setIngredients(ingredients);

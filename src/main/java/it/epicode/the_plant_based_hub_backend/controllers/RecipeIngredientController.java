@@ -3,7 +3,7 @@ package it.epicode.the_plant_based_hub_backend.controllers;
 import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.RecipeIngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -52,7 +52,7 @@ public class RecipeIngredientController {
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<RecipeIngredient> saveRecipeIngredient(
-            @RequestBody @Validated RecipeIngredientDTO recipeIngredientPayload,
+            @RequestBody @Validated RecipeIngredientRequestDTO recipeIngredientPayload,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
@@ -69,7 +69,7 @@ public class RecipeIngredientController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<RecipeIngredient> updateRecipeIngredient(
             @PathVariable long id,
-            @RequestBody @Validated RecipeIngredientDTO updatedRecipeIngredient,
+            @RequestBody @Validated RecipeIngredientRequestDTO updatedRecipeIngredient,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-public record IngredientDTO(
+public record IngredientRequestDTO(
         @NotNull(message = "Ingredient name is mandatory")
         @NotEmpty(message = "Ingredient name cannot be empty")
         String ingredientName,

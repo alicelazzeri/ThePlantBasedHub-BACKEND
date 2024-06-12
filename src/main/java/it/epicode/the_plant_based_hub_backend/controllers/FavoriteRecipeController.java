@@ -3,7 +3,7 @@ package it.epicode.the_plant_based_hub_backend.controllers;
 import it.epicode.the_plant_based_hub_backend.entities.FavoriteRecipe;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.FavoriteRecipeDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.FavoriteRecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.FavoriteRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -51,7 +51,7 @@ public class FavoriteRecipeController {
     @PostMapping
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public ResponseEntity<FavoriteRecipe> saveFavoriteRecipe(
-            @RequestBody @Validated FavoriteRecipeDTO favoriteRecipePayload,
+            @RequestBody @Validated FavoriteRecipeRequestDTO favoriteRecipePayload,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
@@ -68,7 +68,7 @@ public class FavoriteRecipeController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public ResponseEntity<FavoriteRecipe> updateFavoriteRecipe(
             @PathVariable long id,
-            @RequestBody FavoriteRecipeDTO updatedFavoriteRecipe,
+            @RequestBody FavoriteRecipeRequestDTO updatedFavoriteRecipe,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());

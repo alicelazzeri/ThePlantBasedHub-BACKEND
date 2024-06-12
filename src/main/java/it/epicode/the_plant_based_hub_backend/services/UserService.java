@@ -73,8 +73,8 @@ public class UserService {
                     "<head>" +
                     "<style>" +
                     "@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');" +
-                    "@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');" +
-                    "body { font-family: 'Quicksand', Arial, sans-serif; font-weight: 400 }" +
+                    "@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');" +
+                    "body { font-family: 'Tenor Sans', Arial, sans-serif; font-weight: 400 }" +
                     ".email-container { padding: 20px; }" +
                     "</style>" +
                     "</head>" +

@@ -4,7 +4,7 @@ import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
 import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.repositories.RecipeIngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -41,7 +41,7 @@ public class RecipeIngredientService {
     // POST saving recipe ingredient
 
     @Transactional
-    public RecipeIngredient saveRecipeIngredient(RecipeIngredientDTO recipeIngredientPayload) {
+    public RecipeIngredient saveRecipeIngredient(RecipeIngredientRequestDTO recipeIngredientPayload) {
         RecipeIngredient recipeIngredient = mapToEntity(recipeIngredientPayload);
         return recipeIngredientRepository.save(recipeIngredient);
     }
@@ -49,7 +49,7 @@ public class RecipeIngredientService {
     // PUT updating recipe ingredient
 
     @Transactional
-    public RecipeIngredient updateRecipeIngredient(long id, RecipeIngredientDTO updatedRecipeIngredient) {
+    public RecipeIngredient updateRecipeIngredient(long id, RecipeIngredientRequestDTO updatedRecipeIngredient) {
         RecipeIngredient recipeIngredientToBeUpdated = this.getRecipeIngredientById(id);
         if (recipeIngredientToBeUpdated == null) {
             throw new NotFoundException("Recipe ingredient with id: " + id + " not found");
@@ -73,12 +73,12 @@ public class RecipeIngredientService {
     // Map RecipeIngredientDTO to RecipeIngredient entity (converts RecipeIngredientDTO to a RecipeIngredient entity instance in order to save or
     // update data on db via RecipeIngredientRepository)
 
-    public RecipeIngredient mapToEntity(RecipeIngredientDTO recipeIngredientDTO) {
-        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientDTO.ingredientId());
-        Recipe recipe = recipeService.getRecipeById(recipeIngredientDTO.recipeId());
+    public RecipeIngredient mapToEntity(RecipeIngredientRequestDTO recipeIngredientRequestDTO) {
+        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientRequestDTO.ingredientId());
+        Recipe recipe = recipeService.getRecipeById(recipeIngredientRequestDTO.recipeId());
         RecipeIngredient recipeIngredient = RecipeIngredient.builder()
-                .withQuantity(recipeIngredientDTO.quantity())
-                .withMeasurementUnit(recipeIngredientDTO.measurementUnit())
+                .withQuantity(recipeIngredientRequestDTO.quantity())
+                .withMeasurementUnit(recipeIngredientRequestDTO.measurementUnit())
                 .withRecipe(recipe)
                 .withIngredient(ingredient)
                 .build();
@@ -87,11 +87,11 @@ public class RecipeIngredientService {
 
     // update already existing recipe ingredient from RecipeIngredientDTO
 
-    public void updateRecipeIngredientFromDTO(RecipeIngredient existingRecipeIngredient, RecipeIngredientDTO recipeIngredientDTO) {
-        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientDTO.ingredientId());
-        Recipe recipe = recipeService.getRecipeById(recipeIngredientDTO.recipeId());
-        existingRecipeIngredient.setQuantity(recipeIngredientDTO.quantity());
-        existingRecipeIngredient.setMeasurementUnit(recipeIngredientDTO.measurementUnit());
+    public void updateRecipeIngredientFromDTO(RecipeIngredient existingRecipeIngredient, RecipeIngredientRequestDTO recipeIngredientRequestDTO) {
+        Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientRequestDTO.ingredientId());
+        Recipe recipe = recipeService.getRecipeById(recipeIngredientRequestDTO.recipeId());
+        existingRecipeIngredient.setQuantity(recipeIngredientRequestDTO.quantity());
+        existingRecipeIngredient.setMeasurementUnit(recipeIngredientRequestDTO.measurementUnit());
         existingRecipeIngredient.setRecipe(recipe);
         existingRecipeIngredient.setIngredient(ingredient);
     }

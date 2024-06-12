@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.payloads.entities;
 
+import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -8,7 +9,7 @@ import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
-public record RecipeDTO(
+public record RecipeRequestDTO(
         @NotNull(message = "Recipe name is mandatory")
         @NotEmpty(message = "Recipe name cannot be empty")
         @Size(min = 3, max = 50, message = "Recipe name should be between 3 and 50 characters long")
@@ -30,6 +31,6 @@ public record RecipeDTO(
         @NotNull(message = "Calories per serving are mandatory")
         @Positive(message = "Calories per serving must be greater than zero")
         int caloriesPerServing,
-        List<RecipeIngredientDTO> ingredients
+        List<RecipeIngredientRequestDTO> ingredients
 ) {
 }

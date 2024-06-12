@@ -3,10 +3,8 @@ package it.epicode.the_plant_based_hub_backend.controllers;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeDTO;
-import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientDTO;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.RecipeService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,8 +14,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.naming.Binding;
 
 @RestController
 @RequestMapping("/api/recipes")
@@ -55,7 +51,7 @@ public class RecipeController {
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Recipe> saveRecipe(
-            @RequestBody @Validated RecipeDTO recipePayload,
+            @RequestBody @Validated RecipeRequestDTO recipePayload,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
@@ -72,7 +68,7 @@ public class RecipeController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Recipe> updateRecipe(
             @PathVariable long id,
-            @RequestBody @Validated RecipeDTO updatedRecipe,
+            @RequestBody @Validated RecipeRequestDTO updatedRecipe,
             BindingResult validation) {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
