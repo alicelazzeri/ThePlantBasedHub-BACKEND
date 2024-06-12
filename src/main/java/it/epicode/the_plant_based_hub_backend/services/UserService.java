@@ -127,7 +127,7 @@ public class UserService {
     // POST saving user
 
     @Transactional
-    public String saveUser(UserRegisterRequestDTO userPayload){
+    public User saveUser(UserRegisterRequestDTO userPayload){
 
         Optional<User> existingUser = userRepository.findByEmail(userPayload.email());
         if (existingUser.isPresent()) {
@@ -142,13 +142,13 @@ public class UserService {
         sendRegistrationEmail(userPayload.email(), userPayload.firstName());
         userRepository.save(user);
 
-        return "User with id: " + user.getId() + " saved correctly";
+        return user;
     }
 
     // POST saving user with admin role
 
     @Transactional
-    public String saveUserAdmin(UserRegisterRequestDTO userPayload){
+    public User saveUserAdmin(UserRegisterRequestDTO userPayload){
 
         Optional<User> existingUser = userRepository.findByEmail(userPayload.email());
         if (existingUser.isPresent()) {
@@ -164,7 +164,7 @@ public class UserService {
         sendRegistrationEmail(userPayload.email(), userPayload.firstName());
         userRepository.save(user);
 
-        return "Admin with id: " + user.getId() + " saved correctly";
+        return user;
     }
 
     // PUT updating existing user

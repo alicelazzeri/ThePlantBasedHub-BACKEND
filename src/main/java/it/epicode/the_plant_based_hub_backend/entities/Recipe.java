@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

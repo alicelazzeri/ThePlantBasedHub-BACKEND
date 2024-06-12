@@ -53,7 +53,7 @@ public class RecipeController {
     // POST http://localhost:8080/api/recipes + bearer token
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Recipe> saveRecipe(
             @RequestBody @Validated RecipeDTO recipePayload,
             BindingResult validation) {
@@ -69,7 +69,7 @@ public class RecipeController {
     // PUT http://localhost:8080/api/recipes/{id} + bearer token
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Recipe> updateRecipe(
             @PathVariable long id,
             @RequestBody @Validated RecipeDTO updatedRecipe,
@@ -86,7 +86,7 @@ public class RecipeController {
     // DELETE http://localhost:8080/api/recipes/{id} + bearer token
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteRecipe(@PathVariable long id) {
         recipeService.deleteRecipe(id);
         ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);

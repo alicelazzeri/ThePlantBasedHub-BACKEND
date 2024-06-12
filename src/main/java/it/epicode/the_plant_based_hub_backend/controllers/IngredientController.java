@@ -34,7 +34,6 @@ public class IngredientController {
         } else {
             ResponseEntity<Page<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
             return responseEntity;
-
         }
     }
 
@@ -51,7 +50,7 @@ public class IngredientController {
     // POST http://localhost:8080/api/ingredients + bearer token
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Ingredient> saveIngredient(
             @RequestBody @Validated IngredientDTO ingredientPayload,
             BindingResult validation) {
@@ -65,8 +64,9 @@ public class IngredientController {
     }
 
     // PUT http://localhost:8080/api/ingredients/{id} + bearer token
+
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Ingredient> updateIngredient(
             @PathVariable long id,
             @RequestBody @Validated IngredientDTO updatedIngredient,
@@ -83,7 +83,7 @@ public class IngredientController {
     // DELETE http://localhost:8080/api/ingredients/{id} + bearer token
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteIngredient(@PathVariable long id) {
         ingredientService.deleteIngredient(id);
         ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);

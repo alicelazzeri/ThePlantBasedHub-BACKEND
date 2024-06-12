@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.controllers;
 
+import it.epicode.the_plant_based_hub_backend.entities.User;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.payloads.auth.UserLoginRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.auth.UserLoginResponseDTO;
@@ -27,21 +28,21 @@ public class AuthController {
     // POST http://localhost:8080/api/auth/register
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(
+    public ResponseEntity<User> registerUser(
             @RequestBody @Validated UserRegisterRequestDTO registerPayload,
             BindingResult validation) {
 
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
         }
-        String result = userService.saveUser(registerPayload);
+        User result = userService.saveUser(registerPayload);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 
     // POST http://localhost:8080/api/auth/register/admin
 
     @PostMapping("/register/admin")
-    public ResponseEntity<String> registerAdmin(
+    public ResponseEntity<User> registerAdmin(
             @RequestBody @Validated UserRegisterRequestDTO registerPayload,
             BindingResult validation) {
 
@@ -49,7 +50,7 @@ public class AuthController {
             throw new BadRequestException(validation.getAllErrors());
         }
 
-        String result = userService.saveUserAdmin(registerPayload);
+        User result = userService.saveUserAdmin(registerPayload);
 
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

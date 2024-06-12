@@ -53,10 +53,27 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    // POST http://localhost:8080/api/users
+
+    @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<User> saveUser(
+            @RequestBody @Validated UserRegisterRequestDTO userDto,
+            BindingResult validation) {
+        if (validation.hasErrors()) {
+            throw new BadRequestException(validation.getAllErrors());
+        } else {
+            User savedUser = userService.saveUser(userDto);
+            ResponseEntity<User> responseEntity = new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+            return responseEntity;
+        }
+
+    }
+
     // PUT http://localhost:8080/api/users/{id} + bearer token
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<User> updateUser(
             @PathVariable long id,
             @RequestBody @Validated UserRegisterRequestDTO userDto,
@@ -71,7 +88,7 @@ public class UserController {
     // DELETE http://localhost:8080/api/users/{id} + bearer token
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> deleteUser(@PathVariable long id) {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
