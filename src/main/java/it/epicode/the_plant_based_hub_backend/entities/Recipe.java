@@ -37,6 +37,7 @@ public class Recipe extends BaseEntity {
     private int caloriesPerServing;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("recipe")
     private List<RecipeIngredient> ingredients = new ArrayList<>();
 
 }

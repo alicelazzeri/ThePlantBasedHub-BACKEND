@@ -27,6 +27,5 @@ public class AuthService {
         } else {
             throw new UnauthorizedException("Invalid credentials! Try login again.");
         }
-
     }
 }

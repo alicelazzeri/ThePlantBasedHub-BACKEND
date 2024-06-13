@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class RecipeIngredient extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name ="recipe_id", nullable = false)
+    @JsonIgnoreProperties("ingredients")
     private Recipe recipe;
 
     @ManyToOne

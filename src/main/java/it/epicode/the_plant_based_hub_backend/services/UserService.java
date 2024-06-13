@@ -277,8 +277,6 @@ public class UserService {
         if (updatedImage.getSize() > maxFileSize) {
             throw new FileSizeExceededException("File size exceeds the maximum allowed size");
         }
-
         return uploadAvatar(id, updatedImage);
     }
-
 }
