@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.controllers;
 
+import com.itextpdf.text.DocumentException;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
@@ -8,12 +9,16 @@ import it.epicode.the_plant_based_hub_backend.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/recipes")
@@ -87,5 +92,23 @@ public class RecipeController {
         recipeService.deleteRecipe(id);
         ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return responseEntity;
+    }
+
+    // GET recipe PDF generation http://localhost:8080/api/recipes/{id}/pdf
+
+    @GetMapping("/{id}/pdf")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<byte[]> downloadRecipePDF(@PathVariable long id) throws DocumentException, IOException {
+        Recipe recipe = recipeService.getRecipeById(id);
+        ByteArrayOutputStream output;
+        try {
+            output = recipeService.generateRecipePDF(recipe);
+        } catch (DocumentException | IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "inline; filename=recipe_" + id + ".pdf");
+        headers.add("Content-Type", "application/pdf");
+        return ResponseEntity.ok().headers(headers).body(output.toByteArray());
     }
 }

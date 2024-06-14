@@ -247,7 +247,6 @@ public class UserService {
         return url;
     }
 
-
     // DELETE delete cloudinary file
 
     @Transactional

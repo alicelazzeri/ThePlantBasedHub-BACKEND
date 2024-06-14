@@ -1,5 +1,8 @@
 package it.epicode.the_plant_based_hub_backend.services;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
 import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
@@ -13,6 +16,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -120,5 +125,91 @@ public class RecipeService {
                 .map(this::mapToRecipeIngredientEntity)
                 .collect(Collectors.toList());
         existingRecipe.setIngredients(ingredients);
+    }
+
+    // Recipe PDF generation
+
+    public ByteArrayOutputStream generateRecipePDF(Recipe recipe) throws DocumentException, IOException {
+        Document document = new Document();
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+        PdfWriter.getInstance(document, output);
+        document.open();
+
+        // Color configuration
+
+        BaseColor black = new BaseColor(0, 0, 0);
+        BaseColor green = new BaseColor(0, 96, 47);
+
+        // Font configuration
+
+        BaseFont raleway = BaseFont.createFont("src/main/resources/fonts/Raleway/Raleway-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        Font ralewayFont = new Font(raleway, 12, Font.NORMAL, black);
+        BaseFont lora = BaseFont.createFont("src/main/resources/fonts/Lora/Lora-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        Font loraFont = new Font(lora, 13, Font.NORMAL, green);
+
+        // Recipe title
+
+        Paragraph recipeTitle = new Paragraph(recipe.getRecipeName(), new Font(lora, 16, Font.BOLD, green));
+        recipeTitle.setAlignment(Element.ALIGN_CENTER);
+        document.add(recipeTitle);
+
+        // Description
+
+        document.add(new Paragraph("Description", loraFont));
+        document.add(new Paragraph(recipe.getRecipeDescription(), ralewayFont));
+
+        // Category
+
+        Paragraph category = new Paragraph();
+        Chunk categoryLabel = new Chunk("Category: ", loraFont);
+        Chunk categoryValue = new Chunk(recipe.getRecipeCategory().toString(), ralewayFont);
+        category.add(categoryLabel);
+        category.add(categoryValue);
+        document.add(category);
+
+        // Preparation time
+
+        Paragraph prepTime = new Paragraph();
+        Chunk prepTimeLabel = new Chunk("Preparation time: ", loraFont);
+        Chunk prepTimeValue = new Chunk(recipe.getPreparationTime() + " minutes", ralewayFont);
+        prepTime.add(prepTimeLabel);
+        prepTime.add(prepTimeValue);
+        document.add(prepTime);
+
+        // Number of servings
+
+        Paragraph numberOfServings = new Paragraph();
+        Chunk servingsLabel = new Chunk("Number of servings: ", loraFont);
+        Chunk servingsValue = new Chunk(String.valueOf(recipe.getNumberOfServings()), ralewayFont);
+        numberOfServings.add(servingsLabel);
+        numberOfServings.add(servingsValue);
+        document.add(numberOfServings);
+
+        // Calories per serving
+
+        Paragraph caloriesPerServing = new Paragraph();
+        Chunk caloriesLabel = new Chunk("Calories per serving: ", loraFont);
+        Chunk caloriesValue = new Chunk(String.valueOf(recipe.getCaloriesPerServing()), ralewayFont);
+        caloriesPerServing.add(caloriesLabel);
+        caloriesPerServing.add(caloriesValue);
+        document.add(caloriesPerServing);
+
+        // Ingredients
+
+        document.add(new Paragraph("Ingredients:", loraFont));
+        String ingredients = recipe.getIngredients().stream()
+                .map(ingredient -> ingredient.getIngredient().getIngredientName() + " - " +
+                        ingredient.getQuantity() + " " + ingredient.getMeasurementUnit())
+                .collect(Collectors.joining("\n"));
+        document.add(new Paragraph(ingredients, ralewayFont));
+
+        // Instructions
+
+        document.add(new Paragraph("Instructions:", loraFont));
+        document.add(new Paragraph(recipe.getRecipeInstructions(), ralewayFont));
+
+        document.close();
+        return output;
     }
 }
