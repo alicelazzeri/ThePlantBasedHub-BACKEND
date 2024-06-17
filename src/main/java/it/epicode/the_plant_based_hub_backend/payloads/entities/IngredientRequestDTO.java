@@ -9,11 +9,14 @@ public record IngredientRequestDTO(
         @NotNull(message = "Ingredient name is mandatory")
         @NotEmpty(message = "Ingredient name cannot be empty")
         String ingredientName,
+
         @NotNull(message = "Ingredient category is mandatory")
         IngredientCategory ingredientCategory,
+
         @NotNull(message = "Calories per serving are mandatory")
         @Positive(message = "Calories per serving must be greater than zero")
         int caloriesPerServing,
+
         @NotNull(message = "Recommended amount is mandatory")
         @NotEmpty(message = "Recommended amount cannot be empty")
         String recommendedAmount

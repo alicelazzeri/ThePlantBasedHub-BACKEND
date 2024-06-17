@@ -10,6 +10,7 @@ import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.repositories.RecipeRepository;
+import it.epicode.the_plant_based_hub_backend.repositories.RecipeIngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,10 +29,12 @@ public class RecipeService {
     private RecipeRepository recipeRepository;
 
     @Autowired
+    private RecipeIngredientRepository recipeIngredientRepository;
+
+    @Autowired
     private IngredientService ingredientService;
 
     // GET all recipes
-
     @Transactional(readOnly = true)
     public Page<Recipe> getAllRecipes(Pageable pageable){
         return recipeRepository.findAll(pageable);
@@ -44,13 +48,23 @@ public class RecipeService {
                 ()-> new NotFoundException("Recipe with id: " + id + " not found"));
     }
 
-    // POST saving recipe
+    // POST save recipe without ingredients
 
     @Transactional
-    public Recipe saveRecipe(RecipeRequestDTO recipePayload) {
+    public Recipe saveRecipeWithoutIngredients(RecipeRequestDTO recipePayload) {
         Recipe recipe = mapToEntity(recipePayload);
-        recipe.getIngredients().forEach(ingredient -> ingredient.setRecipe(recipe));
+        recipe.setIngredients(new ArrayList<>());  // Save without ingredients
         return recipeRepository.save(recipe);
+    }
+
+    // POST save recipe with ingredients
+
+    @Transactional
+    public void saveRecipeIngredients(List<RecipeIngredientRequestDTO> ingredients) {
+        for (RecipeIngredientRequestDTO dto : ingredients) {
+            RecipeIngredient recipeIngredient = mapToRecipeIngredientEntity(dto);
+            recipeIngredientRepository.save(recipeIngredient);
+        }
     }
 
     // PUT updating recipe
@@ -81,11 +95,7 @@ public class RecipeService {
     // update data on db via RecipeRepository)
 
     private Recipe mapToEntity(RecipeRequestDTO recipeRequestDTO) {
-        List<RecipeIngredient> ingredients = recipeRequestDTO.ingredients().stream()
-                .map(this::mapToRecipeIngredientEntity)
-                .collect(Collectors.toList());
-
-        Recipe recipe = Recipe.builder()
+        return Recipe.builder()
                 .withRecipeName(recipeRequestDTO.recipeName())
                 .withRecipeDescription(recipeRequestDTO.recipeDescription())
                 .withRecipeCategory(recipeRequestDTO.recipeCategory())
@@ -93,9 +103,8 @@ public class RecipeService {
                 .withPreparationTime(recipeRequestDTO.preparationTime())
                 .withNumberOfServings(recipeRequestDTO.numberOfServings())
                 .withCaloriesPerServing(recipeRequestDTO.caloriesPerServing())
-                .withIngredients(ingredients)
+                .withIngredients(new ArrayList<>())
                 .build();
-        return recipe;
     }
 
     // Map RecipeIngredientDTO to RecipeIngredient entity (converts RecipeIngredientDTO to a RecipeIngredient entity instance in order to save or
@@ -103,10 +112,12 @@ public class RecipeService {
 
     private RecipeIngredient mapToRecipeIngredientEntity(RecipeIngredientRequestDTO recipeIngredientRequestDTO) {
         Ingredient ingredient = ingredientService.getIngredientById(recipeIngredientRequestDTO.ingredientId());
+        Recipe recipe = getRecipeById(recipeIngredientRequestDTO.recipeId());
         return RecipeIngredient.builder()
                 .withQuantity(recipeIngredientRequestDTO.quantity())
                 .withMeasurementUnit(recipeIngredientRequestDTO.measurementUnit())
                 .withIngredient(ingredient)
+                .withRecipe(recipe)
                 .build();
     }
 
@@ -127,7 +138,7 @@ public class RecipeService {
         existingRecipe.setIngredients(ingredients);
     }
 
-    // Recipe PDF generation
+    // recipe PDF generation
 
     public ByteArrayOutputStream generateRecipePDF(Recipe recipe) throws DocumentException, IOException {
         Document document = new Document();
@@ -137,30 +148,25 @@ public class RecipeService {
         document.open();
 
         // Color configuration
-
         BaseColor black = new BaseColor(0, 0, 0);
         BaseColor green = new BaseColor(0, 96, 47);
 
         // Font configuration
-
         BaseFont raleway = BaseFont.createFont("src/main/resources/fonts/Raleway/Raleway-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         Font ralewayFont = new Font(raleway, 12, Font.NORMAL, black);
         BaseFont lora = BaseFont.createFont("src/main/resources/fonts/Lora/Lora-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         Font loraFont = new Font(lora, 13, Font.NORMAL, green);
 
         // Recipe title
-
         Paragraph recipeTitle = new Paragraph(recipe.getRecipeName(), new Font(lora, 16, Font.BOLD, green));
         recipeTitle.setAlignment(Element.ALIGN_CENTER);
         document.add(recipeTitle);
 
         // Description
-
         document.add(new Paragraph("Description", loraFont));
         document.add(new Paragraph(recipe.getRecipeDescription(), ralewayFont));
 
         // Category
-
         Paragraph category = new Paragraph();
         Chunk categoryLabel = new Chunk("Category: ", loraFont);
         Chunk categoryValue = new Chunk(recipe.getRecipeCategory().toString(), ralewayFont);
@@ -169,7 +175,6 @@ public class RecipeService {
         document.add(category);
 
         // Preparation time
-
         Paragraph prepTime = new Paragraph();
         Chunk prepTimeLabel = new Chunk("Preparation time: ", loraFont);
         Chunk prepTimeValue = new Chunk(recipe.getPreparationTime() + " minutes", ralewayFont);
@@ -178,7 +183,6 @@ public class RecipeService {
         document.add(prepTime);
 
         // Number of servings
-
         Paragraph numberOfServings = new Paragraph();
         Chunk servingsLabel = new Chunk("Number of servings: ", loraFont);
         Chunk servingsValue = new Chunk(String.valueOf(recipe.getNumberOfServings()), ralewayFont);
@@ -187,16 +191,14 @@ public class RecipeService {
         document.add(numberOfServings);
 
         // Calories per serving
-
         Paragraph caloriesPerServing = new Paragraph();
         Chunk caloriesLabel = new Chunk("Calories per serving: ", loraFont);
-        Chunk caloriesValue = new Chunk(String.valueOf(recipe.getCaloriesPerServing()), ralewayFont);
+        Chunk caloriesValue = new Chunk(String.valueOf(recipe.getCaloriesPerServing()) + " kcal", ralewayFont);
         caloriesPerServing.add(caloriesLabel);
         caloriesPerServing.add(caloriesValue);
         document.add(caloriesPerServing);
 
         // Ingredients
-
         document.add(new Paragraph("Ingredients:", loraFont));
         String ingredients = recipe.getIngredients().stream()
                 .map(ingredient -> ingredient.getIngredient().getIngredientName() + " - " +
@@ -205,7 +207,6 @@ public class RecipeService {
         document.add(new Paragraph(ingredients, ralewayFont));
 
         // Instructions
-
         document.add(new Paragraph("Instructions:", loraFont));
         document.add(new Paragraph(recipe.getRecipeInstructions(), ralewayFont));
 

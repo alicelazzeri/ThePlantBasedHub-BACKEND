@@ -6,9 +6,7 @@ public record RecipeIngredientResponseDTO(
         long id,
         int quantity,
         String measurementUnit,
-        @JsonIgnore
         long recipeId,
-        @JsonIgnore
         long ingredientId
 ) {
 }

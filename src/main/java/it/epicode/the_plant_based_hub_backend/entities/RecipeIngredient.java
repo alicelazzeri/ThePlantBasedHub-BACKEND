@@ -18,12 +18,13 @@ public class RecipeIngredient extends BaseEntity {
     @Column(nullable = false)
     private String measurementUnit;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="recipe_id", nullable = false)
     @JsonIgnoreProperties("ingredients")
     private Recipe recipe;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ingredient_id", nullable = false)
+    @JsonIgnoreProperties("recipes")
     private Ingredient ingredient;
 }

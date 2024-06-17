@@ -83,4 +83,9 @@ public class IngredientService {
         existingIngredient.setCaloriesPerServing(ingredientRequestDTO.caloriesPerServing());
         existingIngredient.setRecommendedAmount(ingredientRequestDTO.recommendedAmount());
     }
+
+    @Transactional(readOnly = true)
+        public Ingredient getIngredientByName(String ingredientName) {
+        return ingredientRepository.findByIngredientName(ingredientName).orElseThrow(() -> new NotFoundException("Ingredient with name: " + ingredientName + " not found."));
+    }
 }

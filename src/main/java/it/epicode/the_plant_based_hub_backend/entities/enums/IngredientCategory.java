@@ -15,5 +15,6 @@ public enum IngredientCategory {
     MEAT_DAIRY_SUBSTITUTES,
     SWEETENERS,
     OILS_CONDIMENTS,
+    SPICES,
     SUPERFOODS
 }

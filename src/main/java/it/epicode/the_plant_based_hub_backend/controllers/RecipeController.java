@@ -4,6 +4,7 @@ import com.itextpdf.text.DocumentException;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
+import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/recipes")
@@ -48,10 +50,11 @@ public class RecipeController {
     public ResponseEntity<Recipe> getRecipeById(@PathVariable long id) {
         Recipe recipe = recipeService.getRecipeById(id);
         ResponseEntity<Recipe> responseEntity = new ResponseEntity<>(recipe, HttpStatus.OK);
-                return responseEntity;
+        return responseEntity;
     }
 
     // POST http://localhost:8080/api/recipes + bearer token
+    // saving recipe without ingredients
 
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -61,9 +64,26 @@ public class RecipeController {
         if (validation.hasErrors()) {
             throw new BadRequestException(validation.getAllErrors());
         } else {
-            Recipe savedRecipe = recipeService.saveRecipe(recipePayload);
+            Recipe savedRecipe = recipeService.saveRecipeWithoutIngredients(recipePayload);
             ResponseEntity<Recipe> responseEntity = new ResponseEntity<>(savedRecipe, HttpStatus.CREATED);
             return responseEntity;
+        }
+    }
+
+    // POST http://localhost:8080/api/recipes/{id}/ingredients + bearer token
+    // saving recipe with ingredients
+
+    @PostMapping("/{id}/ingredients")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<Void> saveRecipeIngredients(
+            @PathVariable long id,
+            @RequestBody @Validated List<RecipeIngredientRequestDTO> ingredients,
+            BindingResult validation) {
+        if (validation.hasErrors()) {
+            throw new BadRequestException(validation.getAllErrors());
+        } else {
+            recipeService.saveRecipeIngredients(ingredients);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
     }
 

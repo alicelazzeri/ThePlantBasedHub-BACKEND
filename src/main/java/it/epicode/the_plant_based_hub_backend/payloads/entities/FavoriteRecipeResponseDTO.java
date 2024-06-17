@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public record FavoriteRecipeResponseDTO(
         long id,
-        @JsonIgnore
         long userId,
-        @JsonIgnore
         long recipeId
 ) {
 }

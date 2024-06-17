@@ -20,14 +20,14 @@ import java.util.List;
 
 public class Recipe extends BaseEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String recipeName;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String recipeDescription;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RecipeCategory recipeCategory;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String recipeInstructions;
     @Column(nullable = false)
     private int preparationTime;
