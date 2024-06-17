@@ -71,6 +71,13 @@ public class IngredientService {
                 .withIngredientCategory(ingredientRequestDTO.ingredientCategory())
                 .withCaloriesPerServing(ingredientRequestDTO.caloriesPerServing())
                 .withRecommendedAmount(ingredientRequestDTO.recommendedAmount())
+                .withProteins(ingredientRequestDTO.proteins())
+                .withCarbohydrates(ingredientRequestDTO.carbohydrates())
+                .withFats(ingredientRequestDTO.fats())
+                .withFibers(ingredientRequestDTO.fibers())
+                .withSugars(ingredientRequestDTO.sugars())
+                .withVitamins(ingredientRequestDTO.vitamins())
+                .withMinerals(ingredientRequestDTO.minerals())
                 .build();
         return ingredient;
     }
@@ -82,6 +89,13 @@ public class IngredientService {
         existingIngredient.setIngredientCategory(ingredientRequestDTO.ingredientCategory());
         existingIngredient.setCaloriesPerServing(ingredientRequestDTO.caloriesPerServing());
         existingIngredient.setRecommendedAmount(ingredientRequestDTO.recommendedAmount());
+        existingIngredient.setProteins(ingredientRequestDTO.proteins());
+        existingIngredient.setCarbohydrates(ingredientRequestDTO.carbohydrates());
+        existingIngredient.setFats(ingredientRequestDTO.fats());
+        existingIngredient.setFibers(ingredientRequestDTO.fibers());
+        existingIngredient.setSugars(ingredientRequestDTO.sugars());
+        existingIngredient.setVitamins(ingredientRequestDTO.vitamins());
+        existingIngredient.setMinerals(ingredientRequestDTO.minerals());
     }
 
     @Transactional(readOnly = true)
