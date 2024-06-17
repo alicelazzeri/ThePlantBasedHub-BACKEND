@@ -25,20 +25,6 @@ public class IngredientsRunner implements CommandLineRunner {
     private void populateIngredients() {
         Ingredient[] ingredients = {
 
-                // Proteins
-                new Ingredient("Tofu", IngredientCategory.PROTEINS, 76, "100g"),
-                new Ingredient("Tempeh", IngredientCategory.PROTEINS, 192, "100g"),
-                new Ingredient("Seitan", IngredientCategory.PROTEINS, 370, "100g"),
-                new Ingredient("Lentils", IngredientCategory.PROTEINS, 116, "100g"),
-                new Ingredient("Edamame", IngredientCategory.PROTEINS, 121, "100g"),
-                new Ingredient("Peanuts", IngredientCategory.PROTEINS, 567, "100g"),
-                new Ingredient("Black beans", IngredientCategory.PROTEINS, 132, "100g"),
-                new Ingredient("Green peas", IngredientCategory.PROTEINS, 81, "100g"),
-                new Ingredient("Hummus", IngredientCategory.PROTEINS, 89, "100g"),
-                new Ingredient("Falafel", IngredientCategory.PROTEINS, 333, "100g"),
-                new Ingredient("Silken tofu", IngredientCategory.PROTEINS, 55, "100g"),
-
-
                 // Legumes
                 new Ingredient("Kidney beans", IngredientCategory.LEGUMES, 127, "100g"),
                 new Ingredient("Navy beans", IngredientCategory.LEGUMES, 140, "100g"),
@@ -51,63 +37,10 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Mung beans", IngredientCategory.LEGUMES, 105, "100g"),
                 new Ingredient("Fava beans", IngredientCategory.LEGUMES, 88, "100g"),
                 new Ingredient("Chickpeas", IngredientCategory.LEGUMES, 164, "100g"),
-
-                // Carbohydrates
-                new Ingredient("Sweet potatoes", IngredientCategory.CARBOHYDRATES, 86, "100g"),
-                new Ingredient("Quinoa", IngredientCategory.CARBOHYDRATES, 120, "100g"),
-                new Ingredient("Brown rice", IngredientCategory.CARBOHYDRATES, 123, "100g"),
-                new Ingredient("Oats", IngredientCategory.CARBOHYDRATES, 389, "100g"),
-                new Ingredient("Barley", IngredientCategory.CARBOHYDRATES, 354, "100g"),
-                new Ingredient("Buckwheat", IngredientCategory.CARBOHYDRATES, 343, "100g"),
-                new Ingredient("Millet", IngredientCategory.CARBOHYDRATES, 378, "100g"),
-                new Ingredient("Corn", IngredientCategory.CARBOHYDRATES, 365, "100g"),
-                new Ingredient("Wild rice", IngredientCategory.CARBOHYDRATES, 101, "100g"),
-                new Ingredient("Couscous (whole wheat)", IngredientCategory.CARBOHYDRATES, 376, "100g"),
-                new Ingredient("Granola", IngredientCategory.CARBOHYDRATES, 471, "100g"),
-                new Ingredient("Rice", IngredientCategory.CARBOHYDRATES, 130, "100g"),
-                new Ingredient("Taco shells", IngredientCategory.CARBOHYDRATES, 320, "100g"),
-                new Ingredient("Potatoes", IngredientCategory.CARBOHYDRATES, 77, "100g"),
-
-                // Fiber
-                new Ingredient("Artichokes", IngredientCategory.FIBER, 47, "100g"),
-                new Ingredient("Beets", IngredientCategory.FIBER, 43, "100g"),
-                new Ingredient("Berries", IngredientCategory.FIBER, 57, "100g"),
-                new Ingredient("Brussels sprouts", IngredientCategory.FIBER, 43, "100g"),
-                new Ingredient("Chia seeds", IngredientCategory.FIBER, 486, "100g"),
-                new Ingredient("Frozen berries", IngredientCategory.FIBER, 57, "100g"),
-
-                // Vitamins
-                new Ingredient("Kale", IngredientCategory.VITAMINS, 49, "100g"),
-                new Ingredient("Spinach", IngredientCategory.VITAMINS, 23, "100g"),
-                new Ingredient("Bell peppers", IngredientCategory.VITAMINS, 31, "100g"),
-                new Ingredient("Carrots", IngredientCategory.VITAMINS, 41, "100g"),
-                new Ingredient("Broccoli", IngredientCategory.VITAMINS, 55, "100g"),
-                new Ingredient("Tomatoes", IngredientCategory.VITAMINS, 18, "100g"),
-                new Ingredient("Oranges", IngredientCategory.VITAMINS, 47, "100g"),
-                new Ingredient("Strawberries", IngredientCategory.VITAMINS, 32, "100g"),
-                new Ingredient("Blueberries", IngredientCategory.VITAMINS, 57, "100g"),
-                new Ingredient("Kiwi", IngredientCategory.VITAMINS, 61, "100g"),
-                new Ingredient("Cherry tomatoes", IngredientCategory.VITAMINS, 18, "100g"),
-                new Ingredient("Lemon", IngredientCategory.VITAMINS, 29, "100g"),
-                new Ingredient("Lemon zest", IngredientCategory.VITAMINS, 29, "100g"),
-                new Ingredient("Lemon juice", IngredientCategory.VITAMINS, 29, "100g"),
-                new Ingredient("Lime", IngredientCategory.VITAMINS, 29, "100g"),
-                new Ingredient("Lime zest", IngredientCategory.VITAMINS, 29, "100g"),
-                new Ingredient("Lime juice", IngredientCategory.VITAMINS, 29, "100g"),
-
-                // Healthy Fats
-                new Ingredient("Olives", IngredientCategory.HEALTHY_FATS, 115, "100g"),
-                new Ingredient("Almonds", IngredientCategory.HEALTHY_FATS, 575, "100g"),
-                new Ingredient("Walnuts", IngredientCategory.HEALTHY_FATS, 654, "100g"),
-                new Ingredient("Flax seeds", IngredientCategory.HEALTHY_FATS, 534, "100g"),
-                new Ingredient("Pumpkin seeds", IngredientCategory.HEALTHY_FATS, 559, "100g"),
-                new Ingredient("Sunflower seeds", IngredientCategory.HEALTHY_FATS, 584, "100g"),
-                new Ingredient("Pistachios", IngredientCategory.HEALTHY_FATS, 562, "100g"),
-                new Ingredient("Avocado", IngredientCategory.HEALTHY_FATS, 160, "100g"),
-                new Ingredient("Hemp seeds", IngredientCategory.HEALTHY_FATS, 553, "100g"),
-                new Ingredient("Sesame seeds", IngredientCategory.HEALTHY_FATS, 343, "100g"),
-                new Ingredient("Peanut butter", IngredientCategory.HEALTHY_FATS, 343, "100g"),
-                new Ingredient("Almond butter", IngredientCategory.HEALTHY_FATS, 614, "100g"),
+                new Ingredient("Lentils", IngredientCategory.LEGUMES, 116, "100g"),
+                new Ingredient("Black beans", IngredientCategory.LEGUMES, 132, "100g"),
+                new Ingredient("Green peas", IngredientCategory.LEGUMES, 81, "100g"),
+                new Ingredient("Edamame", IngredientCategory.LEGUMES, 121, "100g"),
 
                 // Vegetables
                 new Ingredient("Cucumbers", IngredientCategory.VEGETABLES, 16, "100g"),
@@ -132,6 +65,20 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Coleslaw", IngredientCategory.VEGETABLES, 150, "100g"),
                 new Ingredient("Cabbage", IngredientCategory.VEGETABLES, 25, "100g"),
                 new Ingredient("Red onion", IngredientCategory.VEGETABLES, 40, "100g"),
+                new Ingredient("Artichokes", IngredientCategory.VEGETABLES, 47, "100g"),
+                new Ingredient("Beets", IngredientCategory.VEGETABLES, 43, "100g"),
+                new Ingredient("Brussels sprouts", IngredientCategory.VEGETABLES, 43, "100g"),
+                new Ingredient("Avocado", IngredientCategory.VEGETABLES, 160, "100g"),
+                new Ingredient("Olives", IngredientCategory.VEGETABLES, 115, "100g"),
+                new Ingredient("Cherry tomatoes", IngredientCategory.VEGETABLES, 18, "100g"),
+                new Ingredient("Kale", IngredientCategory.VEGETABLES, 49, "100g"),
+                new Ingredient("Spinach", IngredientCategory.VEGETABLES, 23, "100g"),
+                new Ingredient("Bell peppers", IngredientCategory.VEGETABLES, 31, "100g"),
+                new Ingredient("Carrots", IngredientCategory.VEGETABLES, 41, "100g"),
+                new Ingredient("Broccoli", IngredientCategory.VEGETABLES, 55, "100g"),
+                new Ingredient("Tomatoes", IngredientCategory.VEGETABLES, 18, "100g"),
+                new Ingredient("Potatoes", IngredientCategory.VEGETABLES, 77, "100g"),
+                new Ingredient("Sweet potatoes", IngredientCategory.VEGETABLES, 86, "100g"),
 
                 // Fruits
                 new Ingredient("Apples", IngredientCategory.FRUIT, 52, "100g"),
@@ -149,6 +96,18 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Pears", IngredientCategory.FRUIT, 57, "100g"),
                 new Ingredient("Dates", IngredientCategory.FRUIT, 117, "100g"),
                 new Ingredient("Jackfruit", IngredientCategory.FRUIT, 95, "100g"),
+                new Ingredient("Frozen berries", IngredientCategory.FRUIT, 57, "100g"),
+                new Ingredient("Berries", IngredientCategory.FRUIT, 57, "100g"),
+                new Ingredient("Oranges", IngredientCategory.FRUIT, 47, "100g"),
+                new Ingredient("Strawberries", IngredientCategory.FRUIT, 32, "100g"),
+                new Ingredient("Blueberries", IngredientCategory.FRUIT, 57, "100g"),
+                new Ingredient("Kiwi", IngredientCategory.FRUIT, 61, "100g"),
+                new Ingredient("Lemon", IngredientCategory.FRUIT, 29, "100g"),
+                new Ingredient("Lemon zest", IngredientCategory.FRUIT, 29, "100g"),
+                new Ingredient("Lemon juice", IngredientCategory.FRUIT, 29, "100g"),
+                new Ingredient("Lime", IngredientCategory.FRUIT, 29, "100g"),
+                new Ingredient("Lime zest", IngredientCategory.FRUIT, 29, "100g"),
+                new Ingredient("Lime juice", IngredientCategory.FRUIT, 29, "100g"),
 
                 // Grains
                 new Ingredient("Farro", IngredientCategory.GRAINS, 340, "100g"),
@@ -164,6 +123,16 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Sushi rice", IngredientCategory.GRAINS, 130, "100g"),
                 new Ingredient("Flour", IngredientCategory.GRAINS, 364, "100g"),
                 new Ingredient("Whole wheat flour", IngredientCategory.GRAINS, 340, "100g"),
+                new Ingredient("Quinoa", IngredientCategory.GRAINS, 120, "100g"),
+                new Ingredient("Brown rice", IngredientCategory.GRAINS, 123, "100g"),
+                new Ingredient("Oats", IngredientCategory.GRAINS, 389, "100g"),
+                new Ingredient("Barley", IngredientCategory.GRAINS, 354, "100g"),
+                new Ingredient("Buckwheat", IngredientCategory.GRAINS, 343, "100g"),
+                new Ingredient("Millet", IngredientCategory.GRAINS, 378, "100g"),
+                new Ingredient("Corn", IngredientCategory.GRAINS, 365, "100g"),
+                new Ingredient("Wild rice", IngredientCategory.GRAINS, 101, "100g"),
+                new Ingredient("Couscous (whole wheat)", IngredientCategory.GRAINS, 376, "100g"),
+                new Ingredient("Rice", IngredientCategory.GRAINS, 130, "100g"),
 
                 // Nuts and Seeds
                 new Ingredient("Cashews", IngredientCategory.NUTS_SEEDS, 553, "100g"),
@@ -173,6 +142,18 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Hazelnuts", IngredientCategory.NUTS_SEEDS, 628, "100g"),
                 new Ingredient("Pine nuts", IngredientCategory.NUTS_SEEDS, 673, "100g"),
                 new Ingredient("Poppy seeds", IngredientCategory.NUTS_SEEDS, 525, "100g"),
+                new Ingredient("Chia seeds", IngredientCategory.NUTS_SEEDS, 486, "100g"),
+                new Ingredient("Almonds", IngredientCategory.NUTS_SEEDS, 575, "100g"),
+                new Ingredient("Walnuts", IngredientCategory.NUTS_SEEDS, 654, "100g"),
+                new Ingredient("Peanuts", IngredientCategory.NUTS_SEEDS, 567, "100g"),
+                new Ingredient("Flax seeds", IngredientCategory.NUTS_SEEDS, 534, "100g"),
+                new Ingredient("Pumpkin seeds", IngredientCategory.NUTS_SEEDS, 559, "100g"),
+                new Ingredient("Sunflower seeds", IngredientCategory.NUTS_SEEDS, 584, "100g"),
+                new Ingredient("Pistachios", IngredientCategory.NUTS_SEEDS, 562, "100g"),
+                new Ingredient("Hemp seeds", IngredientCategory.NUTS_SEEDS, 553, "100g"),
+                new Ingredient("Sesame seeds", IngredientCategory.NUTS_SEEDS, 343, "100g"),
+                new Ingredient("Peanut butter", IngredientCategory.NUTS_SEEDS, 343, "100g"),
+                new Ingredient("Almond butter", IngredientCategory.NUTS_SEEDS, 614, "100g"),
 
                 // Grain Products
                 new Ingredient("Whole wheat pasta", IngredientCategory.GRAIN_PRODUCTS, 124, "100g"),
@@ -194,6 +175,8 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Pizza dough", IngredientCategory.GRAIN_PRODUCTS, 250, "100g"),
                 new Ingredient("Breadcrumbs", IngredientCategory.GRAIN_PRODUCTS, 350, "100g"),
                 new Ingredient("Rice cakes", IngredientCategory.GRAIN_PRODUCTS, 387, "100g"),
+                new Ingredient("Taco shells", IngredientCategory.GRAIN_PRODUCTS, 320, "100g"),
+                new Ingredient("Granola", IngredientCategory.GRAIN_PRODUCTS, 471, "100g"),
 
 
                 // Meat and Dairy Substitutes
@@ -206,6 +189,11 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Plant-based burgers", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 240, "100g"),
                 new Ingredient("Vegan cheese", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 300, "100g"),
                 new Ingredient("Plant-based sausage", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 280, "100g"),
+                new Ingredient("Tofu", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 76, "100g"),
+                new Ingredient("Tempeh", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 192, "100g"),
+                new Ingredient("Seitan", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 370, "100g"),
+                new Ingredient("Falafel", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 333, "100g"),
+                new Ingredient("Silken tofu", IngredientCategory.MEAT_DAIRY_SUBSTITUTES, 55, "100g"),
 
                 // Sweeteners
                 new Ingredient("Maple syrup", IngredientCategory.SWEETENERS, 260, "100g"),
@@ -253,6 +241,7 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Vegetable shortening", IngredientCategory.OILS_CONDIMENTS, 890, "100g"),
                 new Ingredient("Water", IngredientCategory.OILS_CONDIMENTS, 0, "ml"),
                 new Ingredient("Pad Thai sauce", IngredientCategory.OILS_CONDIMENTS, 100, "100g"),
+                new Ingredient("Hummus", IngredientCategory.OILS_CONDIMENTS, 89, "100g"),
 
                 // Spices
                 new Ingredient("Salt", IngredientCategory.SPICES, 0, "100g"),
