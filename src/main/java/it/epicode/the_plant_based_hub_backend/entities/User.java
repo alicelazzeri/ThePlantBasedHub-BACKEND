@@ -16,7 +16,6 @@ import java.util.List;
 @Table(name="users")
 @Data
 @NoArgsConstructor
-// @Builder(setterPrefix = "with")
 @JsonIgnoreProperties({"password", "active", "authorities", "enabled", "credentialsNonExpired", "accountNonExpired", "accountNonLocked"})
 
 public class User extends BaseEntity implements UserDetails {

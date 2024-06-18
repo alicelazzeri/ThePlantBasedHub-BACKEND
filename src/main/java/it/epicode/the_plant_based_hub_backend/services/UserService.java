@@ -278,4 +278,14 @@ public class UserService {
         }
         return uploadAvatar(id, updatedImage);
     }
+
+    // helper method to convert from Optional<User> to User
+
+    public User getUserByIdOrThrow(long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User with id: " + id + " not found."));
+    }
+
+
+
 }

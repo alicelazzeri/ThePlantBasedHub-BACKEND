@@ -15,6 +15,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/favorite-recipes")
 @CrossOrigin
@@ -89,6 +91,27 @@ public class FavoriteRecipeController {
         return responseEntity;
     }
 
+    // GET http://localhost:8080/api/favorite-recipes/user/{userId} + bearer token
 
+    @GetMapping("/user/{userId}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<List<FavoriteRecipe>> getFavoriteRecipeByUserId(@PathVariable long userId) {
+        List<FavoriteRecipe> favoriteRecipes = favoriteRecipeService.getFavoriteRecipeByUserId(userId);
+        if (favoriteRecipes.isEmpty()) {
+            throw new NoContentException("No favorite recipes found for the user.");
+        } else {
+           ResponseEntity<List<FavoriteRecipe>> responseEntity = new ResponseEntity<>(favoriteRecipes, HttpStatus.OK);
+           return responseEntity;
+        }
+    }
 
+    // GET http://localhost:8080/api/favorite-recipes/user/{userId}/recipe/{recipeId} + bearer token
+
+    @GetMapping("/user/{userId}/recipe/{recipeId}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<FavoriteRecipe> getFavoriteRecipeByUserIdAndRecipeId(@PathVariable long userId, @PathVariable long recipeId) {
+        FavoriteRecipe favoriteRecipe = favoriteRecipeService.getFavoriteRecipeByUserIdAndRecipeId(userId, recipeId);
+        ResponseEntity<FavoriteRecipe> responseEntity = new ResponseEntity<>(favoriteRecipe, HttpStatus.OK);
+        return responseEntity;
+    }
 }

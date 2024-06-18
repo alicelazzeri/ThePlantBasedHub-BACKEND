@@ -6,6 +6,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.RecipeIngredient;
+import it.epicode.the_plant_based_hub_backend.entities.enums.IngredientCategory;
+import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
@@ -213,4 +215,33 @@ public class RecipeService {
         document.close();
         return output;
     }
+
+    // GET recipe by recipe name
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipeByRecipeName(String recipeName) {
+        return recipeRepository.findByRecipeNameContainingIgnoreCase(recipeName);
+    }
+
+    // GET recipe by recipe category
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipeByRecipeCategory(RecipeCategory recipeCategory) {
+        return recipeRepository.findByRecipeCategory(recipeCategory);
+    }
+
+    // GET recipe by ingredient name
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipeByIngredientName (String ingredientName) {
+        return recipeRepository.findByIngredientsIngredientIngredientName(ingredientName);
+    }
+
+    // GET recipe by ingredient category
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipeByIngredientCategory(IngredientCategory ingredientCategory) {
+        return recipeRepository.findByIngredientsIngredientIngredientCategory(ingredientCategory);
+    }
+
 }

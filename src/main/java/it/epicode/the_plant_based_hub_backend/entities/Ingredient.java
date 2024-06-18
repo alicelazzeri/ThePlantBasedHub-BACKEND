@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
+
 public class Ingredient extends BaseEntity {
 
     @Column(nullable = false)
@@ -29,19 +30,19 @@ public class Ingredient extends BaseEntity {
     private String recommendedAmount;
 
     @Column(nullable = true)
-    private Double proteins;
+    private double proteins;
 
     @Column(nullable = true)
-    private Double carbohydrates;
+    private double carbohydrates;
 
     @Column(nullable = true)
     private Double fats;
 
     @Column(nullable = true)
-    private Double fibers;
+    private double fibers;
 
     @Column(nullable = true)
-    private Double sugars;
+    private double sugars;
 
     @Column(nullable = true)
     private String vitamins;

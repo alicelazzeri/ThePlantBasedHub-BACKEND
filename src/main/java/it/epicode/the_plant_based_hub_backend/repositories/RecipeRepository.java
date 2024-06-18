@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long>, PagingAndSortingRepository<Recipe, Long> {
-//    List<Recipe> findByRecipeNameContainingIgnoreCase(String recipeName);
-//    List<Recipe> findByRecipeCategory(RecipeCategory recipeCategory);
-//    List<Recipe> findByIngredientsIngredientIngredientName(String ingredientName);
-//    List<Recipe> findByIngredientCategory(IngredientCategory ingredientCategory);
+    List<Recipe> findByRecipeNameContainingIgnoreCase(String recipeName);
+    List<Recipe> findByRecipeCategory(RecipeCategory recipeCategory);
+    List<Recipe> findByIngredientsIngredientIngredientName(String ingredientName);
+    List<Recipe> findByIngredientsIngredientIngredientCategory(IngredientCategory ingredientCategory);
 }

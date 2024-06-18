@@ -20,19 +20,19 @@ public record IngredientRequestDTO(
         String recommendedAmount,
 
         @PositiveOrZero(message = "Proteins must be zero or greater")
-        Double proteins,
+        double proteins,
 
         @PositiveOrZero(message = "Carbohydrates must be zero or greater")
-        Double carbohydrates,
+        double carbohydrates,
 
         @PositiveOrZero(message = "Fats must be zero or greater")
-        Double fats,
+        double fats,
 
         @PositiveOrZero(message = "Fibers must be zero or greater")
-        Double fibers,
+        double fibers,
 
         @PositiveOrZero(message = "Sugars must be zero or greater")
-        Double sugars,
+        double sugars,
 
         @NotNull(message = "Vitamins is mandatory")
         @NotEmpty(message = "Vitamins cannot be empty")

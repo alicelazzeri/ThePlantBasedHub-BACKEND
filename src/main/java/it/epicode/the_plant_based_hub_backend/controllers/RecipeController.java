@@ -2,6 +2,8 @@ package it.epicode.the_plant_based_hub_backend.controllers;
 
 import com.itextpdf.text.DocumentException;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
+import it.epicode.the_plant_based_hub_backend.entities.enums.IngredientCategory;
+import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
@@ -130,5 +132,65 @@ public class RecipeController {
         headers.add("Content-Disposition", "inline; filename=recipe_" + id + ".pdf");
         headers.add("Content-Type", "application/pdf");
         return ResponseEntity.ok().headers(headers).body(output.toByteArray());
+    }
+
+    // GET recipes by recipe name
+    // GET http://localhost:8080/api/recipes/name/{recipeName} + bearer token
+
+    @GetMapping("/name/{recipeName}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<List<Recipe>> getRecipesByRecipeName(@PathVariable String recipeName) {
+        List<Recipe> recipes = recipeService.getRecipeByRecipeName(recipeName);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with name containing: " + recipeName);
+        } else {
+            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
+            return responseEntity;
+        }
+    }
+
+    // GET recipes by recipe category
+    // GET http://localhost:8080/api/recipes/category/{recipeCategory} + bearer token
+
+    @GetMapping("/category/{recipeCategory}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<List<Recipe>> getRecipesByRecipeCategory(@PathVariable RecipeCategory recipeCategory) {
+        List<Recipe> recipes = recipeService.getRecipeByRecipeCategory(recipeCategory);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found in category: " + recipeCategory);
+        } else {
+            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
+            return responseEntity;
+        }
+    }
+
+    // GET recipes by ingredient name
+    // GET http://localhost:8080/api/recipes/ingredient/{ingredientName} + bearer token
+
+    @GetMapping("/ingredient/{ingredientName}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<List<Recipe>> getRecipesByIngredientName(@PathVariable String ingredientName) {
+        List<Recipe> recipes = recipeService.getRecipeByIngredientName(ingredientName);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with ingredient: " + ingredientName);
+        } else {
+            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
+            return responseEntity;
+        }
+    }
+
+    // GET recipes by ingredient category
+    // GET http://localhost:8080/api/recipes/ingredient-category/{ingredientCategory} + bearer token
+
+    @GetMapping("/ingredient-category/{ingredientCategory}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<List<Recipe>> getRecipesByIngredientCategory(@PathVariable IngredientCategory ingredientCategory) {
+        List<Recipe> recipes = recipeService.getRecipeByIngredientCategory(ingredientCategory);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with ingredient category: " + ingredientCategory);
+        } else {
+            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
+            return responseEntity;
+        }
     }
 }

@@ -12,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class FavoriteRecipeService {
     @Autowired
@@ -87,5 +89,19 @@ public class FavoriteRecipeService {
 
         existingFavoriteRecipe.setUser(user);
         existingFavoriteRecipe.setRecipe(recipe);
+    }
+
+    // GET favorite recipe by user id
+
+    @Transactional(readOnly = true)
+    public List<FavoriteRecipe> getFavoriteRecipeByUserId(long userId) {
+        return favoriteRecipeRepository.findByUserId(userId);
+    }
+
+    // GET favorite recipe by user id and recipe id
+
+    @Transactional(readOnly = true)
+    public FavoriteRecipe getFavoriteRecipeByUserIdAndRecipeId(long userId, long recipeId) {
+        return favoriteRecipeRepository.findByUserIdAndRecipeId(userId, recipeId);
     }
 }
