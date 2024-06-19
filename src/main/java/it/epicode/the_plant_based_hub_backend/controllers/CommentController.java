@@ -1,5 +1,13 @@
 package it.epicode.the_plant_based_hub_backend.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import it.epicode.the_plant_based_hub_backend.entities.Comment;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
@@ -20,6 +28,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/comments")
 @CrossOrigin
+@Tag(name = "Comment API", description = "Operations related to comments")
+
 public class CommentController {
 
     @Autowired
@@ -29,6 +39,13 @@ public class CommentController {
 
     @GetMapping
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get all comments", description = "Retrieve all comments",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of comments",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Page.class))),
+            @ApiResponse(responseCode = "204", description = "No comments found")
+    })
     public ResponseEntity<Page<Comment>> getAllComments(Pageable pageable) {
         Page<Comment> comments = commentService.getAllComments(pageable);
         if (comments.isEmpty()) {
@@ -43,7 +60,14 @@ public class CommentController {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<Comment> getCommentById(@PathVariable long id) {
+    @Operation(summary = "Get comment by ID", description = "Retrieve a comment by ID",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved comment",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Comment.class))),
+            @ApiResponse(responseCode = "404", description = "Comment not found")
+    })
+    public ResponseEntity<Comment> getCommentById(@Parameter(description = "ID of the comment to be retrieved") @PathVariable long id) {
         Comment comment = commentService.getCommentById(id);
         ResponseEntity<Comment> responseEntity = new ResponseEntity<>(comment, HttpStatus.OK);
         return responseEntity;
@@ -53,7 +77,14 @@ public class CommentController {
 
     @GetMapping("/recipe/{recipeId}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<List<Comment>> getCommentsByRecipeId(@PathVariable long recipeId) {
+    @Operation(summary = "Get comments by recipe ID", description = "Retrieve comments by recipe ID",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved comments",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Comment.class))),
+            @ApiResponse(responseCode = "204", description = "No comments found")
+    })
+    public ResponseEntity<List<Comment>> getCommentsByRecipeId(@Parameter(description = "ID of the recipe to retrieve comments for") @PathVariable long recipeId) {
         List<Comment> comments = commentService.getCommentsByRecipeId(recipeId);
         if (comments.isEmpty()) {
             throw new NoContentException("No comments found for the given recipe.");
@@ -67,7 +98,15 @@ public class CommentController {
 
     @PostMapping
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Create a new comment", description = "Create a new comment",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Comment created successfully",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Comment.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data")
+    })
     public ResponseEntity<Comment> saveComment(
+            @Parameter(description = "Comment data to be created")
             @RequestBody @Validated CommentRequestDTO commentPayload,
             BindingResult validation) {
         if (validation.hasErrors()) {
@@ -83,8 +122,18 @@ public class CommentController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Update a comment", description = "Update an existing comment",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Comment updated successfully",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Comment.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "404", description = "Comment not found")
+    })
     public ResponseEntity<Comment> updateComment(
+            @Parameter(description = "ID of the comment to be updated")
             @PathVariable long id,
+            @Parameter(description = "Updated comment data")
             @RequestBody @Validated CommentRequestDTO updatedComment,
             BindingResult validation) {
         if (validation.hasErrors()) {
@@ -96,12 +145,17 @@ public class CommentController {
         }
     }
 
-
     // DELETE http://localhost:8080/api/comments/{id} + bearer token
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<Void> deleteComment(@PathVariable long id) {
+    @Operation(summary = "Delete a comment", description = "Delete a comment by ID",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Comment deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Comment not found")
+    })
+    public ResponseEntity<Void> deleteComment( @Parameter(description = "ID of the comment to be deleted") @PathVariable long id) {
         commentService.deleteComment(id);
         ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return responseEntity;

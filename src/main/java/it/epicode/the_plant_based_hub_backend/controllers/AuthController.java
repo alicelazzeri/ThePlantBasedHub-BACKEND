@@ -1,5 +1,11 @@
 package it.epicode.the_plant_based_hub_backend.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import it.epicode.the_plant_based_hub_backend.entities.User;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.payloads.auth.UserLoginRequestDTO;
@@ -17,6 +23,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin
+@Tag(name = "Auth API", description = "Operations related to user authentication")
+
 public class AuthController {
 
     @Autowired
@@ -28,7 +36,14 @@ public class AuthController {
     // POST http://localhost:8080/api/auth/register
 
     @PostMapping("/register")
+    @Operation(summary = "Register a new user", description = "Register a new user",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "User registered successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))),
+                    @ApiResponse(responseCode = "400", description = "Invalid input data")
+            })
     public ResponseEntity<User> registerUser(
+            @Parameter(description = "User registration data")
             @RequestBody @Validated UserRegisterRequestDTO registerPayload,
             BindingResult validation) {
 
@@ -42,7 +57,14 @@ public class AuthController {
     // POST http://localhost:8080/api/auth/register/admin
 
     @PostMapping("/register/admin")
+    @Operation(summary = "Register a new admin", description = "Register a new admin",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Admin registered successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))),
+                    @ApiResponse(responseCode = "400", description = "Invalid input data")
+            })
     public ResponseEntity<User> registerAdmin(
+            @Parameter(description = "Admin registration data")
             @RequestBody @Validated UserRegisterRequestDTO registerPayload,
             BindingResult validation) {
 
@@ -58,7 +80,13 @@ public class AuthController {
     // POST http://localhost:8080/api/auth/login
 
     @PostMapping("/login")
-    public ResponseEntity<UserLoginResponseDTO> login(@RequestBody UserLoginRequestDTO loginPayload) {
+    @Operation(summary = "User login", description = "Authenticate user and generate token",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Login successful",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserLoginResponseDTO.class))),
+                    @ApiResponse(responseCode = "401", description = "Invalid credentials")
+            })
+    public ResponseEntity<UserLoginResponseDTO> login(@Parameter(description = "User login data") @RequestBody UserLoginRequestDTO loginPayload) {
         String token = authService.authenticateUserAndGenerateToken(loginPayload);
         UserLoginResponseDTO response = new UserLoginResponseDTO(token);
         return new ResponseEntity<>(response, HttpStatus.OK);

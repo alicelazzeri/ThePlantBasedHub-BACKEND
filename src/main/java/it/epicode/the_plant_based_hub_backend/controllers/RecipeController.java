@@ -1,6 +1,14 @@
 package it.epicode.the_plant_based_hub_backend.controllers;
 
 import com.itextpdf.text.DocumentException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.enums.IngredientCategory;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
@@ -27,6 +35,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/recipes")
 @CrossOrigin
+@Tag(name = "Recipe API", description = "Operations related to recipes")
+
 public class RecipeController {
     @Autowired
     private RecipeService recipeService;
@@ -35,6 +45,13 @@ public class RecipeController {
 
     @GetMapping
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get all recipes", description = "Retrieve all recipes",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Page.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
     public ResponseEntity<Page<Recipe>> getAllRecipes(Pageable pageable) {
         Page<Recipe> recipes = recipeService.getAllRecipes(pageable);
         if (recipes.isEmpty()) {
@@ -49,7 +66,14 @@ public class RecipeController {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<Recipe> getRecipeById(@PathVariable long id) {
+    @Operation(summary = "Get recipe by ID", description = "Retrieve a recipe by ID",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipe",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "404", description = "Recipe not found")
+    })
+    public ResponseEntity<Recipe> getRecipeById(@Parameter(description = "ID of the recipe to be retrieved") @PathVariable long id) {
         Recipe recipe = recipeService.getRecipeById(id);
         ResponseEntity<Recipe> responseEntity = new ResponseEntity<>(recipe, HttpStatus.OK);
         return responseEntity;
@@ -60,7 +84,15 @@ public class RecipeController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Create a new recipe", description = "Create a new recipe without ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Recipe created successfully",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data")
+    })
     public ResponseEntity<Recipe> saveRecipe(
+            @Parameter(description = "Recipe data to be created")
             @RequestBody @Validated RecipeRequestDTO recipePayload,
             BindingResult validation) {
         if (validation.hasErrors()) {
@@ -77,8 +109,17 @@ public class RecipeController {
 
     @PostMapping("/{id}/ingredients")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Add ingredients to a recipe", description = "Add ingredients to an existing recipe",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Ingredients added successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "404", description = "Recipe not found")
+    })
     public ResponseEntity<Void> saveRecipeIngredients(
+            @Parameter(description = "ID of the recipe to which ingredients will be added")
             @PathVariable long id,
+            @Parameter(description = "List of ingredients to be added")
             @RequestBody @Validated List<RecipeIngredientRequestDTO> ingredients,
             BindingResult validation) {
         if (validation.hasErrors()) {
@@ -93,8 +134,18 @@ public class RecipeController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Update a recipe", description = "Update an existing recipe",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recipe updated successfully",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "404", description = "Recipe not found")
+    })
     public ResponseEntity<Recipe> updateRecipe(
+            @Parameter(description = "ID of the recipe to be updated")
             @PathVariable long id,
+            @Parameter(description = "Updated recipe data")
             @RequestBody @Validated RecipeRequestDTO updatedRecipe,
             BindingResult validation) {
         if (validation.hasErrors()) {
@@ -110,7 +161,13 @@ public class RecipeController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Void> deleteRecipe(@PathVariable long id) {
+    @Operation(summary = "Delete a recipe", description = "Delete a recipe by ID",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Recipe deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Recipe not found")
+    })
+    public ResponseEntity<Void> deleteRecipe(@Parameter(description = "ID of the recipe to be deleted") @PathVariable long id) {
         recipeService.deleteRecipe(id);
         ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return responseEntity;
@@ -120,7 +177,16 @@ public class RecipeController {
 
     @GetMapping("/{id}/pdf")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<byte[]> downloadRecipePDF(@PathVariable long id) throws DocumentException, IOException {
+    @Operation(summary = "Download recipe as PDF", description = "Generate and download a recipe in PDF format",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully generated PDF",
+                    content = @Content(mediaType = "application/pdf")),
+            @ApiResponse(responseCode = "404", description = "Recipe not found"),
+            @ApiResponse(responseCode = "500", description = "Error generating PDF")
+    })
+    public ResponseEntity<byte[]> downloadRecipePDF(@Parameter(description = "ID of the recipe to be downloaded as PDF")
+                                                        @PathVariable long id) throws DocumentException, IOException {
         Recipe recipe = recipeService.getRecipeById(id);
         ByteArrayOutputStream output;
         try {
@@ -139,7 +205,14 @@ public class RecipeController {
 
     @GetMapping("/name/{recipeName}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<List<Recipe>> getRecipesByRecipeName(@PathVariable String recipeName) {
+    @Operation(summary = "Get recipes by name", description = "Retrieve recipes by name",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByRecipeName(@Parameter(description = "Name of the recipe to be retrieved") @PathVariable String recipeName) {
         List<Recipe> recipes = recipeService.getRecipeByRecipeName(recipeName);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found with name containing: " + recipeName);
@@ -154,7 +227,14 @@ public class RecipeController {
 
     @GetMapping("/category/{recipeCategory}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<List<Recipe>> getRecipesByRecipeCategory(@PathVariable RecipeCategory recipeCategory) {
+    @Operation(summary = "Get recipes by category", description = "Retrieve recipes by category",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByRecipeCategory(@Parameter(description = "Category of the recipes to be retrieved") @PathVariable RecipeCategory recipeCategory) {
         List<Recipe> recipes = recipeService.getRecipeByRecipeCategory(recipeCategory);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found in category: " + recipeCategory);
@@ -169,7 +249,14 @@ public class RecipeController {
 
     @GetMapping("/ingredient/{ingredientName}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<List<Recipe>> getRecipesByIngredientName(@PathVariable String ingredientName) {
+    @Operation(summary = "Get recipes by ingredient", description = "Retrieve recipes by ingredient",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByIngredientName(@Parameter(description = "Name of the ingredient to search for") @PathVariable String ingredientName) {
         List<Recipe> recipes = recipeService.getRecipeByIngredientName(ingredientName);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found with ingredient: " + ingredientName);
@@ -184,7 +271,14 @@ public class RecipeController {
 
     @GetMapping("/ingredient-category/{ingredientCategory}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    public ResponseEntity<List<Recipe>> getRecipesByIngredientCategory(@PathVariable IngredientCategory ingredientCategory) {
+    @Operation(summary = "Get recipes by ingredient category", description = "Retrieve recipes by ingredient category",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByIngredientCategory( @Parameter(description = "Category of the ingredient to search for") @PathVariable IngredientCategory ingredientCategory) {
         List<Recipe> recipes = recipeService.getRecipeByIngredientCategory(ingredientCategory);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found with ingredient category: " + ingredientCategory);

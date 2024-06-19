@@ -47,25 +47,27 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 
         Optional<User> userOptional = userService.getUserById(id);
 
-        if(userOptional.isPresent()){
+        if (userOptional.isPresent()){
             User user = userOptional.get();
 
             Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
-        else{
+        else {
             throw new NotFoundException("User with id: " + id + " not found");
         }
 
         filterChain.doFilter(request, response);
     }
 
-    // this overridden method allows to avoid authentication in order to use authentication services
+    // overridden method allowing to avoid authentication in order to use authentication and swagger services
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-
-        return new AntPathMatcher().match("/auth/**", request.getServletPath());
-
+        AntPathMatcher pathMatcher = new AntPathMatcher();
+        return pathMatcher.match("/auth/**", request.getServletPath()) ||
+                pathMatcher.match("/v3/api-docs/**", request.getServletPath()) ||
+                pathMatcher.match("/swagger-ui/**", request.getServletPath()) ||
+                pathMatcher.match("/swagger-ui.html", request.getServletPath());
     }
 }
