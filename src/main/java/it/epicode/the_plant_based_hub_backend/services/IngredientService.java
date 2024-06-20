@@ -104,8 +104,15 @@ public class IngredientService {
     // GET ingredient by name
 
     @Transactional(readOnly = true)
-        public Ingredient getIngredientByName(String ingredientName) {
-        return ingredientRepository.findByIngredientName(ingredientName).orElseThrow(() -> new NotFoundException("Ingredient with name: " + ingredientName + " not found."));
+    public Ingredient getIngredientByName(String ingredientName) {
+        return ingredientRepository.findFirstByIngredientNameIgnoreCase(ingredientName);
+    }
+
+    // GET ingredients by name
+
+    @Transactional(readOnly = true)
+    public List<Ingredient> getIngredientsByNameContaining(String ingredientName) {
+        return ingredientRepository.findByIngredientNameContainingIgnoreCase(ingredientName);
     }
 
     // GET ingredients by proteins range
@@ -147,14 +154,14 @@ public class IngredientService {
 
     @Transactional(readOnly = true)
     public List<Ingredient> getIngredientsByVitamins(String vitamins) {
-        return ingredientRepository.findByVitamins(vitamins);
+        return ingredientRepository.findByVitaminsContainingIgnoreCase(vitamins);
     }
 
     // GET ingredients by minerals
 
     @Transactional(readOnly = true)
     public List<Ingredient> getIngredientsByMinerals(String minerals) {
-        return ingredientRepository.findByMinerals(minerals);
+        return ingredientRepository.findByMineralsContainingIgnoreCase(minerals);
     }
 
     // GET ingredients by ingredient category

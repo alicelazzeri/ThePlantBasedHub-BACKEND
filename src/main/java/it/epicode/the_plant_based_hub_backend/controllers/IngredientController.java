@@ -12,6 +12,7 @@ import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.enums.IngredientCategory;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
+import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.IngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,20 +144,43 @@ public class IngredientController {
 
     // GET ingredient by name
     // GET http://localhost:8080/api/ingredients/name/{ingredientName} + bearer token
+    // http://localhost:8080/api/ingredients/name/red%20onion
 
     @GetMapping("/name/{ingredientName}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    @Operation(summary = "Get ingredient by name", description = "Retrieve an ingredient by name",
+    @Operation(summary = "Get ingredient by ingredientName", description = "Retrieve an ingredient by ingredientName",
             security = @SecurityRequirement(name = "Bearer Authentication"))
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully retrieved ingredient",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Ingredient.class))),
             @ApiResponse(responseCode = "404", description = "Ingredient not found")
     })
-    public ResponseEntity<Ingredient> getIngredientByName(@Parameter(description = "Name of the ingredient to be retrieved") @PathVariable String name) {
-        Ingredient ingredient = ingredientService.getIngredientByName(name);
+    public ResponseEntity<Ingredient> getIngredientByName(@Parameter(description = "Name of the ingredient to be retrieved") @PathVariable("ingredientName") String ingredientName) {
+        Ingredient ingredient = ingredientService.getIngredientByName(ingredientName);
         ResponseEntity<Ingredient> responseEntity = new ResponseEntity<>(ingredient, HttpStatus.OK);
         return responseEntity;
+    }
+
+    // GET ingredient by name containing (partial search)
+    // GET http://localhost:8080/api/ingredients/search?name={name} + bearer token
+
+    @GetMapping("/search")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get ingredients by partial name match", description = "Retrieve ingredients by partial name match",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved ingredients",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Ingredient.class))),
+            @ApiResponse(responseCode = "404", description = "Ingredients not found")
+    })
+    public ResponseEntity<List<Ingredient>> getIngredientsByNameContaining(@Parameter(description = "Partial name of the ingredients to be retrieved") @RequestParam String name) {
+        List<Ingredient> ingredients = ingredientService.getIngredientsByNameContaining(name);
+        if (ingredients.isEmpty()) {
+            throw new NotFoundException("Ingredients with the following name: " + name + " were not found");
+        } else {
+            ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
+            return responseEntity;
+        }
     }
 
     // GET ingredients by proteins range
@@ -283,8 +307,12 @@ public class IngredientController {
     })
     public ResponseEntity<List<Ingredient>> getIngredientsByVitamins( @Parameter(description = "Vitamins to search for") @PathVariable String vitamins) {
         List<Ingredient> ingredients = ingredientService.getIngredientsByVitamins(vitamins);
-        ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
-        return responseEntity;
+        if (ingredients.isEmpty()) {
+            throw new NoContentException("No ingredients found for vitamin: " + vitamins);
+        } else {
+            ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
+            return responseEntity;
+        }
     }
 
     // GET ingredients by minerals
@@ -301,8 +329,12 @@ public class IngredientController {
     })
     public ResponseEntity<List<Ingredient>> getIngredientsByMinerals(@Parameter(description = "Minerals to search for") @PathVariable String minerals) {
         List<Ingredient> ingredients = ingredientService.getIngredientsByMinerals(minerals);
-        ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
-        return responseEntity;
+        if (ingredients.isEmpty()) {
+            throw new NoContentException("No ingredients found for mineral: " + minerals);
+        } else {
+            ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
+            return responseEntity;
+        }
     }
 
     // GET ingredients by ingredient category
@@ -317,13 +349,19 @@ public class IngredientController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Ingredient.class))),
             @ApiResponse(responseCode = "204", description = "No ingredients found")
     })
-    public ResponseEntity<List<Ingredient>> getIngredientsByIngredientCategory( @Parameter(description = "Category of the ingredients to be retrieved") @PathVariable IngredientCategory ingredientCategory) {
-        List<Ingredient> ingredients = ingredientService.getIngredientsByIngredientCategory(ingredientCategory);
-        if (ingredients.isEmpty()) {
-            throw new NoContentException("No ingredients found for category: " + ingredientCategory);
-        } else {
-            ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
-            return responseEntity;
+    public ResponseEntity<List<Ingredient>> getIngredientsByIngredientCategory(
+            @Parameter(description = "Category of the ingredients to be retrieved") @PathVariable String ingredientCategory) {
+        try {
+            IngredientCategory category = IngredientCategory.valueOf(ingredientCategory.toUpperCase());
+            List<Ingredient> ingredients = ingredientService.getIngredientsByIngredientCategory(category);
+            if (ingredients.isEmpty()) {
+                throw new NoContentException("No ingredients found for category: " + ingredientCategory);
+            } else {
+                ResponseEntity<List<Ingredient>> responseEntity = new ResponseEntity<>(ingredients, HttpStatus.OK);
+                return responseEntity;
+            }
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
         }
     }
 

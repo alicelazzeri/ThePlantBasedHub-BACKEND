@@ -1,7 +1,9 @@
 package it.epicode.the_plant_based_hub_backend.runners;
 
+import it.epicode.the_plant_based_hub_backend.entities.Ingredient;
 import it.epicode.the_plant_based_hub_backend.entities.Recipe;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
+import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.IngredientService;
@@ -2006,5 +2008,12 @@ public class RecipesRunner implements CommandLineRunner {
             }
         }
         System.out.println("Recipes populated on DB successfully.");
+    }
+    private Ingredient findIngredientByPartialName(String partialName) {
+        List<Ingredient> ingredients = ingredientService.getIngredientsByNameContaining(partialName);
+        if (ingredients.isEmpty()) {
+            throw new NotFoundException("No ingredient found containing: " + partialName);
+        }
+        return ingredients.get(0);
     }
 }
