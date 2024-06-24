@@ -307,13 +307,15 @@ public class RecipeController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
             @ApiResponse(responseCode = "204", description = "No recipes found")
     })
-    public ResponseEntity<List<Recipe>> getRecipesByIngredientCategory( @Parameter(description = "Category of the ingredient to search for") @PathVariable IngredientCategory ingredientCategory) {
+    public ResponseEntity<List<Recipe>> getRecipesByIngredientCategory(
+            @Parameter(description = "Category of the ingredient to search for")
+            @PathVariable String ingredientCategory) {
         List<Recipe> recipes = recipeService.getRecipeByIngredientCategory(ingredientCategory);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found with ingredient category: " + ingredientCategory);
         } else {
-            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
-            return responseEntity;
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
         }
     }
+
 }

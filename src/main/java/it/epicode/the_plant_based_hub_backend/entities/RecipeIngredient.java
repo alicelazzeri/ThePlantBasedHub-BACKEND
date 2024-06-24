@@ -1,6 +1,5 @@
 package it.epicode.the_plant_based_hub_backend.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,17 +12,19 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
 public class RecipeIngredient extends BaseEntity {
 
     @Column(nullable = false)
     private int quantity;
+
     @Column(nullable = false)
     private String measurementUnit;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="recipe_id", nullable = false)
-    @JsonIgnoreProperties("ingredients")
+    @JsonIgnoreProperties({"ingredients", "hibernateLazyInitializer", "handler"})
     private Recipe recipe;
 
     @ManyToOne(fetch = FetchType.LAZY)

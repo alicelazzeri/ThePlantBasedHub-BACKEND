@@ -325,7 +325,14 @@ public class RecipeService {
     // GET recipe by ingredient category
 
     @Transactional(readOnly = true)
-    public List<Recipe> getRecipeByIngredientCategory(IngredientCategory ingredientCategory) {
-        return recipeRepository.findByIngredientsIngredientIngredientCategory(ingredientCategory);
+    public List<Recipe> getRecipeByIngredientCategory(String ingredientCategory) {
+        IngredientCategory category;
+        try {
+            category = IngredientCategory.valueOf(ingredientCategory.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new NotFoundException("Ingredient category " + ingredientCategory + " not found");
+        }
+        return recipeRepository.findByIngredientsIngredientIngredientCategory(category);
     }
+
 }
