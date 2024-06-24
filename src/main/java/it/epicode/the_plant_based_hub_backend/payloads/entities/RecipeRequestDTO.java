@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
+import java.util.Collections;
 import java.util.List;
 
 public record RecipeRequestDTO(
@@ -40,4 +41,9 @@ public record RecipeRequestDTO(
 
         List<RecipeIngredientRequestDTO> ingredients
 ) {
+        public RecipeRequestDTO {
+                if (ingredients == null) {
+                        ingredients = Collections.emptyList();
+                }
+        }
 }

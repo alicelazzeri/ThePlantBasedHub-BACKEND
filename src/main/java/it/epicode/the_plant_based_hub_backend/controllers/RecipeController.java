@@ -14,9 +14,11 @@ import it.epicode.the_plant_based_hub_backend.entities.enums.IngredientCategory;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
 import it.epicode.the_plant_based_hub_backend.exceptions.BadRequestException;
 import it.epicode.the_plant_based_hub_backend.exceptions.NoContentException;
+import it.epicode.the_plant_based_hub_backend.exceptions.NotFoundException;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeIngredientRequestDTO;
 import it.epicode.the_plant_based_hub_backend.payloads.entities.RecipeRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.RecipeService;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -105,7 +107,7 @@ public class RecipeController {
     }
 
     // POST http://localhost:8080/api/recipes/{id}/ingredients + bearer token
-    // saving recipe with ingredients
+    // saving ingredients in an existing recipe
 
     @PostMapping("/{id}/ingredients")
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -185,8 +187,9 @@ public class RecipeController {
             @ApiResponse(responseCode = "404", description = "Recipe not found"),
             @ApiResponse(responseCode = "500", description = "Error generating PDF")
     })
-    public ResponseEntity<byte[]> downloadRecipePDF(@Parameter(description = "ID of the recipe to be downloaded as PDF")
-                                                        @PathVariable long id) throws DocumentException, IOException {
+    public ResponseEntity<byte[]> downloadRecipePDF(
+            @Parameter(description = "ID of the recipe to be downloaded as PDF")
+            @PathVariable long id) throws DocumentException, IOException {
         Recipe recipe = recipeService.getRecipeById(id);
         ByteArrayOutputStream output;
         try {
@@ -198,6 +201,32 @@ public class RecipeController {
         headers.add("Content-Disposition", "inline; filename=recipe_" + id + ".pdf");
         headers.add("Content-Type", "application/pdf");
         return ResponseEntity.ok().headers(headers).body(output.toByteArray());
+    }
+
+    // POST sending PDF via email http://localhost:8080/api/recipes/{id}/send-pdf?email={email}
+
+    @PostMapping("/{id}/send-pdf")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Send recipe PDF via email", description = "Generate a recipe PDF and send it to the user via email",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "PDF sent successfully"),
+            @ApiResponse(responseCode = "404", description = "Recipe not found"),
+            @ApiResponse(responseCode = "500", description = "Error sending PDF")
+    })
+    public ResponseEntity<Void> sendRecipePDFViaEmail(
+            @Parameter(description = "ID of the recipe to be sent as PDF")
+            @PathVariable long id,
+            @Parameter(description = "Email address of the recipient")
+            @RequestParam String email) {
+        try {
+            recipeService.sendRecipePdf(email, id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (MessagingException | IOException | DocumentException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     // GET recipes by recipe name
