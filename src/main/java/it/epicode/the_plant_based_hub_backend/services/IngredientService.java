@@ -170,5 +170,4 @@ public class IngredientService {
     public List<Ingredient> getIngredientsByIngredientCategory(IngredientCategory ingredientCategory) {
         return ingredientRepository.findByIngredientCategory(ingredientCategory);
     }
-
 }

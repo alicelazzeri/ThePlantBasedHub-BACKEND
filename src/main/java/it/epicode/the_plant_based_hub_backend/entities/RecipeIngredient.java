@@ -3,6 +3,7 @@ package it.epicode.the_plant_based_hub_backend.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,4 +30,9 @@ public class RecipeIngredient extends BaseEntity {
     @JoinColumn(name="ingredient_id", nullable = false)
     @JsonIgnore
     private Ingredient ingredient;
+
+    @JsonProperty("ingredientName")
+    public String getIngredientName() {
+        return ingredient.getIngredientName();
+    }
 }

@@ -4,6 +4,7 @@ public record RecipeIngredientRequestDTO(
         long ingredientId,
         int quantity,
         String measurementUnit,
-        long recipeId
+        long recipeId,
+        String ingredientName
 ) {
 }

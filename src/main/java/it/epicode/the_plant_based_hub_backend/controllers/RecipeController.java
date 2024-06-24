@@ -263,13 +263,13 @@ public class RecipeController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
             @ApiResponse(responseCode = "204", description = "No recipes found")
     })
-    public ResponseEntity<List<Recipe>> getRecipesByRecipeCategory(@Parameter(description = "Category of the recipes to be retrieved") @PathVariable RecipeCategory recipeCategory) {
+    public ResponseEntity<List<Recipe>> getRecipesByRecipeCategory(
+            @Parameter(description = "Category of the recipes to be retrieved") @PathVariable String recipeCategory) {
         List<Recipe> recipes = recipeService.getRecipeByRecipeCategory(recipeCategory);
         if (recipes.isEmpty()) {
             throw new NoContentException("No recipes found in category: " + recipeCategory);
         } else {
-            ResponseEntity<List<Recipe>> responseEntity = new ResponseEntity<>(recipes, HttpStatus.OK);
-            return responseEntity;
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
         }
     }
 

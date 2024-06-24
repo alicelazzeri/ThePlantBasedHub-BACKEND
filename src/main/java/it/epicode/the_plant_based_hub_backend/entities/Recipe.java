@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name="recipes")
@@ -41,5 +42,11 @@ public class Recipe extends BaseEntity {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("recipe")
     private List<RecipeIngredient> ingredients = new ArrayList<>();
+
+    public List<String> getIngredientNames() {
+        return ingredients.stream()
+                .map(RecipeIngredient::getIngredientName)
+                .collect(Collectors.toList());
+    }
 
 }

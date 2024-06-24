@@ -52,17 +52,17 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 50, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Spinach").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Spinach").getId(), 50, "g", 0, "Spinach"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Turmeric").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Turmeric").getId(), 1, "tsp", 0, "Turmeric"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -76,15 +76,15 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0, "Oats"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0, "Bananas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -98,15 +98,15 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0, "Bananas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Granola").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Granola").getId(), 50, "g", 0, "Granola"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -120,15 +120,15 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chia seeds").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Chia seeds").getId(), 50, "g", 0, "Chia seeds"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Fresh fruits").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Fresh fruits").getId(), 100, "g", 0, "Fresh fruits"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Walnuts").getId(), 30, "g", 0),
+                                ingredientService.getIngredientByName("Walnuts").getId(), 30, "g", 0, "Walnuts"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -142,17 +142,17 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole grain bread").getId(), 2, "slices", 0),
+                                ingredientService.getIngredientByName("Whole grain bread").getId(), 2, "slices", 0, "Whole grain bread"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "unit", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "unit", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 50, "g", 0, "Cherry tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -166,17 +166,17 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 100, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 50, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tortillas").getId(), 2, "units", 0),
+                                ingredientService.getIngredientByName("Tortillas").getId(), 2, "units", 0, "Tortillas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder")
                 )
         ));
 
@@ -190,15 +190,15 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oats").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Oats").getId(), 50, "g", 0, "Oats"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chia seeds").getId(), 10, "g", 0),
+                                ingredientService.getIngredientByName("Chia seeds").getId(), 10, "g", 0, "Chia seeds"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -212,17 +212,17 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 3, "units", 0),
+                                ingredientService.getIngredientByName("Bananas").getId(), 3, "units", 0, "Bananas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 100, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tbsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Nutmeg").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Nutmeg").getId(), 1, "tsp", 0, "Nutmeg")
                 )
         ));
 
@@ -236,13 +236,13 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0, "Oats"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Hazelnuts").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Hazelnuts").getId(), 100, "g", 0, "Hazelnuts"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 2, "tbsp", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -256,21 +256,21 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole wheat flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Whole wheat flour").getId(), 200, "g", 0, "Whole wheat flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tbsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Blackberries").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Blackberries").getId(), 100, "g", 0, "Blackberries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Raspberries").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Raspberries").getId(), 100, "g", 0, "Raspberries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Strawberries").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Strawberries").getId(), 100, "g", 0, "Strawberries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -285,25 +285,25 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0, "Corn"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 100, "g", 0, "Cherry tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 10, "g", 0),
+                                ingredientService.getIngredientByName("Cilantro").getId(), 10, "g", 0, "Cilantro"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "pcs", 0, "Lime juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -317,23 +317,23 @@ public class RecipesRunner implements CommandLineRunner {
                 450,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 200, "g", 0, "Sweet potatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Broccoli").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Broccoli").getId(), 100, "g", 0, "Broccoli"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 150, "g", 0, "Chickpeas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tahini").getId(), 3, "tbsp", 0),
+                                ingredientService.getIngredientByName("Tahini").getId(), 3, "tbsp", 0, "Tahini"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -347,29 +347,29 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 100, "g", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -383,17 +383,17 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sushi rice").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Sushi rice").getId(), 200, "g", 0, "Sushi rice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Nori").getId(), 4, "sheets", 0),
+                                ingredientService.getIngredientByName("Nori").getId(), 4, "sheets", 0, "Nori"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0, "Cucumbers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Soy sauce").getId(), 2, "tbsp", 0)
+                                ingredientService.getIngredientByName("Soy sauce").getId(), 2, "tbsp", 0, "Soy sauce")
                 )
         ));
 
@@ -407,23 +407,23 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0, "Chickpeas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 50, "g", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegan mayo").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Vegan mayo").getId(), 2, "tbsp", 0, "Vegan mayo"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole grain bread").getId(), 4, "slices", 0),
+                                ingredientService.getIngredientByName("Whole grain bread").getId(), 4, "slices", 0, "Whole grain bread"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lettuce").getId(), 2, "leaves", 0),
+                                ingredientService.getIngredientByName("Lettuce").getId(), 2, "leaves", 0, "Lettuce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 1, "pcs", 0, "Tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -437,21 +437,21 @@ public class RecipesRunner implements CommandLineRunner {
                 450,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Falafel").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Falafel").getId(), 200, "g", 0, "Falafel"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tortillas").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Tortillas").getId(), 4, "pcs", 0, "Tortillas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Hummus").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Hummus").getId(), 100, "g", 0, "Hummus"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0, "Tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0, "Cucumbers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lettuce").getId(), 4, "leaves", 0),
+                                ingredientService.getIngredientByName("Lettuce").getId(), 4, "leaves", 0, "Lettuce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika")
                 )
         ));
 
@@ -465,23 +465,23 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0, "Corn"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 200, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 4, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -495,23 +495,23 @@ public class RecipesRunner implements CommandLineRunner {
                 450,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Taco seasoning").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Taco seasoning").getId(), 2, "tbsp", 0, "Taco seasoning"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Taco shells").getId(), 8, "pcs", 0),
+                                ingredientService.getIngredientByName("Taco shells").getId(), 8, "pcs", 0, "Taco shells"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0, "Tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lettuce").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Lettuce").getId(), 100, "g", 0, "Lettuce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0)
+                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0, "Lime")
                 )
         ));
 
@@ -525,21 +525,21 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0, "Kale"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cranberries").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Cranberries").getId(), 50, "g", 0, "Cranberries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0, "Almonds"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Lemon").getId(), 1, "pcs", 0, "Lemon"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tahini").getId(), 3, "tbsp", 0),
+                                ingredientService.getIngredientByName("Tahini").getId(), 3, "tbsp", 0, "Tahini"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -553,25 +553,25 @@ public class RecipesRunner implements CommandLineRunner {
                 450,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 200, "g", 0, "Sweet potatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 150, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tortillas").getId(), 8, "pcs", 0),
+                                ingredientService.getIngredientByName("Tortillas").getId(), 8, "pcs", 0, "Tortillas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Enchilada sauce").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Enchilada sauce").getId(), 200, "ml", 0, "Enchilada sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 10, "g", 0),
+                                ingredientService.getIngredientByName("Cilantro").getId(), 10, "g", 0, "Cilantro"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -586,33 +586,33 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Spaghetti").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Spaghetti").getId(), 200, "g", 0, "Spaghetti"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 100, "g", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomato paste").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Tomato paste").getId(), 2, "tbsp", 0, "Tomato paste"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0, "Oregano"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Basil").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Basil").getId(), 1, "tsp", 0, "Basil")
                 )
         ));
 
@@ -626,25 +626,25 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tortillas").getId(), 8, "pcs", 0),
+                                ingredientService.getIngredientByName("Tortillas").getId(), 8, "pcs", 0, "Tortillas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 200, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Corn").getId(), 150, "g", 0, "Corn"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 200, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0, "Lime"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -658,23 +658,23 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Broccoli").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Broccoli").getId(), 150, "g", 0, "Broccoli"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Soy sauce").getId(), 3, "tbsp", 0),
+                                ingredientService.getIngredientByName("Soy sauce").getId(), 3, "tbsp", 0, "Soy sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0, "Ginger"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sesame seeds").getId(), 1, "tbsp", 0)
+                                ingredientService.getIngredientByName("Sesame seeds").getId(), 1, "tbsp", 0, "Sesame seeds")
                 )
         ));
 
@@ -688,25 +688,25 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green peas").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Green peas").getId(), 150, "g", 0, "Green peas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomato paste").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Tomato paste").getId(), 2, "tbsp", 0, "Tomato paste"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Potatoes").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Potatoes").getId(), 500, "g", 0, "Potatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0, "Thyme"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -720,23 +720,23 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice noodles").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Rice noodles").getId(), 200, "g", 0, "Rice noodles"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green onions").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Green onions").getId(), 50, "g", 0, "Green onions"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Pad Thai sauce").getId(), 4, "tbsp", 0),
+                                ingredientService.getIngredientByName("Pad Thai sauce").getId(), 4, "tbsp", 0, "Pad Thai sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Peanuts").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Peanuts").getId(), 50, "g", 0, "Peanuts"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Lime").getId(), 1, "pcs", 0, "Lime"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0)
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro")
                 )
         ));
 
@@ -750,19 +750,19 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Portobello mushrooms").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Portobello mushrooms").getId(), 4, "pcs", 0, "Portobello mushrooms"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Spinach").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Spinach").getId(), 150, "g", 0, "Spinach"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 100, "g", 0, "Tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -776,23 +776,23 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cauliflower").getId(), 1, "head", 0),
+                                ingredientService.getIngredientByName("Cauliflower").getId(), 1, "head", 0, "Cauliflower"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0, "Chickpeas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Curry powder").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Curry powder").getId(), 2, "tbsp", 0, "Curry powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0, "Ginger"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0)
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro")
                 )
         ));
 
@@ -806,25 +806,25 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Jackfruit").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Jackfruit").getId(), 400, "g", 0, "Jackfruit"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("BBQ sauce").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("BBQ sauce").getId(), 200, "ml", 0, "BBQ sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Buns").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Buns").getId(), 4, "pcs", 0, "Buns"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coleslaw").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Coleslaw").getId(), 200, "g", 0, "Coleslaw"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -838,23 +838,23 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0, "Rice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mushrooms").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Mushrooms").getId(), 200, "g", 0, "Mushrooms"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 1, "L", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0, "Thyme"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -868,25 +868,24 @@ public class RecipesRunner implements CommandLineRunner {
                 450,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Pizza dough").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Pizza dough").getId(), 1, "pcs", 0, "Pizza dough"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomato sauce").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tomato sauce").getId(), 200, "g", 0, "Tomato sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 100, "g", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mushrooms").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Mushrooms").getId(), 100, "g", 0, "Mushrooms"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olives").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Olives").getId(), 50, "g", 0, "Olives"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegan cheese").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Vegan cheese").getId(), 100, "g", 0, "Vegan cheese"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0, "Basil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tbsp", 0)
+                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tbsp", 0, "Oregano")
                 )
         ));
 
-        // SIDE_DISHES
         recipes.add(new RecipeRequestDTO(
                 "Roasted Brussels Sprouts",
                 "Crispy and delicious roasted Brussels sprouts with a hint of garlic.",
@@ -897,17 +896,17 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Brussels sprouts").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Brussels sprouts").getId(), 400, "g", 0, "Brussels sprouts"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika")
                 )
         ));
 
@@ -921,19 +920,19 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Potatoes").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Potatoes").getId(), 500, "g", 0, "Potatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 4, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 4, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rosemary").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Rosemary").getId(), 1, "tsp", 0, "Rosemary")
                 )
         ));
 
@@ -947,15 +946,15 @@ public class RecipesRunner implements CommandLineRunner {
                 100,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Asparagus").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Asparagus").getId(), 400, "g", 0, "Asparagus"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon").getId(), 1, "pcs", 0)
+                                ingredientService.getIngredientByName("Lemon").getId(), 1, "pcs", 0, "Lemon")
                 )
         ));
 
@@ -969,15 +968,15 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 500, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Balsamic vinegar").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Balsamic vinegar").getId(), 2, "tbsp", 0, "Balsamic vinegar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0, "Thyme")
                 )
         ));
 
@@ -991,29 +990,29 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mushrooms").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Mushrooms").getId(), 400, "g", 0, "Mushrooms"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Breadcrumbs").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Breadcrumbs").getId(), 100, "g", 0, "Breadcrumbs"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Parsley").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Parsley").getId(), 2, "tbsp", 0, "Parsley"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Fenugreek").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Fenugreek").getId(), 2, "tbsp", 0, "Fenugreek"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mint").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Mint").getId(), 2, "tbsp", 0, "Mint"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Parsley").getId(), 1, "tbsp", 0)
+                                ingredientService.getIngredientByName("Parsley").getId(), 1, "tbsp", 0, "Parsley")
                 )
         ));
 
@@ -1027,21 +1026,21 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cabbage").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Cabbage").getId(), 300, "g", 0, "Cabbage"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 100, "g", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegan mayo").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Vegan mayo").getId(), 100, "g", 0, "Vegan mayo"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Apple cider vinegar").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Apple cider vinegar").getId(), 2, "tbsp", 0, "Apple cider vinegar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 1, "tbsp", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dill").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Dill").getId(), 1, "tsp", 0, "Dill")
                 )
         ));
 
@@ -1055,17 +1054,17 @@ public class RecipesRunner implements CommandLineRunner {
                 100,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green beans").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Green beans").getId(), 400, "g", 0, "Green beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0, "Chili flakes")
                 )
         ));
 
@@ -1079,15 +1078,15 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Sweet potatoes").getId(), 500, "g", 0, "Sweet potatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -1101,27 +1100,27 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Cucumbers").getId(), 100, "g", 0, "Cucumbers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Cherry tomatoes").getId(), 100, "g", 0, "Cherry tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Red onion").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Red onion").getId(), 50, "g", 0, "Red onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Parsley").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Parsley").getId(), 2, "tbsp", 0, "Parsley"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mint").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Mint").getId(), 2, "tbsp", 0, "Mint"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -1135,21 +1134,22 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cauliflower").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Cauliflower").getId(), 500, "g", 0, "Cauliflower"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
-        // ONE_POT_MEALS
+       // ONE_POT_MEALS
+
         recipes.add(new RecipeRequestDTO(
                 "Vegan Lentil Stew",
                 "A hearty and nutritious lentil stew with vegetables.",
@@ -1160,25 +1160,25 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 2, "pcs", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bay leaves").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Bay leaves").getId(), 1, "pcs", 0, "Bay leaves"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Thyme").getId(), 1, "tsp", 0, "Thyme")
                 )
         ));
 
@@ -1192,25 +1192,25 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0, "Chickpeas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Curry powder").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Curry powder").getId(), 2, "tbsp", 0, "Curry powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
                 )
         ));
 
@@ -1224,25 +1224,25 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 200, "g", 0, "Whole wheat pasta"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Mushrooms").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Mushrooms").getId(), 300, "g", 0, "Mushrooms"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 200, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Soy sauce").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Soy sauce").getId(), 1, "tbsp", 0, "Soy sauce"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika")
                 )
         ));
 
@@ -1256,33 +1256,33 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Eggplant").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Eggplant").getId(), 1, "pcs", 0, "Eggplant"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Zucchini").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Zucchini").getId(), 2, "pcs", 0, "Zucchini"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bay leaves").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Bay leaves").getId(), 2, "pcs", 0, "Bay leaves"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rosemary").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Rosemary").getId(), 2, "tsp", 0, "Rosemary"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Thyme").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Thyme").getId(), 2, "tsp", 0, "Thyme"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sage").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Sage").getId(), 2, "tsp", 0, "Sage"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Marjoram").getId(), 2, "tsp", 0)
+                                ingredientService.getIngredientByName("Marjoram").getId(), 2, "tsp", 0, "Marjoram")
                 )
         ));
 
@@ -1296,27 +1296,27 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 400, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Chili powder").getId(), 2, "tsp", 0, "Chili powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper")
                 )
         ));
 
@@ -1330,23 +1330,23 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green curry paste").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Green curry paste").getId(), 2, "tbsp", 0, "Green curry paste"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green beans").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Green beans").getId(), 100, "g", 0, "Green beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Zucchini").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Zucchini").getId(), 1, "pcs", 0, "Zucchini"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemongrass").getId(), 1, "tbsp", 0)
+                                ingredientService.getIngredientByName("Lemongrass").getId(), 1, "tbsp", 0, "Lemongrass")
                 )
         ));
 
@@ -1360,29 +1360,29 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 3, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 2, "pcs", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cannellini beans").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Cannellini beans").getId(), 400, "g", 0, "Cannellini beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 100, "g", 0, "Whole wheat pasta"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0, "Basil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0, "Oregano")
                 )
         ));
 
@@ -1396,27 +1396,27 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Celery").getId(), 2, "pcs", 0, "Celery"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0, "Rice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black beans").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Black beans").getId(), 400, "g", 0, "Black beans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0, "Chili flakes")
                 )
         ));
 
@@ -1428,25 +1428,27 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 300,
+
+
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Whole wheat pasta").getId(), 200, "g", 0, "Whole wheat pasta"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Diced tomatoes").getId(), 400, "g", 0, "Diced tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0),
+                                ingredientService.getIngredientByName("Vegetable broth").getId(), 500, "ml", 0, "Vegetable broth"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Spinach").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Spinach").getId(), 100, "g", 0, "Spinach"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Basil").getId(), 1, "tbsp", 0, "Basil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Oregano").getId(), 1, "tsp", 0, "Oregano")
                 )
         ));
 
@@ -1460,25 +1462,26 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0, "Rice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Bell peppers").getId(), 2, "pcs", 0, "Bell peppers"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Green peas").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Green peas").getId(), 100, "g", 0, "Green peas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Turmeric").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Turmeric").getId(), 1, "tsp", 0, "Turmeric"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Ginger").getId(), 1, "tsp", 0, "Ginger")
                 )
         ));
 
         // SNACKS
+
         recipes.add(new RecipeRequestDTO(
                 "Vegan Energy Balls",
                 "Delicious and nutritious energy balls made with almonds and dates.",
@@ -1489,13 +1492,13 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almonds").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Almonds").getId(), 100, "g", 0, "Almonds"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cocoa powder").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Cocoa powder").getId(), 2, "tbsp", 0, "Cocoa powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -1509,19 +1512,19 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 400, "g", 0, "Chickpeas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tahini").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Tahini").getId(), 2, "tbsp", 0, "Tahini"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0),
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
                 )
         ));
 
@@ -1535,13 +1538,13 @@ public class RecipesRunner implements CommandLineRunner {
                 100,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0, "Kale"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic powder").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Garlic powder").getId(), 1, "tsp", 0, "Garlic powder")
                 )
         ));
 
@@ -1555,21 +1558,21 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 2, "pcs", 0, "Tomatoes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "tbsp", 0, "Lime juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder")
                 )
         ));
 
@@ -1583,13 +1586,13 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond butter").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Almond butter").getId(), 100, "g", 0, "Almond butter"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0, "Almonds"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -1603,13 +1606,13 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0, "Bananas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chia seeds").getId(), 1, "tbsp", 0)
+                                ingredientService.getIngredientByName("Chia seeds").getId(), 1, "tbsp", 0, "Chia seeds")
                 )
         ));
 
@@ -1623,15 +1626,15 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice cakes").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Rice cakes").getId(), 4, "pcs", 0, "Rice cakes"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0),
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0, "Chili flakes")
                 )
         ));
 
@@ -1645,13 +1648,13 @@ public class RecipesRunner implements CommandLineRunner {
                 100,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 4, "pcs", 0),
+                                ingredientService.getIngredientByName("Carrots").getId(), 4, "pcs", 0, "Carrots"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Hummus").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Hummus").getId(), 200, "g", 0, "Hummus"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
                 )
         ));
 
@@ -1665,11 +1668,11 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Apples").getId(), 2, "pcs", 0),
+                                ingredientService.getIngredientByName("Apples").getId(), 2, "pcs", 0, "Apples"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Peanut butter").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Peanut butter").getId(), 100, "g", 0, "Peanut butter"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -1683,15 +1686,229 @@ public class RecipesRunner implements CommandLineRunner {
                 100,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Popcorn kernels").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Popcorn kernels").getId(), 100, "g", 0, "Popcorn kernels"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Nutritional yeast").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Nutritional yeast").getId(), 2, "tbsp", 0, "Nutritional yeast"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt")
                 )
         ));
 
         // DESSERTS
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Energy Balls",
+                "Delicious and nutritious energy balls made with almonds and dates.",
+                RecipeCategory.SNACKS,
+                "1. Blend dates, almonds, and cocoa powder in a food processor until smooth.\n2. Roll the mixture into small balls and refrigerate for 1 hour before serving.",
+                10,
+                4,
+                200,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Almonds").getId(), 100, "g", 0, "Almonds"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cocoa powder").getId(), 2, "tbsp", 0, "Cocoa powder"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Hummus",
+                "A creamy and delicious homemade hummus.",
+                RecipeCategory.SNACKS,
+                "1. Blend chickpeas, tahini, lemon juice, garlic, and olive oil in a food processor until smooth.\n2. Serve with fresh vegetables or pita bread.",
+                10,
+                4,
+                150,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Chickpeas").getId(), 400, "g", 0, "Chickpeas"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Tahini").getId(), 2, "tbsp", 0, "Tahini"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0, "Lemon juice"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Kale Chips",
+                "Crispy and healthy kale chips.",
+                RecipeCategory.SNACKS,
+                "1. Tear kale leaves into bite-sized pieces and toss with olive oil and salt.\n2. Bake at 180°C for 10-15 minutes until crispy.",
+                20,
+                4,
+                100,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0, "Kale"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Garlic powder").getId(), 1, "tsp", 0, "Garlic powder")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Guacamole",
+                "A fresh and flavorful guacamole dip.",
+                RecipeCategory.SNACKS,
+                "1. Mash avocados with a fork.\n2. Add diced onion, tomatoes, cilantro, lime juice, salt, and pepper. Mix well.\n3. Serve with tortilla chips or fresh vegetables.",
+                10,
+                4,
+                150,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0, "Avocado"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Tomatoes").getId(), 2, "pcs", 0, "Tomatoes"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "tbsp", 0, "Lime juice"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Stuffed Dates",
+                "Sweet and satisfying stuffed dates with almond butter and almonds.",
+                RecipeCategory.SNACKS,
+                "1. Slice dates open and remove pits.\n2. Fill each date with almond butter and top with a whole almond.\n3. Serve immediately.",
+                5,
+                4,
+                200,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Almond butter").getId(), 100, "g", 0, "Almond butter"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0, "Almonds"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Fruit Smoothie",
+                "A refreshing and healthy fruit smoothie.",
+                RecipeCategory.SNACKS,
+                "1. Blend frozen berries, banana, and almond milk until smooth.\n2. Pour into glasses and serve immediately.",
+                5,
+                2,
+                150,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0, "Bananas"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Chia seeds").getId(), 1, "tbsp", 0, "Chia seeds")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Rice Cakes with Avocado",
+                "Simple and delicious rice cakes topped with avocado and spices.",
+                RecipeCategory.SNACKS,
+                "1. Slice avocado and place on rice cakes.\n2. Sprinkle with salt, pepper, and red pepper flakes.\n3. Serve immediately.",
+                5,
+                2,
+                150,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Rice cakes").getId(), 4, "pcs", 0, "Rice cakes"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0, "Chili flakes")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Carrot Sticks with Hummus",
+                "Crunchy carrot sticks served with homemade hummus.",
+                RecipeCategory.SNACKS,
+                "1. Slice carrots into sticks.\n2. Serve with homemade hummus.",
+                5,
+                2,
+                100,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Carrots").getId(), 4, "pcs", 0, "Carrots"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Hummus").getId(), 200, "g", 0, "Hummus"),
+
+
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Apple Slices with Peanut Butter",
+                "Fresh apple slices served with creamy peanut butter.",
+                RecipeCategory.SNACKS,
+                "1. Slice apples and serve with peanut butter.",
+                5,
+                2,
+                150,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Apples").getId(), 2, "pcs", 0, "Apples"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Peanut butter").getId(), 100, "g", 0, "Peanut butter"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
+                )
+        ));
+
+        recipes.add(new RecipeRequestDTO(
+                "Vegan Popcorn",
+                "A classic snack of air-popped popcorn with nutritional yeast.",
+                RecipeCategory.SNACKS,
+                "1. Air-pop the popcorn kernels.\n2. Sprinkle with nutritional yeast and salt.\n3. Serve immediately.",
+                5,
+                4,
+                100,
+                Arrays.asList(
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Popcorn kernels").getId(), 100, "g", 0, "Popcorn kernels"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Nutritional yeast").getId(), 2, "tbsp", 0, "Nutritional yeast"),
+                        new RecipeIngredientRequestDTO(
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt")
+                )
+        ));
+
         recipes.add(new RecipeRequestDTO(
                 "Vegan Chocolate Cake",
                 "A rich and moist vegan chocolate cake perfect for any occasion.",
@@ -1702,21 +1919,21 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cocoa powder").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Cocoa powder").getId(), 50, "g", 0, "Cocoa powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 240, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0),
+                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0, "Sunflower oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Apple cider vinegar").getId(), 1, "tbsp", 0),
+                                ingredientService.getIngredientByName("Apple cider vinegar").getId(), 1, "tbsp", 0, "Apple cider vinegar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract")
                 )
         ));
 
@@ -1730,23 +1947,23 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Bananas").getId(), 300, "g", 0, "Bananas"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0),
+                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0, "Sunflower oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
                 )
         ));
 
@@ -1760,21 +1977,21 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 60, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 60, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0),
+                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0, "Sunflower oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chocolate chips").getId(), 100, "g", 0)
+                                ingredientService.getIngredientByName("Chocolate chips").getId(), 100, "g", 0, "Chocolate chips")
                 )
         ));
 
@@ -1788,23 +2005,23 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Apples").getId(), 6, "pcs", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 2, "tsp", 0),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0)
-                )
-        ));
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
+        new RecipeIngredientRequestDTO(
+                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0, "Sugar"),
+                new RecipeIngredientRequestDTO(
+                        ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0, "Vegetable shortening"),
+                new RecipeIngredientRequestDTO(
+                        ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0, "Water"),
+                new RecipeIngredientRequestDTO(
+                        ingredientService.getIngredientByName("Apples").getId(), 6, "pcs", 0, "Apples"),
+                new RecipeIngredientRequestDTO(
+                        ingredientService.getIngredientByName("Cinnamon").getId(), 2, "tsp", 0, "Cinnamon"),
+                new RecipeIngredientRequestDTO(
+                        ingredientService.getIngredientByName("Lemon juice").getId(), 1, "tbsp", 0, "Lemon juice")
+        )
+));
 
         recipes.add(new RecipeRequestDTO(
                 "Vegan Brownies",
@@ -1816,23 +2033,23 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cocoa powder").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Cocoa powder").getId(), 50, "g", 0, "Cocoa powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0, "Baking powder"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Almond milk").getId(), 240, "ml", 0, "Almond milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0),
+                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0, "Sunflower oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chocolate chips").getId(), 100, "g", 0)
+                                ingredientService.getIngredientByName("Chocolate chips").getId(), 100, "g", 0, "Chocolate chips")
                 )
         ));
 
@@ -1846,21 +2063,21 @@ public class RecipesRunner implements CommandLineRunner {
                 250,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Powdered sugar").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Powdered sugar").getId(), 50, "g", 0, "Powdered sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 100, "g", 0, "Vegetable shortening"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 120, "ml", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 120, "ml", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon zest").getId(), 2, "tsp", 0),
+                                ingredientService.getIngredientByName("Lemon zest").getId(), 2, "tsp", 0, "Lemon zest"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 200, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cornstarch").getId(), 2, "tbsp", 0)
+                                ingredientService.getIngredientByName("Cornstarch").getId(), 2, "tbsp", 0, "Cornstarch")
                 )
         ));
 
@@ -1874,23 +2091,23 @@ public class RecipesRunner implements CommandLineRunner {
                 300,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0, "Vegetable shortening"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0),
+                                ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0, "Water"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Pumpkin puree").getId(), 425, "g", 0),
+                                ingredientService.getIngredientByName("Pumpkin puree").getId(), 425, "g", 0, "Pumpkin puree"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Pumpkin spice mix").getId(), 2, "tsp", 0)
+                                ingredientService.getIngredientByName("Pumpkin spice mix").getId(), 2, "tsp", 0, "Pumpkin spice mix")
                 )
         ));
 
@@ -1904,19 +2121,19 @@ public class RecipesRunner implements CommandLineRunner {
                 350,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegan digestive biscuits").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Vegan digestive biscuits").getId(), 200, "g", 0, "Vegan digestive biscuits"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut oil").getId(), 80, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut oil").getId(), 80, "ml", 0, "Coconut oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegan cheese").getId(), 600, "g", 0),
+                                ingredientService.getIngredientByName("Vegan cheese").getId(), 600, "g", 0, "Vegan cheese"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0),
+                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0, "Lemon juice"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract")
                 )
         ));
 
@@ -1930,25 +2147,25 @@ public class RecipesRunner implements CommandLineRunner {
                 400,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0),
+                                ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0),
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0),
+                                ingredientService.getIngredientByName("Sugar").getId(), 50, "g", 0, "Sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0),
+                                ingredientService.getIngredientByName("Vegetable shortening").getId(), 150, "g", 0, "Vegetable shortening"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0),
+                                ingredientService.getIngredientByName("Water").getId(), 60, "ml", 0, "Water"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Pecans").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Pecans").getId(), 200, "g", 0, "Pecans"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Maple syrup").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 240, "ml", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Coconut milk").getId(), 240, "ml", 0, "Coconut milk"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Brown sugar").getId(), 100, "g", 0),
+                                ingredientService.getIngredientByName("Brown sugar").getId(), 100, "g", 0, "Brown sugar"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract")
                 )
         ));
 
@@ -1962,11 +2179,11 @@ public class RecipesRunner implements CommandLineRunner {
                 200,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dark chocolate").getId(), 200, "g", 0),
+                                ingredientService.getIngredientByName("Dark chocolate").getId(), 200, "g", 0, "Dark chocolate"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Silken tofu").getId(), 400, "g", 0),
+                                ingredientService.getIngredientByName("Silken tofu").getId(), 400, "g", 0, "Silken tofu"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0)
+                                ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract")
                 )
         ));
 
@@ -1980,11 +2197,11 @@ public class RecipesRunner implements CommandLineRunner {
                 150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Raspberries").getId(), 500, "g", 0),
+                                ingredientService.getIngredientByName("Raspberries").getId(), 500, "g", 0, "Raspberries"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Water").getId(), 240, "ml", 0),
+                                ingredientService.getIngredientByName("Water").getId(), 240, "ml", 0, "Water"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0)
+                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0, "Sugar")
                 )
         ));
 
@@ -1997,7 +2214,9 @@ public class RecipesRunner implements CommandLineRunner {
                                 ingredient.ingredientId(),
                                 ingredient.quantity(),
                                 ingredient.measurementUnit(),
-                                savedRecipe.getId()
+                                savedRecipe.getId(),
+                                ingredient.ingredientName()
+
                         ))
                         .collect(Collectors.toList());
 
@@ -2009,6 +2228,7 @@ public class RecipesRunner implements CommandLineRunner {
         }
         System.out.println("Recipes populated on DB successfully.");
     }
+
     private Ingredient findIngredientByPartialName(String partialName) {
         List<Ingredient> ingredients = ingredientService.getIngredientsByNameContaining(partialName);
         if (ingredients.isEmpty()) {

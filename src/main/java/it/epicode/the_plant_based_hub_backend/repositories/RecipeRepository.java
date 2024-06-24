@@ -13,6 +13,6 @@ import java.util.List;
 public interface RecipeRepository extends JpaRepository<Recipe, Long>, PagingAndSortingRepository<Recipe, Long> {
     List<Recipe> findByRecipeNameContainingIgnoreCase(String recipeName);
     List<Recipe> findByRecipeCategory(RecipeCategory recipeCategory);
-    List<Recipe> findByIngredientsIngredientIngredientName(String ingredientName);
+    List<Recipe> findByIngredientsIngredientIngredientNameContainingIgnoreCase(String ingredientName);
     List<Recipe> findByIngredientsIngredientIngredientCategory(IngredientCategory ingredientCategory);
 }

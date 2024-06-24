@@ -305,15 +305,21 @@ public class RecipeService {
     // GET recipe by recipe category
 
     @Transactional(readOnly = true)
-    public List<Recipe> getRecipeByRecipeCategory(RecipeCategory recipeCategory) {
-        return recipeRepository.findByRecipeCategory(recipeCategory);
+    public List<Recipe> getRecipeByRecipeCategory(String recipeCategory) {
+        RecipeCategory category;
+        try {
+            category = RecipeCategory.valueOf(recipeCategory.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new NotFoundException("Recipe category " + recipeCategory + " not found");
+        }
+        return recipeRepository.findByRecipeCategory(category);
     }
 
     // GET recipe by ingredient name
 
     @Transactional(readOnly = true)
     public List<Recipe> getRecipeByIngredientName(String ingredientName) {
-        return recipeRepository.findByIngredientsIngredientIngredientName(ingredientName);
+        return recipeRepository.findByIngredientsIngredientIngredientNameContainingIgnoreCase(ingredientName);
     }
 
     // GET recipe by ingredient category
