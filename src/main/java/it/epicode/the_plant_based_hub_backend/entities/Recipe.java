@@ -1,5 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import it.epicode.the_plant_based_hub_backend.entities.enums.RecipeCategory;
@@ -18,7 +19,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
 public class Recipe extends BaseEntity {
 
@@ -39,7 +39,7 @@ public class Recipe extends BaseEntity {
     private int caloriesPerServing;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonIgnoreProperties("recipe")
     private List<RecipeIngredient> ingredients = new ArrayList<>();
 
 }

@@ -1,6 +1,7 @@
 package it.epicode.the_plant_based_hub_backend.runners;
 
 import com.github.javafaker.Faker;
+import it.epicode.the_plant_based_hub_backend.entities.User;
 import it.epicode.the_plant_based_hub_backend.entities.enums.Role;
 import it.epicode.the_plant_based_hub_backend.payloads.auth.UserRegisterRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.UserService;

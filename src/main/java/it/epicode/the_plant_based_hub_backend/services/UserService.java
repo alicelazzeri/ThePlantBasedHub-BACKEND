@@ -163,6 +163,7 @@ public class UserService {
         user.setPassword(bcrypt.encode(userPayload.password()));
         sendRegistrationEmail(userPayload.email(), userPayload.firstName());
         userRepository.save(user);
+        System.out.println("--------------password saved ------------------------");
 
         return user;
     }
@@ -183,6 +184,8 @@ public class UserService {
             if (userPayload.role() != null) {
                 user.setRole(userPayload.role());
             }
+            System.out.println("------------ Password was updated -------------------");
+            System.out.println(user.getPassword());
 
             return userRepository.save(user);
         } else {
