@@ -154,6 +154,8 @@ public class IngredientsRunner implements CommandLineRunner {
                 new Ingredient("Sesame seeds", IngredientCategory.NUTS_SEEDS, 343, "100g", 17.0, 25.6, 49.7, 11.8, 0.3, "Vitamin B1", "Calcium, Magnesium"),
                 new Ingredient("Peanut butter", IngredientCategory.NUTS_SEEDS, 343, "100g", 25.8, 16.1, 49.2, 8.5, 4.2, "Vitamin E", "Magnesium"),
                 new Ingredient("Almond butter", IngredientCategory.NUTS_SEEDS, 614, "100g", 21.1, 19.6, 55.5, 10.9, 3.9, "Vitamin E, Vitamin B2", "Magnesium"),
+                new Ingredient("Shredded coconut", IngredientCategory.NUTS_SEEDS, 660, "100g", 6.9, 23.6, 64.5, 16.3, 5.2, "Vitamin E, Vitamin B5", "Iron, Magnesium, Zinc"),
+                new Ingredient("Almond flour", IngredientCategory.NUTS_SEEDS, 660, "100g", 6.9, 23.6, 64.5, 16.3, 5.2, "Vitamin E, Vitamin B5", "Iron, Magnesium, Zinc"),
 
                 // Grain Products
                 new Ingredient("Whole wheat pasta", IngredientCategory.GRAIN_PRODUCTS, 124, "100g", 5.7, 28.5, 0.9, 3.7, 1.4, "Vitamin B3, Folate", "Iron, Magnesium"),

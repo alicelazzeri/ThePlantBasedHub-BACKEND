@@ -1938,32 +1938,32 @@ public class RecipesRunner implements CommandLineRunner {
         ));
 
         recipes.add(new RecipeRequestDTO(
-                "Vegan Banana Bread",
-                "A moist and delicious vegan banana bread perfect for breakfast or a snack.",
+                "Vegan Coconut Macaroons",
+                "Delicious vegan coconut macaroons that are crispy on the outside and chewy on the inside.",
                 RecipeCategory.DESSERTS,
-                "1. Preheat oven to 175°C (350°F).\n2. In a bowl, mash the ripe bananas until smooth.\n3. Add almond milk, vegetable oil, vanilla extract, and sugars. Mix well.\n4. In another bowl, mix flour, baking powder, and salt.\n5. Combine the wet and dry ingredients and mix until smooth.\n6. Pour the batter into a greased loaf pan and bake for 50-60 minutes.\n7. Let cool before serving.",
-                70,
+                "1. Preheat the oven to 175°C (350°F) and line a baking sheet with parchment paper.\n" +
+                        "2. In a bowl, mix shredded coconut, almond flour, and salt.\n" +
+                        "3. In another bowl, whisk together maple syrup, vanilla extract, and melted coconut oil.\n" +
+                        "4. Combine the wet and dry ingredients and mix until well combined.\n" +
+                        "5. Scoop small amounts of the mixture onto the prepared baking sheet.\n" +
+                        "6. Bake for 15-20 minutes, or until golden brown.\n" +
+                        "7. Let cool before serving.",
+                35,
                 8,
-                250,
+                150,
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 300, "g", 0, "Bananas"),
+                                ingredientService.getIngredientByName("Shredded coconut").getId(), 200, "g", 0, "Shredded coconut"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 100, "ml", 0, "Almond milk"),
+                                ingredientService.getIngredientByName("Almond flour").getId(), 100, "g", 0, "Almond flour"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sunflower oil").getId(), 80, "ml", 0, "Sunflower oil"),
+                                ingredientService.getIngredientByName("Maple syrup").getId(), 120, "ml", 0, "Maple syrup"),
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Vanilla extract").getId(), 1, "tsp", 0, "Vanilla extract"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Sugar").getId(), 150, "g", 0, "Sugar"),
+                                ingredientService.getIngredientByName("Coconut oil").getId(), 60, "ml", 0, "Coconut oil"),
                         new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Baking powder").getId(), 1, "tsp", 0, "Baking powder"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
+                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt")
                 )
         ));
 
