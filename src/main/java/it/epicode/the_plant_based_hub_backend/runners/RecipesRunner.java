@@ -50,6 +50,7 @@ public class RecipesRunner implements CommandLineRunner {
                 15,
                 2,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763218/img/breakfast/akh2m5loetxestbanfyb.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
@@ -74,6 +75,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 250,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763214/img/breakfast/bedikrwyukaurokq5ixy.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0, "Oats"),
@@ -96,7 +98,7 @@ public class RecipesRunner implements CommandLineRunner {
                 10,
                 1,
                 300,
-                Arrays.asList(
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763218/img/breakfast/cwzrbtkh8akms5a1haqf.jpg",                Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
                         new RecipeIngredientRequestDTO(
@@ -118,6 +120,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 2,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763224/img/breakfast/oclz8joqqpzzbht0bnkn.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Chia seeds").getId(), 50, "g", 0, "Chia seeds"),
@@ -140,6 +143,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 1,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763232/img/breakfast/uetzkhoifufwyshhzgsp.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Whole grain bread").getId(), 2, "slices", 0, "Whole grain bread"),
@@ -164,6 +168,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 2,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763226/img/breakfast/asmkq63onpib8iwxtp0u.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
@@ -188,6 +193,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 1,
                 250,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763224/img/breakfast/ffyblz8ctj6gdiijm0co.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Oats").getId(), 50, "g", 0, "Oats"),
@@ -210,6 +216,7 @@ public class RecipesRunner implements CommandLineRunner {
                 60,
                 8,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763217/img/breakfast/ny1payvbvzx2fdnav0wn.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Bananas").getId(), 3, "units", 0, "Bananas"),
@@ -234,6 +241,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 10,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763235/img/breakfast/fbycf6pol7hga6heo02i.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Oats").getId(), 200, "g", 0, "Oats"),
@@ -254,6 +262,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 6,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763230/img/breakfast/sxlwv384pdwbtbmeedx8.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Whole wheat flour").getId(), 200, "g", 0, "Whole wheat flour"),
@@ -283,6 +292,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763184/img/lunch/zstu6rae0le2tqcslodk.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
@@ -315,6 +325,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 450,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763194/img/lunch/pbghynqsttzx72e8dub0.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
@@ -345,6 +356,7 @@ public class RecipesRunner implements CommandLineRunner {
                 45,
                 6,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763191/img/lunch/jdlnwckralsuxemt4wsx.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
@@ -381,6 +393,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763186/img/lunch/levellkeqlw4n6s75p1i.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Sushi rice").getId(), 200, "g", 0, "Sushi rice"),
@@ -405,6 +418,7 @@ public class RecipesRunner implements CommandLineRunner {
                 15,
                 2,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763178/img/lunch/oueatrdega4casibbz5s.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0, "Chickpeas"),
@@ -435,6 +449,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 450,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763181/img/lunch/nbwlfiokkeomklfjivco.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Falafel").getId(), 200, "g", 0, "Falafel"),
@@ -463,6 +478,7 @@ public class RecipesRunner implements CommandLineRunner {
                 50,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763193/img/lunch/z5y4kjjknb25yhahnyug.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
@@ -493,6 +509,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 450,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763179/img/lunch/eysj3ct5060czkucuwou.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
@@ -523,6 +540,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763185/img/lunch/vfeajnna16ac4v50h3e3.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
@@ -551,6 +569,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 450,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763182/img/lunch/vtkk4vy4iaakdtcdmb0e.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Sweet potatoes").getId(), 200, "g", 0, "Sweet potatoes"),
@@ -584,6 +603,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763207/img/dinner/fde2hkegxt9uq8qpmzey.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Spaghetti").getId(), 200, "g", 0, "Spaghetti"),
@@ -624,6 +644,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763198/img/dinner/fx3wbfkbrlo2istkxoo8.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Tortillas").getId(), 8, "pcs", 0, "Tortillas"),
@@ -656,6 +677,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763193/img/dinner/xcdfdg6rcxhi9xai8qt4.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Tofu").getId(), 200, "g", 0, "Tofu"),
@@ -686,6 +708,7 @@ public class RecipesRunner implements CommandLineRunner {
                 50,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763193/img/dinner/jtbu6crgnbau7rupei1i.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
@@ -718,6 +741,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763195/img/dinner/pwg5vdafmytiogdl6sb8.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Rice noodles").getId(), 200, "g", 0, "Rice noodles"),
@@ -748,6 +772,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763194/img/dinner/fe0zpxuvoffvnm9lrhtb.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Portobello mushrooms").getId(), 4, "pcs", 0, "Portobello mushrooms"),
@@ -774,6 +799,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763194/img/dinner/azwmbx0fgu1hbgedsqpb.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Cauliflower").getId(), 1, "head", 0, "Cauliflower"),
@@ -804,6 +830,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763193/img/dinner/hwe6vsfjqa5naet51sly.png",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Jackfruit").getId(), 400, "g", 0, "Jackfruit"),
@@ -836,6 +863,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763192/img/dinner/zyy47nk5fptomfgjwvqr.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Rice").getId(), 200, "g", 0, "Rice"),
@@ -866,6 +894,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 450,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763199/img/dinner/cuufzf0eklmolu1j6hym.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Pizza dough").getId(), 1, "pcs", 0, "Pizza dough"),
@@ -886,6 +915,8 @@ public class RecipesRunner implements CommandLineRunner {
                 )
         ));
 
+
+        // SIDE_DISHES
         recipes.add(new RecipeRequestDTO(
                 "Roasted Brussels Sprouts",
                 "Crispy and delicious roasted Brussels sprouts with a hint of garlic.",
@@ -894,6 +925,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763207/img/side-dishes/wraue2n1r8kfyzcaav1z.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Brussels sprouts").getId(), 400, "g", 0, "Brussels sprouts"),
@@ -918,6 +950,7 @@ public class RecipesRunner implements CommandLineRunner {
                 25,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763209/img/side-dishes/dohj4aupirvawhiwwwvm.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Potatoes").getId(), 500, "g", 0, "Potatoes"),
@@ -944,6 +977,7 @@ public class RecipesRunner implements CommandLineRunner {
                 15,
                 4,
                 100,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763207/img/side-dishes/qfgtw7kknpc9ikpsyngy.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Asparagus").getId(), 400, "g", 0, "Asparagus"),
@@ -966,6 +1000,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763209/img/side-dishes/vuvmaqgp75a7xdvtyksj.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Carrots").getId(), 500, "g", 0, "Carrots"),
@@ -988,6 +1023,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763208/img/side-dishes/i1nh0qleueap5mcglt38.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Mushrooms").getId(), 400, "g", 0, "Mushrooms"),
@@ -1024,6 +1060,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763207/img/side-dishes/h6tmll0tpp4qjst05i7w.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Cabbage").getId(), 300, "g", 0, "Cabbage"),
@@ -1052,6 +1089,7 @@ public class RecipesRunner implements CommandLineRunner {
                 15,
                 4,
                 100,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763208/img/side-dishes/wl9fjtmumgs5toofsvcr.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Green beans").getId(), 400, "g", 0, "Green beans"),
@@ -1076,6 +1114,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763209/img/side-dishes/pk0vbrrrxtguevbqykl2.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Sweet potatoes").getId(), 500, "g", 0, "Sweet potatoes"),
@@ -1098,6 +1137,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763206/img/side-dishes/pko13aawifjxmrxtu4qz.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Quinoa").getId(), 200, "g", 0, "Quinoa"),
@@ -1132,6 +1172,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763208/img/side-dishes/h9xwtiwfs50wmzxtxlak.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Cauliflower").getId(), 500, "g", 0, "Cauliflower"),
@@ -1158,6 +1199,7 @@ public class RecipesRunner implements CommandLineRunner {
                 45,
                 4,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763178/img/one-pot-meals/afynmzqynmt44ur3tq6r.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Lentils").getId(), 200, "g", 0, "Lentils"),
@@ -1190,6 +1232,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763179/img/one-pot-meals/poryqgllkdld5dweaffp.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Chickpeas").getId(), 200, "g", 0, "Chickpeas"),
@@ -1222,6 +1265,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763178/img/one-pot-meals/comznoefnkvtfsfxf1no.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Whole wheat pasta").getId(), 200, "g", 0, "Whole wheat pasta"),
@@ -1254,6 +1298,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 250,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763178/img/one-pot-meals/ddobk6jesqdnpvcvkisi.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
@@ -1294,6 +1339,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763177/img/one-pot-meals/giihgg78vstokbecxqzt.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
@@ -1328,6 +1374,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763178/img/one-pot-meals/jhl6dhhejy0semyqzeit.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
@@ -1358,6 +1405,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 4,
                 250,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763180/img/one-pot-meals/iljxfjeceynjhtv2rw5g.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
@@ -1394,6 +1442,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 4,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763180/img/one-pot-meals/uoiafcl9attpdv6ks229.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
@@ -1428,8 +1477,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 300,
-
-
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719776801/img/one-pot-meals/uawxn1yfba8ashtyyhc0.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Whole wheat pasta").getId(), 200, "g", 0, "Whole wheat pasta"),
@@ -1460,6 +1508,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 4,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763179/img/one-pot-meals/f3kq6j8bjb6b5mqsas84.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Coconut milk").getId(), 400, "ml", 0, "Coconut milk"),
@@ -1481,7 +1530,6 @@ public class RecipesRunner implements CommandLineRunner {
         ));
 
         // SNACKS
-
         recipes.add(new RecipeRequestDTO(
                 "Vegan Energy Balls",
                 "Delicious and nutritious energy balls made with almonds and dates.",
@@ -1490,6 +1538,7 @@ public class RecipesRunner implements CommandLineRunner {
                 10,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763209/img/snacks/idg2vn8lxlxturjd0lls.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
@@ -1510,6 +1559,7 @@ public class RecipesRunner implements CommandLineRunner {
                 10,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763216/img/snacks/oq9ovn0hti83w56inz9t.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Chickpeas").getId(), 400, "g", 0, "Chickpeas"),
@@ -1536,6 +1586,7 @@ public class RecipesRunner implements CommandLineRunner {
                 20,
                 4,
                 100,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763211/img/snacks/vrxgda9haazqyer4hkbi.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0, "Kale"),
@@ -1556,6 +1607,7 @@ public class RecipesRunner implements CommandLineRunner {
                 10,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763217/img/snacks/boixwjnaidhdjmbj1pkl.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0, "Avocado"),
@@ -1584,6 +1636,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763210/img/snacks/evidt7ryzhnvm2rhpss3.webp",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
@@ -1604,6 +1657,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 2,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763216/img/snacks/w4dwriwnnujvb4qoo5li.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
@@ -1624,6 +1678,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 2,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763213/img/snacks/xjxkcwjjjivhrhp8j8xt.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Rice cakes").getId(), 4, "pcs", 0, "Rice cakes"),
@@ -1646,6 +1701,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 2,
                 100,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719778120/img/snacks/kbpes11cscrmz2ztipnx.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Carrots").getId(), 4, "pcs", 0, "Carrots"),
@@ -1666,6 +1722,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 2,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763211/img/snacks/qewj9d0f4ow9ri2bp4t0.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Apples").getId(), 2, "pcs", 0, "Apples"),
@@ -1684,6 +1741,7 @@ public class RecipesRunner implements CommandLineRunner {
                 5,
                 4,
                 100,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763210/img/snacks/nzcqswo1sizoegbjgfwx.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Popcorn kernels").getId(), 100, "g", 0, "Popcorn kernels"),
@@ -1696,220 +1754,6 @@ public class RecipesRunner implements CommandLineRunner {
 
         // DESSERTS
         recipes.add(new RecipeRequestDTO(
-                "Vegan Energy Balls",
-                "Delicious and nutritious energy balls made with almonds and dates.",
-                RecipeCategory.SNACKS,
-                "1. Blend dates, almonds, and cocoa powder in a food processor until smooth.\n2. Roll the mixture into small balls and refrigerate for 1 hour before serving.",
-                10,
-                4,
-                200,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almonds").getId(), 100, "g", 0, "Almonds"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cocoa powder").getId(), 2, "tbsp", 0, "Cocoa powder"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Hummus",
-                "A creamy and delicious homemade hummus.",
-                RecipeCategory.SNACKS,
-                "1. Blend chickpeas, tahini, lemon juice, garlic, and olive oil in a food processor until smooth.\n2. Serve with fresh vegetables or pita bread.",
-                10,
-                4,
-                150,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chickpeas").getId(), 400, "g", 0, "Chickpeas"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tahini").getId(), 2, "tbsp", 0, "Tahini"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lemon juice").getId(), 2, "tbsp", 0, "Lemon juice"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic").getId(), 2, "cloves", 0, "Garlic"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 2, "tbsp", 0, "Olive oil"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Kale Chips",
-                "Crispy and healthy kale chips.",
-                RecipeCategory.SNACKS,
-                "1. Tear kale leaves into bite-sized pieces and toss with olive oil and salt.\n2. Bake at 180°C for 10-15 minutes until crispy.",
-                20,
-                4,
-                100,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Kale").getId(), 200, "g", 0, "Kale"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Olive oil").getId(), 1, "tbsp", 0, "Olive oil"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Garlic powder").getId(), 1, "tsp", 0, "Garlic powder")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Guacamole",
-                "A fresh and flavorful guacamole dip.",
-                RecipeCategory.SNACKS,
-                "1. Mash avocados with a fork.\n2. Add diced onion, tomatoes, cilantro, lime juice, salt, and pepper. Mix well.\n3. Serve with tortilla chips or fresh vegetables.",
-                10,
-                4,
-                150,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 2, "pcs", 0, "Avocado"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Onion").getId(), 1, "pcs", 0, "Onion"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Tomatoes").getId(), 2, "pcs", 0, "Tomatoes"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cilantro").getId(), 2, "tbsp", 0, "Cilantro"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Lime juice").getId(), 1, "tbsp", 0, "Lime juice"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili powder").getId(), 1, "tsp", 0, "Chili powder")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Stuffed Dates",
-                "Sweet and satisfying stuffed dates with almond butter and almonds.",
-                RecipeCategory.SNACKS,
-                "1. Slice dates open and remove pits.\n2. Fill each date with almond butter and top with a whole almond.\n3. Serve immediately.",
-                5,
-                4,
-                200,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Dates").getId(), 200, "g", 0, "Dates"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond butter").getId(), 100, "g", 0, "Almond butter"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almonds").getId(), 50, "g", 0, "Almonds"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Fruit Smoothie",
-                "A refreshing and healthy fruit smoothie.",
-                RecipeCategory.SNACKS,
-                "1. Blend frozen berries, banana, and almond milk until smooth.\n2. Pour into glasses and serve immediately.",
-                5,
-                2,
-                150,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Frozen berries").getId(), 100, "g", 0, "Frozen berries"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Bananas").getId(), 100, "g", 0, "Bananas"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Almond milk").getId(), 200, "ml", 0, "Almond milk"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chia seeds").getId(), 1, "tbsp", 0, "Chia seeds")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Rice Cakes with Avocado",
-                "Simple and delicious rice cakes topped with avocado and spices.",
-                RecipeCategory.SNACKS,
-                "1. Slice avocado and place on rice cakes.\n2. Sprinkle with salt, pepper, and red pepper flakes.\n3. Serve immediately.",
-                5,
-                2,
-                150,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Rice cakes").getId(), 4, "pcs", 0, "Rice cakes"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Avocado").getId(), 1, "pcs", 0, "Avocado"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Black pepper").getId(), 1, "tsp", 0, "Black pepper"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Chili flakes").getId(), 1, "tsp", 0, "Chili flakes")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Carrot Sticks with Hummus",
-                "Crunchy carrot sticks served with homemade hummus.",
-                RecipeCategory.SNACKS,
-                "1. Slice carrots into sticks.\n2. Serve with homemade hummus.",
-                5,
-                2,
-                100,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Carrots").getId(), 4, "pcs", 0, "Carrots"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Hummus").getId(), 200, "g", 0, "Hummus"),
-
-
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Paprika").getId(), 1, "tsp", 0, "Paprika"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cumin").getId(), 1, "tsp", 0, "Cumin")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Apple Slices with Peanut Butter",
-                "Fresh apple slices served with creamy peanut butter.",
-                RecipeCategory.SNACKS,
-                "1. Slice apples and serve with peanut butter.",
-                5,
-                2,
-                150,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Apples").getId(), 2, "pcs", 0, "Apples"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Peanut butter").getId(), 100, "g", 0, "Peanut butter"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Cinnamon").getId(), 1, "tsp", 0, "Cinnamon")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
-                "Vegan Popcorn",
-                "A classic snack of air-popped popcorn with nutritional yeast.",
-                RecipeCategory.SNACKS,
-                "1. Air-pop the popcorn kernels.\n2. Sprinkle with nutritional yeast and salt.\n3. Serve immediately.",
-                5,
-                4,
-                100,
-                Arrays.asList(
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Popcorn kernels").getId(), 100, "g", 0, "Popcorn kernels"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Nutritional yeast").getId(), 2, "tbsp", 0, "Nutritional yeast"),
-                        new RecipeIngredientRequestDTO(
-                                ingredientService.getIngredientByName("Salt").getId(), 1, "tsp", 0, "Salt")
-                )
-        ));
-
-        recipes.add(new RecipeRequestDTO(
                 "Vegan Chocolate Cake",
                 "A rich and moist vegan chocolate cake perfect for any occasion.",
                 RecipeCategory.DESSERTS,
@@ -1917,6 +1761,7 @@ public class RecipesRunner implements CommandLineRunner {
                 45,
                 8,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763198/img/desserts/gjve2hubpagvj3y6wi28.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
@@ -1951,6 +1796,7 @@ public class RecipesRunner implements CommandLineRunner {
                 35,
                 8,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763205/img/desserts/fdi8cnsih3yvh5qgwoqr.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Shredded coconut").getId(), 200, "g", 0, "Shredded coconut"),
@@ -1975,6 +1821,7 @@ public class RecipesRunner implements CommandLineRunner {
                 30,
                 6,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763208/img/desserts/tsegbvltfdagdruzudw4.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
@@ -2003,6 +1850,7 @@ public class RecipesRunner implements CommandLineRunner {
                 90,
                 8,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763205/img/desserts/qs0ma5fiqhypxctxcpgf.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
@@ -2031,6 +1879,7 @@ public class RecipesRunner implements CommandLineRunner {
                 40,
                 8,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763201/img/desserts/k9slv9rojrkorrctrx3e.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
@@ -2061,6 +1910,7 @@ public class RecipesRunner implements CommandLineRunner {
                 45,
                 8,
                 250,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763204/img/desserts/p7sb3tdlguyt5ms4rdis.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 200, "g", 0, "Flour"),
@@ -2089,6 +1939,7 @@ public class RecipesRunner implements CommandLineRunner {
                 90,
                 8,
                 300,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763196/img/desserts/a09j9wqntbonvmgsvto2.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
@@ -2119,6 +1970,7 @@ public class RecipesRunner implements CommandLineRunner {
                 70,
                 8,
                 350,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763203/img/desserts/ick3j7zowyeikfkmu0db.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Vegan digestive biscuits").getId(), 200, "g", 0, "Vegan digestive biscuits"),
@@ -2145,6 +1997,7 @@ public class RecipesRunner implements CommandLineRunner {
                 90,
                 8,
                 400,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763203/img/desserts/myedcf328uspppav18qr.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Flour").getId(), 300, "g", 0, "Flour"),
@@ -2177,6 +2030,7 @@ public class RecipesRunner implements CommandLineRunner {
                 10,
                 4,
                 200,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763205/img/desserts/wjmkdyjjqamuhzz5d3sr.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Dark chocolate").getId(), 200, "g", 0, "Dark chocolate"),
@@ -2195,6 +2049,7 @@ public class RecipesRunner implements CommandLineRunner {
                 15,
                 4,
                 150,
+                "https://res.cloudinary.com/dopblayrc/image/upload/v1719763200/img/desserts/w64twdymngsjwfyhx8qm.jpg",
                 Arrays.asList(
                         new RecipeIngredientRequestDTO(
                                 ingredientService.getIngredientByName("Raspberries").getId(), 500, "g", 0, "Raspberries"),

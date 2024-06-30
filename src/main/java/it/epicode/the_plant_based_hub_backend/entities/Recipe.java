@@ -43,6 +43,9 @@ public class Recipe extends BaseEntity {
     @Column(nullable = false)
     private int caloriesPerServing;
 
+    @Column(nullable = false)
+    private String imageUrl;
+
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"recipe", "hibernateLazyInitializer", "handler"})
     private List<RecipeIngredient> ingredients = new ArrayList<>();
@@ -52,5 +55,4 @@ public class Recipe extends BaseEntity {
                 .map(RecipeIngredient::getIngredientName)
                 .collect(Collectors.toList());
     }
-
 }

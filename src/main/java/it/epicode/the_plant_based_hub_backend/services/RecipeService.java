@@ -180,6 +180,7 @@ public class RecipeService {
                 .withPreparationTime(recipeRequestDTO.preparationTime())
                 .withNumberOfServings(recipeRequestDTO.numberOfServings())
                 .withCaloriesPerServing(recipeRequestDTO.caloriesPerServing())
+                .withImageUrl(recipeRequestDTO.imageUrl())
                 .withIngredients(new ArrayList<>())
                 .build();
     }
@@ -207,6 +208,7 @@ public class RecipeService {
         existingRecipe.setPreparationTime(recipeRequestDTO.preparationTime());
         existingRecipe.setNumberOfServings(recipeRequestDTO.numberOfServings());
         existingRecipe.setCaloriesPerServing(recipeRequestDTO.caloriesPerServing());
+        existingRecipe.setImageUrl(recipeRequestDTO.imageUrl());
 
         if (recipeRequestDTO.ingredients() != null) {
             List<RecipeIngredient> newIngredients = recipeRequestDTO.ingredients().stream()
@@ -334,5 +336,4 @@ public class RecipeService {
         }
         return recipeRepository.findByIngredientsIngredientIngredientCategory(category);
     }
-
 }

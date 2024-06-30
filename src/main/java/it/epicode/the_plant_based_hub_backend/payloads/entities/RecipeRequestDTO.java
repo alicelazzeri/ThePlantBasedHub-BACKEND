@@ -39,6 +39,10 @@ public record RecipeRequestDTO(
         @Positive(message = "Calories per serving must be greater than zero")
         int caloriesPerServing,
 
+        @NotNull(message = "Image URL is mandatory")
+        @NotEmpty(message = "Image URL cannot be empty")
+        String imageUrl,
+
         List<RecipeIngredientRequestDTO> ingredients
 ) {
         public RecipeRequestDTO {
