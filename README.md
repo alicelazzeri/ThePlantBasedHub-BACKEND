@@ -31,10 +31,17 @@ The Plant Based Hub is a web application designed to:
 - **src/main/resources**: Contains application resources, such as configuration files.
 - **src/test/java**: Contains unit and integration tests for the application.
 
+## Frontend Repository
+
+This repository contains only the backend part of the application. You can find the frontend repository here:
+
+👉 [The Plant Based Hub Frontend](https://github.com/alicelazzeri/ThePlantBasedHub-FRONTEND) 👈
+
 ## API and Swagger Documentation
 
 This repository contains the backend that provides APIs for the front-end application.
-Once the appropriate endpoints are completed, Swagger documentation will be available to explore and test the APIs.
+- **Swagger API Docs**: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+- **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## Installation and Configuration
 
@@ -116,11 +123,19 @@ The Plant Based Hub è un'applicazione web progettata per:
 - **src/main/resources**: Contiene le risorse dell'applicazione, come i file di configurazione.
 - **src/test/java**: Contiene i test unitari e di integrazione per l'applicazione.
 
+
+## Frontend Repository
+
+Questo repository contiene solo la parte backend dell'applicazione. Puoi trovare il repository del frontend qui:
+
+👉 [The Plant Based Hub Frontend](https://github.com/alicelazzeri/ThePlantBasedHub-FRONTEND) 👈
+
 ## API e Documentazione Swagger
 
 Questo repository contiene il backend che fornisce le API per l'applicazione front-end. 
-Una volta completati gli endpoint idonei, sarà disponibile la documentazione Swagger per esplorare e testare le API.
-
+- **Swagger API Docs**: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+- **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+  
 ## Installazione e Configurazione
 
 ### Prerequisiti
