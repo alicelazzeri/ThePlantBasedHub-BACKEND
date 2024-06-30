@@ -126,7 +126,7 @@ The Plant Based Hub è un'applicazione web progettata per:
 
 ## Frontend Repository
 
-Questa repository contiene solo la parte backend dell'applicazione. Puoi trovare il repository del frontend qui:
+Questo repository contiene solo la parte backend dell'applicazione. Puoi trovare il repository del frontend qui:
 
 👉 [The Plant Based Hub Frontend](https://github.com/alicelazzeri/ThePlantBasedHub-FRONTEND) 👈
 
