@@ -31,6 +31,12 @@ The Plant Based Hub is a web application designed to:
 - **src/main/resources**: Contains application resources, such as configuration files.
 - **src/test/java**: Contains unit and integration tests for the application.
 
+## Frontend Repository
+
+This repository contains only the backend part of the application. You can find the frontend repository here:
+
+👉 [The Plant Based Hub Frontend](https://github.com/alicelazzeri/ThePlantBasedHub-FRONTEND) 👈
+
 ## API and Swagger Documentation
 
 This repository contains the backend that provides APIs for the front-end application.
