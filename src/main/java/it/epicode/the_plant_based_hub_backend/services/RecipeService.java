@@ -336,4 +336,113 @@ public class RecipeService {
         }
         return recipeRepository.findByIngredientsIngredientIngredientCategory(category);
     }
+
+    // GET recipe by total proteins
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalProteins(double minProteins, double maxProteins) {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    double totalProteins = recipe.getIngredients().stream()
+                            .mapToDouble(ri -> ri.getIngredient().getProteins())
+                            .sum();
+                    return totalProteins >= minProteins && totalProteins <= maxProteins;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total carbohydrates
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalCarbohydrates(double minCarbohydrates, double maxCarbohydrates) {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    double totalCarbohydrates = recipe.getIngredients().stream()
+                            .mapToDouble(ri -> ri.getIngredient().getCarbohydrates())
+                            .sum();
+                    return totalCarbohydrates >= minCarbohydrates && totalCarbohydrates <= maxCarbohydrates;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total fats
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalFats(double minFats, double maxFats) {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    double totalFats = recipe.getIngredients().stream()
+                            .mapToDouble(ri -> ri.getIngredient().getFats())
+                            .sum();
+                    return totalFats >= minFats && totalFats <= maxFats;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total fibers
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalFibers(double minFibers, double maxFibers) {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    double totalFibers = recipe.getIngredients().stream()
+                            .mapToDouble(ri -> ri.getIngredient().getFibers())
+                            .sum();
+                    return totalFibers >= minFibers && totalFibers <= maxFibers;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total sugars
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalSugars(double minSugars, double maxSugars) {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    double totalSugars = recipe.getIngredients().stream()
+                            .mapToDouble(ri -> ri.getIngredient().getSugars())
+                            .sum();
+                    return totalSugars >= minSugars && totalSugars <= maxSugars;
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total vitamins
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalVitamins(String vitamins) {
+        List<String> vitaminList = List.of(vitamins.toLowerCase().split(",\\s*"));
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    String totalVitamins = recipe.getIngredients().stream()
+                            .flatMap(ri -> List.of(ri.getIngredient().getVitamins().toLowerCase().split(",\\s*")).stream())
+                            .distinct()
+                            .collect(Collectors.joining(", "));
+                    return vitaminList.stream().allMatch(totalVitamins::contains);
+                })
+                .collect(Collectors.toList());
+    }
+
+    // GET recipe by total minerals
+
+    @Transactional(readOnly = true)
+    public List<Recipe> getRecipesByTotalMinerals(String minerals) {
+        List<String> mineralList = List.of(minerals.toLowerCase().split(",\\s*"));
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        return allRecipes.stream()
+                .filter(recipe -> {
+                    String totalMinerals = recipe.getIngredients().stream()
+                            .flatMap(ri -> List.of(ri.getIngredient().getMinerals().toLowerCase().split(",\\s*")).stream())
+                            .distinct()
+                            .collect(Collectors.joining(", "));
+                    return mineralList.stream().allMatch(totalMinerals::contains);
+                })
+                .collect(Collectors.toList());
+    }
 }

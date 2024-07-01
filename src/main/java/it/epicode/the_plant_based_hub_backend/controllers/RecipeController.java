@@ -318,4 +318,163 @@ public class RecipeController {
         }
     }
 
+    // GET recipes by total proteins
+    // GET http://localhost:8080/api/recipes/total-proteins?minProteins={minProteins}&maxProteins={maxProteins} + bearer token
+
+    @GetMapping("/total-proteins")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total proteins", description = "Retrieve recipes by total proteins in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalProteins(
+            @Parameter(description = "Minimum proteins") @RequestParam double minProteins,
+            @Parameter(description = "Maximum proteins") @RequestParam double maxProteins) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalProteins(minProteins, maxProteins);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with total proteins between: " + minProteins + " and " + maxProteins);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total carbohydrates
+    // GET http://localhost:8080/api/recipes/total-carbohydrates?minCarbohydrates={minCarbohydrates}&maxCarbohydrates={maxCarbohydrates} + bearer token
+
+    @GetMapping("/total-carbohydrates")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total carbohydrates", description = "Retrieve recipes by total carbohydrates in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalCarbohydrates(
+            @Parameter(description = "Minimum carbohydrates") @RequestParam double minCarbohydrates,
+            @Parameter(description = "Maximum carbohydrates") @RequestParam double maxCarbohydrates) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalCarbohydrates(minCarbohydrates, maxCarbohydrates);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with total carbohydrates between: " + minCarbohydrates + " and " + maxCarbohydrates);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total fats
+    // GET http://localhost:8080/api/recipes/total-fats?minFats={minFats}&maxFats={maxFats} + bearer token
+
+    @GetMapping("/total-fats")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total fats", description = "Retrieve recipes by total fats in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalFats(
+            @Parameter(description = "Minimum fats") @RequestParam double minFats,
+            @Parameter(description = "Maximum fats") @RequestParam double maxFats) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalFats(minFats, maxFats);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with total fats between: " + minFats + " and " + maxFats);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total fibers
+    // GET http://localhost:8080/api/recipes/total-fibers?minFibers={minFibers}&maxFibers={maxFibers} + bearer token
+
+    @GetMapping("/total-fibers")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total fibers", description = "Retrieve recipes by total fibers in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalFibers(
+            @Parameter(description = "Minimum fibers") @RequestParam double minFibers,
+            @Parameter(description = "Maximum fibers") @RequestParam double maxFibers) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalFibers(minFibers, maxFibers);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with total fibers between: " + minFibers + " and " + maxFibers);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total sugars
+    // GET http://localhost:8080/api/recipes/total-sugars?minSugars={minSugars}&maxSugars={maxSugars} + bearer token
+
+    @GetMapping("/total-sugars")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total sugars", description = "Retrieve recipes by total sugars in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalSugars(
+            @Parameter(description = "Minimum sugars") @RequestParam double minSugars,
+            @Parameter(description = "Maximum sugars") @RequestParam double maxSugars) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalSugars(minSugars, maxSugars);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found with total sugars between: " + minSugars + " and " + maxSugars);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total vitamins
+    // GET http://localhost:8080/api/recipes/total-vitamins?vitamins={vitamins} + bearer token
+
+    @GetMapping("/total-vitamins")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total vitamins", description = "Retrieve recipes by total vitamins in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalVitamins(
+            @Parameter(description = "Vitamins to search for (comma-separated, case-insensitive)") @RequestParam String vitamins) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalVitamins(vitamins);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found containing vitamins: " + vitamins);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
+    // GET recipes by total minerals
+    // GET http://localhost:8080/api/recipes/total-minerals?minerals={minerals} + bearer token
+
+    @GetMapping("/total-minerals")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @Operation(summary = "Get recipes by total minerals", description = "Retrieve recipes by total minerals in all ingredients",
+            security = @SecurityRequirement(name = "Bearer Authentication"))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved recipes",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Recipe.class))),
+            @ApiResponse(responseCode = "204", description = "No recipes found")
+    })
+    public ResponseEntity<List<Recipe>> getRecipesByTotalMinerals(
+            @Parameter(description = "Minerals to search for (comma-separated, case-insensitive)") @RequestParam String minerals) {
+        List<Recipe> recipes = recipeService.getRecipesByTotalMinerals(minerals);
+        if (recipes.isEmpty()) {
+            throw new NoContentException("No recipes found containing minerals: " + minerals);
+        } else {
+            return new ResponseEntity<>(recipes, HttpStatus.OK);
+        }
+    }
+
 }
