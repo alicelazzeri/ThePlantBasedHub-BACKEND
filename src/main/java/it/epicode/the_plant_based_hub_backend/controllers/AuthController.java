@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 @CrossOrigin
 @Tag(name = "Auth API", description = "Operations related to user authentication")
-
 public class AuthController {
 
     @Autowired
@@ -32,8 +31,6 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
-
-    // POST http://localhost:8080/api/auth/register
 
     @PostMapping("/register")
     @Operation(summary = "Register a new user", description = "Register a new user",
@@ -54,8 +51,6 @@ public class AuthController {
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 
-    // POST http://localhost:8080/api/auth/register/admin
-
     @PostMapping("/register/admin")
     @Operation(summary = "Register a new admin", description = "Register a new admin",
             responses = {
@@ -73,11 +68,8 @@ public class AuthController {
         }
 
         User result = userService.saveUserAdmin(registerPayload);
-
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
-
-    // POST http://localhost:8080/api/auth/login
 
     @PostMapping("/login")
     @Operation(summary = "User login", description = "Authenticate user and generate token",
@@ -87,8 +79,7 @@ public class AuthController {
                     @ApiResponse(responseCode = "401", description = "Invalid credentials")
             })
     public ResponseEntity<UserLoginResponseDTO> login(@Parameter(description = "User login data") @RequestBody UserLoginRequestDTO loginPayload) {
-        String token = authService.authenticateUserAndGenerateToken(loginPayload);
-        UserLoginResponseDTO response = new UserLoginResponseDTO(token);
+        UserLoginResponseDTO response = authService.authenticateUserAndGenerateToken(loginPayload);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
