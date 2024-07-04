@@ -81,6 +81,7 @@ public class IngredientService {
                 .withSugars(ingredientRequestDTO.sugars())
                 .withVitamins(ingredientRequestDTO.vitamins())
                 .withMinerals(ingredientRequestDTO.minerals())
+                .withIngredientDescription(ingredientRequestDTO.ingredientDescription())
                 .build();
         return ingredient;
     }
@@ -99,6 +100,7 @@ public class IngredientService {
         existingIngredient.setSugars(ingredientRequestDTO.sugars());
         existingIngredient.setVitamins(ingredientRequestDTO.vitamins());
         existingIngredient.setMinerals(ingredientRequestDTO.minerals());
+        existingIngredient.setIngredientDescription(ingredientRequestDTO.ingredientDescription());
     }
 
     // GET ingredient by name

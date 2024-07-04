@@ -49,4 +49,7 @@ public class Ingredient extends BaseEntity {
 
     @Column(nullable = true)
     private String minerals;
+
+    @Column(nullable = false)
+    private String ingredientDescription;
 }

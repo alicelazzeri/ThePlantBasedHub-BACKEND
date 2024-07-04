@@ -40,6 +40,9 @@ public record IngredientRequestDTO(
 
         @NotNull(message = "Minerals is mandatory")
         @NotEmpty(message = "Minerals cannot be empty")
-        String minerals
+        String minerals,
+
+        @NotEmpty(message = "Ingredient description cannot be empty")
+        String ingredientDescription
 ) {
 }
