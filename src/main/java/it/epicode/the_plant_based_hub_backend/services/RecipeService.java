@@ -240,58 +240,100 @@ public class RecipeService {
         BaseFont lora = BaseFont.createFont("src/main/resources/fonts/Lora/Lora-Regular.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         Font loraFont = new Font(lora, 13, Font.NORMAL, green);
 
+        // Add logo with text
+        Image logo = Image.getInstance("src/main/resources/images/logo.png"); // Path to your logo
+        logo.scaleToFit(80, 80);
+        logo.setAlignment(Element.ALIGN_CENTER);
+        document.add(logo);
+
+        Paragraph logoText = new Paragraph("THE PLANT BASED HUB", new Font(lora, 16, Font.BOLD, green));
+        logoText.setAlignment(Element.ALIGN_CENTER);
+        logoText.setSpacingAfter(20);
+        document.add(logoText);
+
         // Recipe title
         Paragraph recipeTitle = new Paragraph(recipe.getRecipeName(), new Font(lora, 16, Font.BOLD, green));
         recipeTitle.setAlignment(Element.ALIGN_CENTER);
+        recipeTitle.setSpacingAfter(20);
         document.add(recipeTitle);
 
         // Description
-        document.add(new Paragraph("Description", loraFont));
-        document.add(new Paragraph(recipe.getRecipeDescription(), ralewayFont));
+        Paragraph descriptionTitle = new Paragraph("Description", loraFont);
+        descriptionTitle.setAlignment(Element.ALIGN_CENTER);
+        descriptionTitle.setSpacingAfter(10);
+        document.add(descriptionTitle);
+
+        Paragraph description = new Paragraph(recipe.getRecipeDescription(), ralewayFont);
+        description.setAlignment(Element.ALIGN_CENTER);
+        description.setSpacingAfter(20);
+        document.add(description);
 
         // Category
         Paragraph category = new Paragraph();
+        category.setAlignment(Element.ALIGN_CENTER);
         Chunk categoryLabel = new Chunk("Category: ", loraFont);
         Chunk categoryValue = new Chunk(recipe.getRecipeCategory().toString(), ralewayFont);
         category.add(categoryLabel);
         category.add(categoryValue);
+        category.setSpacingAfter(10);
         document.add(category);
 
         // Preparation time
         Paragraph prepTime = new Paragraph();
+        prepTime.setAlignment(Element.ALIGN_CENTER);
         Chunk prepTimeLabel = new Chunk("Preparation time: ", loraFont);
         Chunk prepTimeValue = new Chunk(recipe.getPreparationTime() + " minutes", ralewayFont);
         prepTime.add(prepTimeLabel);
         prepTime.add(prepTimeValue);
+        prepTime.setSpacingAfter(10);
         document.add(prepTime);
 
         // Number of servings
         Paragraph numberOfServings = new Paragraph();
+        numberOfServings.setAlignment(Element.ALIGN_CENTER);
         Chunk servingsLabel = new Chunk("Number of servings: ", loraFont);
         Chunk servingsValue = new Chunk(String.valueOf(recipe.getNumberOfServings()), ralewayFont);
         numberOfServings.add(servingsLabel);
         numberOfServings.add(servingsValue);
+        numberOfServings.setSpacingAfter(10);
         document.add(numberOfServings);
 
         // Calories per serving
         Paragraph caloriesPerServing = new Paragraph();
+        caloriesPerServing.setAlignment(Element.ALIGN_CENTER);
         Chunk caloriesLabel = new Chunk("Calories per serving: ", loraFont);
         Chunk caloriesValue = new Chunk(String.valueOf(recipe.getCaloriesPerServing()) + " kcal", ralewayFont);
         caloriesPerServing.add(caloriesLabel);
         caloriesPerServing.add(caloriesValue);
+        caloriesPerServing.setSpacingAfter(20);
         document.add(caloriesPerServing);
 
         // Ingredients
-        document.add(new Paragraph("Ingredients:", loraFont));
+        Paragraph ingredientsTitle = new Paragraph("Ingredients:", loraFont);
+        ingredientsTitle.setAlignment(Element.ALIGN_CENTER);
+        ingredientsTitle.setSpacingAfter(10);
+        document.add(ingredientsTitle);
+
         String ingredients = recipe.getIngredients().stream()
                 .map(ingredient -> ingredient.getIngredient().getIngredientName() + " - " +
                         ingredient.getQuantity() + " " + ingredient.getMeasurementUnit())
                 .collect(Collectors.joining("\n"));
-        document.add(new Paragraph(ingredients, ralewayFont));
+
+        Paragraph ingredientsParagraph = new Paragraph(ingredients, ralewayFont);
+        ingredientsParagraph.setAlignment(Element.ALIGN_CENTER);
+        ingredientsParagraph.setSpacingAfter(20);
+        document.add(ingredientsParagraph);
 
         // Instructions
-        document.add(new Paragraph("Instructions:", loraFont));
-        document.add(new Paragraph(recipe.getRecipeInstructions(), ralewayFont));
+        Paragraph instructionsTitle = new Paragraph("Instructions:", loraFont);
+        instructionsTitle.setAlignment(Element.ALIGN_CENTER);
+        instructionsTitle.setSpacingAfter(10);
+        document.add(instructionsTitle);
+
+        Paragraph instructions = new Paragraph(recipe.getRecipeInstructions(), ralewayFont);
+        instructions.setAlignment(Element.ALIGN_CENTER);
+        instructions.setSpacingAfter(20);
+        document.add(instructions);
 
         document.close();
         return output;
