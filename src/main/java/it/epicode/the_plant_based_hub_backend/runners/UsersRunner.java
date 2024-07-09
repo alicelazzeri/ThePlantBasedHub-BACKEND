@@ -34,13 +34,15 @@ public class UsersRunner implements CommandLineRunner {
             String lastName = generateValidLastName();
             String email = faker.internet().emailAddress();
             String password = bcrypt.encode(faker.internet().password());
+            String avatarUrl = faker.avatar().image();
 
             UserRegisterRequestDTO userDto = new UserRegisterRequestDTO(
                     firstName,
                     lastName,
                     email,
                     password,
-                    Role.USER
+                    Role.USER,
+                    avatarUrl
             );
 
             try {
