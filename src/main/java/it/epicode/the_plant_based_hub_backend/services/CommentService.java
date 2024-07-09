@@ -105,5 +105,4 @@ public class CommentService {
     public List<Comment> getCommentsByRecipeId(long recipeId) {
         return commentRepository.findByRecipeId(recipeId);
     }
-
 }

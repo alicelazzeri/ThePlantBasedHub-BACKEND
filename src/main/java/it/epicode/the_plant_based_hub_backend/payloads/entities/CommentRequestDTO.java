@@ -18,5 +18,4 @@ public record CommentRequestDTO(
         @NotNull(message = "Recipe ID is mandatory")
         long recipeId
 ) {
-
 }
