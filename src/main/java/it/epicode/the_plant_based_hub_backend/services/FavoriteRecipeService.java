@@ -60,11 +60,12 @@ public class FavoriteRecipeService {
     // DELETE favorite recipe
 
     @Transactional
-    public void deleteFavoriteRecipe(long id) {
-        if (!favoriteRecipeRepository.existsById(id)) {
-            throw new NotFoundException("Favorite recipe with id: " + id + " not found");
+    public void deleteFavoriteRecipeByUserIdAndRecipeId(long userId, long recipeId) {
+        FavoriteRecipe favoriteRecipe = favoriteRecipeRepository.findByUserIdAndRecipeId(userId, recipeId);
+        if (favoriteRecipe == null) {
+            throw new NotFoundException("Favorite recipe not found");
         }
-        favoriteRecipeRepository.deleteById(id);
+        favoriteRecipeRepository.delete(favoriteRecipe);
     }
 
     // Map FavoriteRecipeDTO to FavoriteRecipe entity

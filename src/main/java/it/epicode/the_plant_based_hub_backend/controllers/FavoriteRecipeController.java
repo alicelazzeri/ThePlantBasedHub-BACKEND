@@ -123,20 +123,20 @@ public class FavoriteRecipeController {
         }
     }
 
-    // DELETE http://localhost:8080/api/favorite-recipes/{id} + bearer token
-
-    @DeleteMapping("/{id}")
+    // DELETE http://localhost:8080/api/favorite-recipes/user/{userId}/recipe/{recipeId} + bearer token
+    @DeleteMapping("/user/{userId}/recipe/{recipeId}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
-    @Operation(summary = "Delete a favorite recipe", description = "Delete a favorite recipe by ID",
+    @Operation(summary = "Delete a favorite recipe by user ID and recipe ID", description = "Delete a favorite recipe by user ID and recipe ID",
             security = @SecurityRequirement(name = "Bearer Authentication"))
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Favorite recipe deleted successfully"),
             @ApiResponse(responseCode = "404", description = "Favorite recipe not found")
     })
-    public ResponseEntity<Void> deleteFavoriteRecipe(@Parameter(description = "ID of the favorite recipe to be deleted") @PathVariable long id) {
-        favoriteRecipeService.deleteFavoriteRecipe(id);
-        ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        return responseEntity;
+    public ResponseEntity<Void> deleteFavoriteRecipeByUserIdAndRecipeId(
+            @Parameter(description = "ID of the user") @PathVariable long userId,
+            @Parameter(description = "ID of the recipe") @PathVariable long recipeId) {
+        favoriteRecipeService.deleteFavoriteRecipeByUserIdAndRecipeId(userId, recipeId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // GET http://localhost:8080/api/favorite-recipes/user/{userId} + bearer token
