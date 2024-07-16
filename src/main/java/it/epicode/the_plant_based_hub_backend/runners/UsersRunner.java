@@ -1,7 +1,6 @@
 package it.epicode.the_plant_based_hub_backend.runners;
 
 import com.github.javafaker.Faker;
-import it.epicode.the_plant_based_hub_backend.entities.User;
 import it.epicode.the_plant_based_hub_backend.entities.enums.Role;
 import it.epicode.the_plant_based_hub_backend.payloads.auth.UserRegisterRequestDTO;
 import it.epicode.the_plant_based_hub_backend.services.UserService;
@@ -34,7 +33,7 @@ public class UsersRunner implements CommandLineRunner {
             String lastName = generateValidLastName();
             String email = faker.internet().emailAddress();
             String password = bcrypt.encode(faker.internet().password());
-            String avatarUrl = faker.avatar().image();
+            String avatarUrl = generateAvatarUrl(firstName, lastName);
 
             UserRegisterRequestDTO userDto = new UserRegisterRequestDTO(
                     firstName,
@@ -70,5 +69,9 @@ public class UsersRunner implements CommandLineRunner {
         } while (lastName.length() < 3 || lastName.length() > 30);
 
         return lastName;
+    }
+
+    private String generateAvatarUrl(String firstName, String lastName) {
+        return "https://ui-avatars.com/api/?name=" + firstName + "+" + lastName + "&background=random";
     }
 }

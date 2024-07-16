@@ -14,7 +14,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @Component
@@ -50,9 +52,10 @@ public class CommentsRunner implements CommandLineRunner {
         for (User user : users) {
             for (int i = 0; i < 5; i++) {
                 Recipe recipe = recipes.get(random.nextInt(recipes.size()));
+                Map.Entry<String, Integer> commentEntry = generateCommentAndRating(recipe);
                 CommentRequestDTO commentDto = new CommentRequestDTO(
-                        random.nextInt(5) + 1,
-                        generateComment(recipe),
+                        commentEntry.getValue(),
+                        commentEntry.getKey(),
                         user.getId(),
                         recipe.getId()
                 );
@@ -62,14 +65,15 @@ public class CommentsRunner implements CommandLineRunner {
         System.out.println("Comments have been added.");
     }
 
-    private String generateComment(Recipe recipe) {
-        String[] comments = {
-                "This " + recipe.getRecipeName() + " was absolutely delicious! Highly recommend.",
-                "I tried the " + recipe.getRecipeName() + " and it was so tasty. Will make it again!",
-                "The " + recipe.getRecipeName() + " recipe was easy to follow and turned out great.",
-                "Loved the " + recipe.getRecipeName() + "! Perfect for a quick and healthy meal.",
-                "The " + recipe.getRecipeName() + " was a hit with my family. We all enjoyed it."
-        };
-        return comments[random.nextInt(comments.length)];
+    private Map.Entry<String, Integer> generateCommentAndRating(Recipe recipe) {
+        Map<String, Integer> commentsWithRatings = new HashMap<>();
+        commentsWithRatings.put("This " + recipe.getRecipeName() + " was absolutely delicious! Highly recommend.", 5);
+        commentsWithRatings.put("I tried the " + recipe.getRecipeName() + " and it was so tasty. Will make it again!", 5);
+        commentsWithRatings.put("The " + recipe.getRecipeName() + " recipe was easy to follow and turned out great.", 5);
+        commentsWithRatings.put("Loved the " + recipe.getRecipeName() + "! Perfect for a quick and healthy meal.", 5);
+        commentsWithRatings.put("The " + recipe.getRecipeName() + " was a hit with my family. We all enjoyed it.", 5);
+
+        int index = random.nextInt(commentsWithRatings.size());
+        return commentsWithRatings.entrySet().stream().toList().get(index);
     }
 }

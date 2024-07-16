@@ -26,7 +26,7 @@ public class AuthService {
         if (bcrypt.matches(loginPayload.password(), user.getPassword())) {
             System.out.println("CORRECT password for created user:" + user.getEmail());
             String token = jwtTools.createToken(user);
-            return new UserLoginResponseDTO(token, user.getFirstName(), user.getLastName(), user.getEmail());
+            return new UserLoginResponseDTO(user.getId(), token, user.getFirstName(), user.getLastName(), user.getEmail());
         } else {
             System.out.println("INCORRECT password for created user:" + user.getEmail());
             throw new UnauthorizedException("Invalid credentials! Try login again.");
